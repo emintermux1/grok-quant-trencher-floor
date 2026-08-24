@@ -3,582 +3,462 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Grok Quant — Command HQ</title>
-  <meta name="description" content="Paper command HQ for Grok Quant Trencher Bot. Not affiliated with xAI." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3Cfilter id='s' x='-20%25' y='-20%25' width='140%25' height='140%25'%3E%3CfeDropShadow dx='0' dy='1.4' stdDeviation='1.2' flood-color='%23000' flood-opacity='.4'/%3E%3C/filter%3E%3Cmask id='m'%3E%3Crect width='64' height='64' rx='32' fill='%23fff'/%3E%3Cg transform='rotate(-55 32 32)'%3E%3Crect x='-8' y='27.4' width='36' height='8' rx='4' fill='%23000'/%3E%3Crect x='36' y='27.4' width='36' height='8' rx='4' fill='%23000'/%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='30' fill='%2358b83a' filter='url(%23s)'/%3E%3Ccircle cx='32' cy='32' r='30' fill='%237ce04a' mask='url(%23m)'/%3E%3Ccircle cx='32' cy='32' r='30.5' fill='none' stroke='%23d8f7b8' stroke-width='1.6'/%3E%3C/svg%3E" />
+  <title>GROK QUANT TRENCHER FLOOR — PAPER NIGHT SHIFT</title>
   <style>
     :root {
-      --bg: #000000;
-      --body: #121212;
-      --header: #0a0a0a;
-      --elev: #171717;
-      --panel: #1d1d1d;
-      --chip: #242424;
-      --hover: #2e2e2e;
-      --hair: #1f1f1f;
-      --text: #f5f5f5;
-      --mute: #808080;
-      --dim: #525252;
-      --mid: #cccccc;
-      --up: #46b87d;
-      --up2: #69cf8d;
-      --dn: #de5759;
-      --warn: #f8b951;
-      --lime: #7ce04a;
+      --bg: #0a0c14;
+      --floor: #1a1520;
+      --floor-line: #2a2030;
+      --desk: #3d2a1a;
+      --desk-top: #5c3d24;
+      --wood: #4a3018;
+      --night: #0d1220;
+      --window: #1a2848;
+      --star: #c8d8ff;
+      --amber: #f0b429;
+      --green: #3ecf6e;
+      --red: #e24b4b;
+      --cyan: #4ad4e8;
+      --paper: #e8dcc8;
+      --muted: #8a8090;
+      --panel: #12151f;
+      --border: #3a3048;
+      --pixel: 4px;
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body {
-      background: var(--body);
-      color: var(--text);
-      font-family: Geist, Inter, system-ui, sans-serif;
-      font-size: 14px;
-      line-height: 1.4;
-      min-height: 100%;
+    html, body { height: 100%; }
+    body {
+      background: var(--bg);
+      color: var(--paper);
+      font-family: "Courier New", Courier, monospace;
+      image-rendering: pixelated;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
-    button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
-    .num { font-variant-numeric: tabular-nums; }
 
-    header.bar {
-      position: sticky; top: 0; z-index: 30;
-      height: 60px;
-      display: flex; align-items: center; gap: 12px;
-      padding: 0 16px;
-      background: var(--header);
-      border-bottom: 1px solid var(--hair);
-    }
-    .mark {
-      width: 22px; height: 22px; flex-shrink: 0;
-      animation: mark-idle 12s ease-in-out infinite;
-      filter: drop-shadow(0 0 6px rgba(124,224,74,.35));
-    }
-    .mark .glow { animation: glow-pulse 3.6s ease-in-out infinite; }
-    .mark .cuts { animation: cuts-breathe 4.8s ease-in-out infinite; }
-    @keyframes mark-idle {
-      0%, 100% { transform: rotate(-8deg); }
-      50% { transform: rotate(8deg); }
-    }
-    @keyframes glow-pulse {
-      0%, 100% { opacity: .55; }
-      50% { opacity: 1; }
-    }
-    @keyframes cuts-breathe {
-      0%, 100% { opacity: .72; }
-      50% { opacity: 1; }
-    }
-    .brand { font-size: 12px; font-weight: 700; letter-spacing: .06em; }
-    .pill {
-      font-size: 9px; font-weight: 700; letter-spacing: .08em;
-      color: var(--lime);
-      border: 1px solid #355528;
-      background: #1a2618;
-      border-radius: 6px;
-      padding: 2px 6px;
-    }
-    .spacer { flex: 1; }
-    .open-n { color: var(--mute); font-size: 11px; }
-    .open-n b { color: var(--text); font-weight: 600; }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 12px 12px 24px; }
 
-    nav.tabs {
-      position: sticky; top: 60px; z-index: 29;
-      display: flex; gap: 0;
-      padding: 0 12px;
-      background: var(--header);
-      border-bottom: 1px solid var(--hair);
-    }
-    .tab {
-      height: 40px; padding: 0 14px;
-      color: var(--mute); font-size: 13px; font-weight: 600;
-      border-bottom: 2px solid transparent;
-    }
-    .tab.on { color: var(--text); border-bottom-color: var(--lime); }
-
-    .hero {
-      display: none;
-      height: 72px;
-      padding: 0 12px;
-      border-bottom: 1px solid var(--hair);
-      align-items: center;
-      gap: 14px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    body.floor .hero { display: flex; }
-    .hero .mark { width: 40px; height: 40px; }
-    .hero h1 { font-size: 16px; font-weight: 700; letter-spacing: .02em; }
-    .hero p { color: var(--mute); font-size: 12px; margin-top: 2px; }
-
-    main { padding: 12px; max-width: 1100px; margin: 0 auto; }
-    .panel { display: none; }
-    .panel.on { display: block; }
-
-    .floor-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .roster, .feed {
+    header.top {
+      border: 4px solid var(--border);
       background: var(--panel);
-      border: 1px solid var(--hair);
-      border-radius: 8px;
+      padding: 10px 12px;
+      margin-bottom: 8px;
+    }
+    .brand-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 16px; }
+    h1 {
+      font-size: 18px;
+      letter-spacing: 2px;
+      color: var(--amber);
+      text-shadow: 2px 2px 0 #000;
+    }
+    .sub { color: var(--cyan); font-size: 12px; letter-spacing: 1px; }
+    .crew { color: var(--muted); font-size: 11px; margin-top: 4px; }
+
+    .stats {
+      display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px;
+    }
+    .chip {
+      border: 2px solid var(--border);
+      background: #0c0e16;
+      padding: 3px 8px;
+      font-size: 11px;
+      letter-spacing: 0.5px;
+    }
+    .chip.on { color: var(--green); border-color: #2a5a38; }
+    .chip.off { color: var(--red); border-color: #5a2a2a; }
+    .chip.warn { color: var(--amber); }
+    .chip.dim { color: var(--muted); }
+
+    .ticker-wrap {
+      border: 4px solid #2a2038;
+      background: #080a10;
+      overflow: hidden;
+      white-space: nowrap;
+      margin-bottom: 8px;
+      height: 28px;
+      line-height: 28px;
+    }
+    .ticker {
+      display: inline-block;
+      animation: tick 42s linear infinite;
+      font-size: 12px;
+      color: var(--paper);
+    }
+    .ticker span { margin-right: 40px; }
+    .ticker .up { color: var(--green); }
+    .ticker .rule { color: var(--cyan); }
+    @keyframes tick {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .floor-stage {
+      position: relative;
+      border: 4px solid #2a1828;
+      background:
+        linear-gradient(90deg, var(--floor-line) 1px, transparent 1px) 0 0 / 24px 24px,
+        linear-gradient(0deg, var(--floor-line) 1px, transparent 1px) 0 0 / 24px 24px,
+        var(--floor);
+      min-height: 420px;
+      padding: 12px;
       overflow: hidden;
     }
-    .block-h {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 10px 12px;
-      border-bottom: 1px solid var(--hair);
-      font-size: 11px; font-weight: 700; letter-spacing: .08em;
-      color: var(--mute);
+
+    /* Night sky windows */
+    .windows {
+      position: absolute; top: 0; left: 0; right: 0; height: 72px;
+      background: linear-gradient(#0a1020, #121828);
+      border-bottom: 4px solid #2a2030;
+      display: flex; justify-content: space-around; align-items: stretch;
+      padding: 6px 20px 0;
     }
-    .live-dot {
-      width: 6px; height: 6px; border-radius: 50%;
-      background: var(--lime);
-      box-shadow: 0 0 8px var(--lime);
-      animation: glow-pulse 1.8s ease-in-out infinite;
+    .win {
+      width: 90px; height: 52px;
+      background: var(--window);
+      border: 3px solid #3a4058;
+      position: relative;
+      box-shadow: inset 0 0 0 2px #0a1028;
+    }
+    .win::before, .win::after {
+      content: "";
+      position: absolute;
+      background: #c8d8ff;
+      width: 2px; height: 2px;
+    }
+    .win::before { top: 8px; left: 14px; box-shadow: 22px 10px 0 #fff, 50px 6px 0 #aab, 36px 20px 0 #dde; }
+    .win::after { top: 28px; left: 40px; box-shadow: -20px -4px 0 #99a, 18px 8px 0 #fff; }
+    .moon {
+      position: absolute; top: 8px; right: 10px;
+      width: 10px; height: 10px; background: #e8e0c0;
+      box-shadow: 2px 2px 0 #c8c090;
+    }
+
+    .whiteboard {
+      position: absolute;
+      top: 86px; left: 50%;
+      transform: translateX(-50%);
+      width: 160px; height: 56px;
+      background: #d8d0b8;
+      border: 4px solid #5a5040;
+      color: #1a2030;
+      text-align: center;
+      font-weight: bold;
+      font-size: 16px;
+      letter-spacing: 3px;
+      line-height: 48px;
+      box-shadow: 4px 4px 0 #000;
+    }
+
+    .lamp {
+      position: absolute; top: 80px; width: 8px; height: 40px;
+      background: #3a3020;
+    }
+    .lamp::after {
+      content: "";
+      position: absolute; bottom: -10px; left: -8px;
+      width: 24px; height: 10px;
+      background: #f0c050;
+      box-shadow: 0 8px 16px #f0b42966;
+    }
+    .lamp.l { left: 24px; }
+    .lamp.r { right: 24px; }
+
+    .desks {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px 12px;
+      margin-top: 140px;
+      position: relative;
+      z-index: 1;
     }
 
     .desk {
-      display: flex;
-      flex-direction: column;
+      background: var(--desk);
+      border: 3px solid #2a1810;
+      min-height: 118px;
+      position: relative;
+      padding: 6px;
+      box-shadow: 4px 4px 0 #0008;
     }
-    .agent {
-      display: grid;
-      grid-template-columns: 52px 1fr auto;
-      gap: 10px;
-      align-items: center;
-      min-height: 72px;
-      padding: 10px 12px;
-      border-bottom: 1px solid var(--hair);
+    .desk-top {
+      background: var(--desk-top);
+      height: 14px;
+      margin: -6px -6px 8px;
+      border-bottom: 3px solid #2a1810;
     }
-    .agent:hover { background: var(--hover); }
-    .agent:last-child { border-bottom: 0; }
-    .call { font-weight: 700; letter-spacing: .06em; font-size: 12px; color: var(--lime); }
-    .role { font-size: 11px; color: var(--mute); margin-top: 2px; }
-    .stat {
-      font-size: 10px; font-weight: 700; letter-spacing: .06em;
-      padding: 3px 7px; border-radius: 6px;
-      white-space: nowrap;
+    .agent-name {
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--amber);
+      margin-bottom: 4px;
     }
-    .stat.scanning { color: var(--up); background: var(--chip); }
-    .stat.watching { color: #46cbf0; background: var(--chip); }
-    .stat.skip { color: var(--warn); background: var(--chip); }
-    .stat.paper { color: var(--mute); background: var(--chip); }
+    .agent-role { font-size: 10px; color: var(--muted); }
 
-    .feed-list { display: flex; flex-direction: column; }
-    .ev {
-      display: grid;
-      grid-template-columns: 64px 1fr;
-      gap: 10px;
-      padding: 10px 12px;
-      border-bottom: 1px solid var(--hair);
+    /* 8-bit sprite */
+    .sprite {
+      width: 32px; height: 40px;
+      image-rendering: pixelated;
+      position: absolute;
+      right: 10px; bottom: 8px;
     }
-    .ev:last-child { border-bottom: 0; }
-    .ev .when { color: var(--mute); font-size: 11px; }
-    .ev .txt { font-weight: 500; }
-    .ev .who { color: var(--lime); font-weight: 700; font-size: 11px; letter-spacing: .04em; }
+    .sprite .px { width: 4px; height: 4px; float: left; }
+    .hair { background: #2a1a10; }
+    .skin { background: #e0b090; }
+    .shirt { background: #3a5a88; }
+    .shirt2 { background: #2a7040; }
+    .shirt3 { background: #704028; }
+    .shirt4 { background: #603060; }
+    .shirt5 { background: #306060; }
+    .shirt6 { background: #805020; }
+    .scr { background: #1a3040; }
+    .lit { background: #4ad4e8; }
+    .blk { background: #111; }
+    .mon {
+      position: absolute; left: 8px; bottom: 18px;
+      width: 28px; height: 20px;
+      background: #1a2030;
+      border: 2px solid #333;
+    }
+    .mon i {
+      display: block; height: 100%;
+      background: repeating-linear-gradient(
+        180deg, #2a8 0 2px, #163 2px 4px
+      );
+      animation: scan 1.2s steps(4) infinite;
+    }
+    @keyframes scan { 50% { opacity: 0.6; } }
 
-    .cards { display: flex; flex-direction: column; gap: 12px; }
-    .card {
-      background: var(--elev);
-      border: 1px solid var(--hair);
-      border-radius: 8px;
-      padding: 12px;
-    }
-    .card.closed { opacity: .78; }
-    .card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 10px; }
-    .tok { font-weight: 700; font-size: 13px; }
-    .ca { color: var(--mute); font-size: 11px; margin-top: 2px; word-break: break-all; }
-    .size { text-align: right; }
-    .size .v { font-weight: 600; }
-    .size .l { display: block; color: var(--mute); font-size: 11px; }
-    .grid {
+    .live-col {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px 12px;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      margin-top: 8px;
     }
-    .cell .l { display: block; color: var(--mute); font-size: 11px; margin-bottom: 2px; }
-    .cell .v { font-weight: 600; }
-    .up { color: var(--up); }
-    .dn { color: var(--dn); }
-    .meta { margin-top: 10px; color: var(--mute); font-size: 11px; }
-    .st {
-      display: inline-block; margin-top: 8px;
-      font-size: 10px; font-weight: 700; letter-spacing: .06em;
-      padding: 3px 7px; border-radius: 8px;
+    @media (min-width: 720px) {
+      .main-grid {
+        display: grid;
+        grid-template-columns: 1fr 280px;
+        gap: 8px;
+      }
+      .live-col { margin-top: 0; }
     }
-    .st.open { color: var(--up); background: var(--chip); }
-    .st.closed { color: var(--mute); background: var(--chip); }
 
-    .table-wrap { display: none; overflow-x: auto; border: 1px solid var(--hair); border-radius: 8px; background: var(--elev); }
-    table.book { width: 100%; border-collapse: collapse; }
-    .book th {
-      text-align: left; font-size: 12px; font-weight: 600; color: var(--mute);
-      padding: 8px; height: 34px; border-bottom: 1px solid var(--hair);
+    .panel {
+      border: 4px solid var(--border);
+      background: var(--panel);
+      padding: 8px;
     }
-    .book td { padding: 8px; height: 80px; border-bottom: 1px solid var(--hair); vertical-align: middle; }
-    .book tbody tr:hover { background: var(--hover); }
-    .book tr:last-child td { border-bottom: 0; }
-    .book tr.closed { opacity: .78; }
-
-    .fills { display: flex; flex-direction: column; gap: 8px; }
-    .fill {
-      display: grid;
-      grid-template-columns: 52px 1fr auto;
-      gap: 12px; align-items: center;
-      background: var(--elev);
-      border: 1px solid var(--hair);
-      border-radius: 8px;
-      padding: 12px;
+    .panel h2 {
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: var(--cyan);
+      margin-bottom: 6px;
+      border-bottom: 2px solid #2a3040;
+      padding-bottom: 4px;
     }
-    .side { font-size: 12px; font-weight: 700; letter-spacing: .04em; }
-    .side.buy { color: var(--up); }
-    .side.sell { color: var(--dn); }
-    .fill .who { font-weight: 600; }
-    .fill .det { display: block; color: var(--mute); font-size: 12px; margin-top: 2px; }
+    #feed {
+      height: 380px;
+      overflow-y: auto;
+      font-size: 11px;
+      line-height: 1.45;
+    }
+    #feed p {
+      margin-bottom: 8px;
+      border-left: 3px solid #2a3048;
+      padding-left: 6px;
+    }
+    #feed .t { color: var(--muted); }
+    #feed .a { color: var(--amber); }
+    #feed .ok { color: var(--green); }
+    #feed .no { color: var(--red); }
+    #feed .note { color: var(--cyan); }
 
     footer {
-      max-width: 1100px; margin: 0 auto;
-      padding: 8px 12px 24px;
-      color: var(--mute); font-size: 12px;
-    }
-
-    @media (min-width: 800px) {
-      .floor-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: start; }
-      .cards { display: none; }
-      .table-wrap { display: block; }
-      .fill { padding: 8px 12px; }
+      margin-top: 10px;
+      font-size: 10px;
+      color: var(--muted);
+      text-align: center;
+      letter-spacing: 0.5px;
+      border-top: 2px solid #2a2030;
+      padding-top: 8px;
     }
   </style>
 </head>
-<body class="floor">
-  <header class="bar">
-    <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
-      <defs>
-        <filter id="sh" x="-40%" y="-40%" width="180%" height="180%">
-          <feDropShadow dx="0" dy="1.4" stdDeviation="1.2" flood-color="#000" flood-opacity=".4"/>
-          <feDropShadow class="glow" dx="0" dy="0" stdDeviation="3.2" flood-color="#7ce04a" flood-opacity=".55"/>
-        </filter>
-        <mask id="cuts">
-          <rect width="64" height="64" rx="32" fill="#fff"/>
-          <g class="cuts" transform="rotate(-55 32 32)">
-            <rect x="-8" y="27.4" width="36" height="8" rx="4" fill="#000"/>
-            <rect x="36" y="27.4" width="36" height="8" rx="4" fill="#000"/>
-          </g>
-        </mask>
-      </defs>
-      <circle class="glow" cx="32" cy="32" r="31" fill="none" stroke="#7ce04a" stroke-width="3" opacity=".35"/>
-      <circle cx="32" cy="32" r="30" fill="#58b83a" filter="url(#sh)"/>
-      <circle cx="32" cy="32" r="30" fill="#7ce04a" mask="url(#cuts)"/>
-      <circle cx="32" cy="32" r="30.5" fill="none" stroke="#d8f7b8" stroke-width="1.6"/>
-    </svg>
-    <div class="brand">GROK QUANT</div>
-    <span class="pill">PAPER</span>
-    <div class="spacer"></div>
-    <div class="open-n">Open <b>3</b></div>
-  </header>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <div class="brand-row">
+        <h1>GROK QUANT TRENCHER FLOOR</h1>
+        <div class="sub">PAPER NIGHT SHIFT</div>
+      </div>
+      <div class="crew">Crew · Grok Quant Trencher Bot</div>
+      <div class="stats">
+        <span class="chip">AGENTS 6</span>
+        <span class="chip warn">WATCH 3</span>
+        <span class="chip off">SKIP mayhem/rugs</span>
+        <span class="chip on">PAPER on</span>
+        <span class="chip off">LIVE off</span>
+      </div>
+    </header>
 
-  <nav class="tabs">
-    <button class="tab on" data-tab="floor">Floor</button>
-    <button class="tab" data-tab="pos">Positions</button>
-    <button class="tab" data-tab="act">Activity</button>
-  </nav>
-
-  <div class="hero">
-    <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
-      <defs>
-        <filter id="sh2" x="-40%" y="-40%" width="180%" height="180%">
-          <feDropShadow dx="0" dy="1.4" stdDeviation="1.2" flood-color="#000" flood-opacity=".4"/>
-        </filter>
-        <mask id="cuts2">
-          <rect width="64" height="64" rx="32" fill="#fff"/>
-          <g class="cuts" transform="rotate(-55 32 32)">
-            <rect x="-8" y="27.4" width="36" height="8" rx="4" fill="#000"/>
-            <rect x="36" y="27.4" width="36" height="8" rx="4" fill="#000"/>
-          </g>
-        </mask>
-      </defs>
-      <circle class="glow" cx="32" cy="32" r="31" fill="none" stroke="#7ce04a" stroke-width="3" opacity=".4"/>
-      <circle cx="32" cy="32" r="30" fill="#58b83a" filter="url(#sh2)"/>
-      <circle cx="32" cy="32" r="30" fill="#7ce04a" mask="url(#cuts2)"/>
-      <circle cx="32" cy="32" r="30.5" fill="none" stroke="#d8f7b8" stroke-width="1.6"/>
-    </svg>
-    <div>
-      <h1>Command HQ</h1>
-      <p>Six desks, one paper book. Directs the session — not a market tape.</p>
+    <div class="ticker-wrap" aria-label="last tape">
+      <div class="ticker" id="ticker"></div>
     </div>
+
+    <div class="main-grid">
+      <div class="floor-stage">
+        <div class="windows">
+          <div class="win"><div class="moon"></div></div>
+          <div class="win"></div>
+          <div class="win"></div>
+          <div class="win"></div>
+        </div>
+        <div class="lamp l"></div>
+        <div class="lamp r"></div>
+        <div class="whiteboard">TRENCH</div>
+
+        <div class="desks">
+          <div class="desk" data-agent="SCAN">
+            <div class="desk-top"></div>
+            <div class="agent-name">SCAN</div>
+            <div class="agent-role">tape filter</div>
+            <div class="mon"><i></i></div>
+            <div class="sprite" data-shirt="shirt"></div>
+          </div>
+          <div class="desk" data-agent="LORE">
+            <div class="desk-top"></div>
+            <div class="agent-name">LORE</div>
+            <div class="agent-role">serial / story</div>
+            <div class="mon"><i></i></div>
+            <div class="sprite" data-shirt="shirt2"></div>
+          </div>
+          <div class="desk" data-agent="GMGN">
+            <div class="desk-top"></div>
+            <div class="agent-name">GMGN</div>
+            <div class="agent-role">flow desk</div>
+            <div class="mon"><i></i></div>
+            <div class="sprite" data-shirt="shirt3"></div>
+          </div>
+          <div class="desk" data-agent="CHART">
+            <div class="desk-top"></div>
+            <div class="agent-name">CHART</div>
+            <div class="agent-role">structure</div>
+            <div class="mon"><i></i></div>
+            <div class="sprite" data-shirt="shirt4"></div>
+          </div>
+          <div class="desk" data-agent="RISK">
+            <div class="desk-top"></div>
+            <div class="agent-name">RISK</div>
+            <div class="agent-role">liq / skip</div>
+            <div class="mon"><i></i></div>
+            <div class="sprite" data-shirt="shirt5"></div>
+          </div>
+          <div class="desk" data-agent="CHIEF">
+            <div class="desk-top"></div>
+            <div class="agent-name">CHIEF</div>
+            <div class="agent-role">paper watch</div>
+            <div class="mon"><i></i></div>
+            <div class="sprite" data-shirt="shirt6"></div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="live-col">
+        <div class="panel">
+          <h2>LIVE FEED</h2>
+          <div id="feed"></div>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      PAPER ONLY · no live size · reports to owner · Grok Quant Trencher Bot · not a trade ticket
+    </footer>
   </div>
 
-  <main>
-    <section id="floor" class="panel on">
-      <div class="floor-grid">
-        <div class="roster">
-          <div class="block-h">DESK ROSTER</div>
-          <div class="desk">
-            <div class="agent">
-              <div class="call">SCAN</div>
-              <div>
-                <div>New-pair intake</div>
-                <div class="role">Filters raw listings before size</div>
-              </div>
-              <span class="stat scanning">scanning</span>
-            </div>
-            <div class="agent">
-              <div class="call">LORE</div>
-              <div>
-                <div>Narrative check</div>
-                <div class="role">Name, copy, social residue</div>
-              </div>
-              <span class="stat watching">watching</span>
-            </div>
-            <div class="agent">
-              <div class="call">GMGN</div>
-              <div>
-                <div>Tape + holder read</div>
-                <div class="role">Our book vs. public tape</div>
-              </div>
-              <span class="stat watching">watching</span>
-            </div>
-            <div class="agent">
-              <div class="call">CHART</div>
-              <div>
-                <div>Structure only</div>
-                <div class="role">No sparkline wall — levels</div>
-              </div>
-              <span class="stat skip">skip-mayhem</span>
-            </div>
-            <div class="agent">
-              <div class="call">RISK</div>
-              <div>
-                <div>Size, SL, TP</div>
-                <div class="role">Hard stops on paper</div>
-              </div>
-              <span class="stat paper">paper</span>
-            </div>
-            <div class="agent">
-              <div class="call">CHIEF</div>
-              <div>
-                <div>Directs everything</div>
-                <div class="role">Go / hold / flatten</div>
-              </div>
-              <span class="stat paper">paper</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="feed">
-          <div class="block-h">LIVE FEED <span class="live-dot" aria-hidden="true"></span></div>
-          <div class="feed-list">
-            <div class="ev">
-              <div class="when">now</div>
-              <div><div class="who">CHIEF</div><div class="txt">Hold book. Three open, one closed SL. No new size.</div></div>
-            </div>
-            <div class="ev">
-              <div class="when">+0</div>
-              <div><div class="who">RISK</div><div class="txt">PilotX1970 still above paper SL 13,010. uPnL +0.2677 SOL.</div></div>
-            </div>
-            <div class="ev">
-              <div class="when">+1</div>
-              <div><div class="who">GMGN</div><div class="txt">HORSE now MC 5,390 vs entry 12,544. Watching, not adding.</div></div>
-            </div>
-            <div class="ev">
-              <div class="when">+2</div>
-              <div><div class="who">SCAN</div><div class="txt">Skipped crowded tape. CHART marked skip-mayhem.</div></div>
-            </div>
-            <div class="ev">
-              <div class="when">+3</div>
-              <div><div class="who">LORE</div><div class="txt">Smudge narrative stale. Size stays 0.05 SOL.</div></div>
-            </div>
-            <div class="ev">
-              <div class="when">+8</div>
-              <div><div class="who">RISK</div><div class="txt">YUREI flattened on paper SL. Book updated.</div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="pos" class="panel">
-      <div class="cards">
-        <article class="card">
-          <div class="card-top">
-            <div>
-              <div class="tok">Smudge</div>
-              <div class="ca">AALr9xpQ…Cugrpump</div>
-            </div>
-            <div class="size">
-              <span class="v num">0.05 SOL</span>
-              <span class="l">Size</span>
-            </div>
-          </div>
-          <div class="grid">
-            <div class="cell"><span class="l">Entry MC</span><span class="v num">190,456</span></div>
-            <div class="cell"><span class="l">Now MC</span><span class="v num">171,129</span></div>
-            <div class="cell"><span class="l">uPnL</span><span class="v num dn">−0.0051 SOL</span></div>
-            <div class="cell"><span class="l">SL / TP</span><span class="v num">142,842 / 266,638</span></div>
-          </div>
-          <div class="meta">Liq 33,783 · Vol 808,621 · 24h <span class="up">+172%</span></div>
-          <span class="st open">OPEN</span>
-        </article>
-
-        <article class="card">
-          <div class="card-top">
-            <div>
-              <div class="tok">HORSE</div>
-              <div class="ca">5te4qXdC…9rYpump</div>
-            </div>
-            <div class="size">
-              <span class="v num">0.81 SOL</span>
-              <span class="l">Size</span>
-            </div>
-          </div>
-          <div class="grid">
-            <div class="cell"><span class="l">Entry MC</span><span class="v num">12,544</span></div>
-            <div class="cell"><span class="l">Now MC</span><span class="v num">5,390</span></div>
-            <div class="cell"><span class="l">uPnL</span><span class="v num dn">−0.4618 SOL</span></div>
-            <div class="cell"><span class="l">SL / TP</span><span class="v num">10,286 / 17,562</span></div>
-          </div>
-          <div class="meta">Liq 4,324 · Vol 48,159 · 24h <span class="dn">−86.25%</span></div>
-          <span class="st open">OPEN</span>
-        </article>
-
-        <article class="card">
-          <div class="card-top">
-            <div>
-              <div class="tok">PilotX1970</div>
-              <div class="ca">77RhBYwj…vZzpump</div>
-            </div>
-            <div class="size">
-              <span class="v num">0.79 SOL</span>
-              <span class="l">Size</span>
-            </div>
-          </div>
-          <div class="grid">
-            <div class="cell"><span class="l">Entry MC</span><span class="v num">15,866</span></div>
-            <div class="cell"><span class="l">Now MC</span><span class="v num">21,242</span></div>
-            <div class="cell"><span class="l">uPnL</span><span class="v num up">+0.2677 SOL</span></div>
-            <div class="cell"><span class="l">SL / TP</span><span class="v num">13,010 / 22,213</span></div>
-          </div>
-          <div class="meta">Liq — · Vol 159,671 · 24h <span class="up">+490%</span></div>
-          <span class="st open">OPEN</span>
-        </article>
-
-        <article class="card closed">
-          <div class="card-top">
-            <div>
-              <div class="tok">YUREI</div>
-              <div class="ca">9Cjh…pump</div>
-            </div>
-            <div class="size">
-              <span class="v num">0.05 SOL</span>
-              <span class="l">Size</span>
-            </div>
-          </div>
-          <div class="grid">
-            <div class="cell"><span class="l">Entry MC</span><span class="v num">—</span></div>
-            <div class="cell"><span class="l">Now MC</span><span class="v num">—</span></div>
-            <div class="cell"><span class="l">uPnL</span><span class="v num">—</span></div>
-            <div class="cell"><span class="l">SL / TP</span><span class="v num">paper SL</span></div>
-          </div>
-          <span class="st closed">CLOSED</span>
-        </article>
-      </div>
-
-      <div class="table-wrap">
-        <table class="book">
-          <thead>
-            <tr>
-              <th>Token</th>
-              <th>Size</th>
-              <th>Entry MC</th>
-              <th>Now MC</th>
-              <th>uPnL</th>
-              <th>SL / TP</th>
-              <th>24h</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><span class="tok">Smudge</span><div class="ca">AALr9xpQ…Cugrpump</div></td>
-              <td class="num">0.05 SOL</td>
-              <td class="num">190,456</td>
-              <td class="num">171,129</td>
-              <td class="num dn">−0.0051</td>
-              <td class="num">142,842 / 266,638</td>
-              <td class="num up">+172%</td>
-              <td><span class="st open">OPEN</span></td>
-            </tr>
-            <tr>
-              <td><span class="tok">HORSE</span><div class="ca">5te4qXdC…9rYpump</div></td>
-              <td class="num">0.81 SOL</td>
-              <td class="num">12,544</td>
-              <td class="num">5,390</td>
-              <td class="num dn">−0.4618</td>
-              <td class="num">10,286 / 17,562</td>
-              <td class="num dn">−86.25%</td>
-              <td><span class="st open">OPEN</span></td>
-            </tr>
-            <tr>
-              <td><span class="tok">PilotX1970</span><div class="ca">77RhBYwj…vZzpump</div></td>
-              <td class="num">0.79 SOL</td>
-              <td class="num">15,866</td>
-              <td class="num">21,242</td>
-              <td class="num up">+0.2677</td>
-              <td class="num">13,010 / 22,213</td>
-              <td class="num up">+490%</td>
-              <td><span class="st open">OPEN</span></td>
-            </tr>
-            <tr class="closed">
-              <td><span class="tok">YUREI</span><div class="ca">9Cjh…pump</div></td>
-              <td class="num">0.05 SOL</td>
-              <td class="num">—</td>
-              <td class="num">—</td>
-              <td class="num">—</td>
-              <td>paper SL</td>
-              <td class="num">—</td>
-              <td><span class="st closed">CLOSED</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section id="act" class="panel">
-      <div class="fills">
-        <div class="fill">
-          <span class="side buy">BUY</span>
-          <div><span class="who">Smudge</span><span class="det">0.05 SOL · entry MC 190,456</span></div>
-        </div>
-        <div class="fill">
-          <span class="side buy">BUY</span>
-          <div><span class="who">HORSE</span><span class="det">0.81 SOL · entry MC 12,544</span></div>
-        </div>
-        <div class="fill">
-          <span class="side buy">BUY</span>
-          <div><span class="who">PilotX1970</span><span class="det">0.79 SOL · entry MC 15,866</span></div>
-        </div>
-        <div class="fill">
-          <span class="side sell">SELL</span>
-          <div><span class="who">YUREI</span><span class="det">0.05 SOL · paper SL</span></div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>Built for Grok Quant Trencher Bot · paper only</footer>
-
   <script>
-    const tabs = document.querySelectorAll(".tab");
-    const panels = document.querySelectorAll(".panel");
-    tabs.forEach(t => t.addEventListener("click", () => {
-      tabs.forEach(x => x.classList.remove("on"));
-      panels.forEach(p => p.classList.remove("on"));
-      t.classList.add("on");
-      document.getElementById(t.dataset.tab).classList.add("on");
-      document.body.classList.toggle("floor", t.dataset.tab === "floor");
-    }));
+    const TAPE = [
+      { name: "BORTY", mc: "$455K", liq: "$62K", vol: "$4.2M", ch: "+1096%" },
+      { name: "joshua", mc: "$52K", liq: "$19K", vol: "$927K", ch: "+49%" },
+      { name: "GrokBot", mc: "$992K", liq: "$85K", vol: "$1.6M", ch: "+2479%" }
+    ];
+    const RULES = "SOL only · liq≥$5k · vol≥$80k · no Mayhem";
+
+    function tickerHtml() {
+      const bit = TAPE.map(t =>
+        `<span><b>${t.name}</b> MC ${t.mc} liq ${t.liq} vol ${t.vol} 24h <span class="up">${t.ch}</span></span>`
+      ).join("") + `<span class="rule">${RULES}</span>`;
+      return bit + bit;
+    }
+    document.getElementById("ticker").innerHTML = tickerHtml();
+
+    // tiny CSS pixel people
+    document.querySelectorAll(".sprite").forEach(el => {
+      const shirt = el.getAttribute("data-shirt");
+      const grid = [
+        "....hhhh",
+        "...hsssh",
+        "...sese.",
+        "....ss..",
+        "...CCCC.",
+        "..C.CC.C",
+        "..C....C",
+        "...llll.",
+        "...l..l.",
+        "...l..l."
+      ];
+      const map = { ".": "transparent", h: "#2a1a10", s: "#e0b090", e: "#111", C: null, l: "#1a2038" };
+      let html = "";
+      grid.forEach(row => {
+        for (const ch of row) {
+          let bg = map[ch];
+          if (ch === "C") {
+            const colors = { shirt: "#3a5a88", shirt2: "#2a7040", shirt3: "#704028", shirt4: "#603060", shirt5: "#306060", shirt6: "#805020" };
+            bg = colors[shirt] || "#3a5a88";
+          }
+          html += `<div class="px" style="background:${bg}"></div>`;
+        }
+      });
+      el.innerHTML = html;
+      el.style.width = (8 * 4) + "px";
+    });
+
+    const LINES = [
+      { a: "SCAN", cls: "ok", t: "BORTY pass — SOL, liq $62K ≥ $5k, vol $4.2M ≥ $80k, not Mayhem." },
+      { a: "RISK", cls: "no", t: "skip LPZ — liq $10 (below $5k floor)." },
+      { a: "LORE", cls: "note", t: "joshua — serial launcher 102 on tape; lore flag only, paper desk." },
+      { a: "CHIEF", cls: "note", t: "paper-watch, no X size. LIVE off. Reports to owner." },
+      { a: "GMGN", cls: "ok", t: "GrokBot flow — MC $992K liq $85K vol $1.6M 24h +2479% last tape." },
+      { a: "CHART", cls: "ok", t: "BORTY structure on last print: MC $455K, 24h +1096%, no live ticket." },
+      { a: "SCAN", cls: "ok", t: "joshua pass filter — liq $19K, vol $927K, SOL, skip-mayhem clean." },
+      { a: "RISK", cls: "no", t: "SKIP mayhem/rugs. No mayhem venues. PAPER on." },
+      { a: "CHIEF", cls: "note", t: "WATCH 3 = BORTY, joshua, GrokBot. AGENTS 6 at desks." },
+      { a: "LORE", cls: "note", t: "GrokBot name collision check — tape name only, not this crew." },
+      { a: "GMGN", cls: "ok", t: "BORTY vol $4.2M vs rule vol≥$80k — pass. Paper night shift." },
+      { a: "CHART", cls: "ok", t: "joshua 24h +49% last tape; no buy cue, structure only." },
+      { a: "SCAN", cls: "ok", t: "Rules chip hold: SOL only · liq≥$5k · vol≥$80k · no Mayhem." },
+      { a: "RISK", cls: "no", t: "skip thin LP prints under $5k. LPZ example stands." },
+      { a: "CHIEF", cls: "note", t: "paper-watch no X. Floor does not size live." }
+    ];
+
+    const feed = document.getElementById("feed");
+    let i = 0;
+    function stamp() {
+      const d = new Date();
+      return d.toTimeString().slice(0, 8);
+    }
+    function pushLine() {
+      const L = LINES[i % LINES.length];
+      i++;
+      const p = document.createElement("p");
+      p.innerHTML = `<span class="t">${stamp()}</span> <span class="a">${L.a}</span> <span class="${L.cls}">${L.t}</span>`;
+      feed.prepend(p);
+      while (feed.children.length > 24) feed.removeChild(feed.lastChild);
+    }
+    // seed
+    for (let n = 0; n < 6; n++) pushLine();
+    setInterval(pushLine, 2800);
   </script>
 </body>
 </html>
