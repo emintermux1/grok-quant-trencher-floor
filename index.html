@@ -3,705 +3,218 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GROK QUANT TRENCHER FLOOR — PAPER NIGHT SHIFT</title>
+  <title>GROK QUANT TRENCHER — PAPER BOOK</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3Cmask id='m'%3E%3Crect width='64' height='64' rx='32' fill='white'/%3E%3Crect x='-6' y='28' width='38' height='9' rx='4.5' fill='black' transform='rotate(-55 32 32)'/%3E%3Crect x='32' y='28' width='38' height='9' rx='4.5' fill='black' transform='rotate(-55 32 32)'/%3E%3C/mask%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='30' fill='%2368c43a'/%3E%3Ccircle cx='32' cy='32' r='30' fill='%2378d44a' mask='url(%23m)'/%3E%3Ccircle cx='32' cy='32' r='30.5' fill='none' stroke='%23b8f08a' stroke-width='2.4'/%3E%3C/svg%3E" />
   <style>
     :root {
-      --bg: #070910;
-      --floor: #1c1622;
-      --floor-line: #2e2436;
-      --desk: #3d2a1a;
-      --desk-top: #6a4528;
-      --window: #152848;
-      --amber: #f0b429;
-      --green: #3ecf6e;
-      --red: #e24b4b;
-      --cyan: #4ad4e8;
-      --paper: #e8dcc8;
-      --muted: #8a8090;
-      --panel: #10131c;
-      --border: #3a3048;
-      --glow: #f0b42955;
-      --lime: #8fe03a;
+      --bg: #0b0d12;
+      --panel: #10131a;
+      --line: #1c2230;
+      --mute: #7d8696;
+      --text: #e8edf5;
+      --lime: #7ee04a;
+      --mid: #4caf3a;
+      --green: #3dd68c;
+      --red: #f05252;
+      --amber: #e8c36a;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { height: 100%; }
-    body {
-      background: radial-gradient(ellipse at 50% 0%, #12162a 0%, var(--bg) 55%);
-      color: var(--paper);
-      font-family: "Courier New", Courier, monospace;
-      image-rendering: pixelated;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-    .wrap { max-width: 1180px; margin: 0 auto; padding: 8px 10px 14px; }
-
+    html, body { background: var(--bg); color: var(--text); font: 13px/1.35 ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; }
+    a { color: inherit; }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 10px 14px 18px; }
     header.top {
-      border: 3px solid var(--border);
-      background: linear-gradient(#161924, var(--panel));
-      padding: 8px 12px;
-      margin-bottom: 6px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 10px 16px;
+      display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+      padding: 8px 0 10px; border-bottom: 1px solid var(--line);
     }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .logo-mark {
-      width: 56px;
-      height: 56px;
-      flex-shrink: 0;
-      filter: drop-shadow(0 0 8px #8fe03a88);
-    }
-    h1 {
-      font-size: 16px;
-      letter-spacing: 2px;
-      color: var(--amber);
-      text-shadow: 2px 2px 0 #000;
-      line-height: 1.2;
-    }
-    .sub { color: var(--cyan); font-size: 11px; letter-spacing: 1px; }
-    .crew { color: var(--muted); font-size: 10px; }
-
-    .filters {
-      display: flex; flex-wrap: wrap; align-items: center; gap: 6px;
-      flex: 1 1 280px;
-    }
+    .brand { display: flex; align-items: center; gap: 10px; min-width: 240px; }
+    .mark { width: 38px; height: 38px; flex-shrink: 0; filter: drop-shadow(0 3px 6px rgba(0,0,0,.55)) drop-shadow(0 0 8px rgba(80,180,50,.28)); }
+    .word { font-size: 15px; font-weight: 750; letter-spacing: .08em; }
+    .word span { display: block; font-size: 10px; font-weight: 600; letter-spacing: .16em; color: var(--mute); margin-top: 1px; }
+    .meta { margin-left: auto; display: flex; gap: 14px; color: var(--mute); font-size: 11px; letter-spacing: .04em; }
+    .meta b { color: var(--amber); font-weight: 650; }
+    .filters { display: flex; gap: 6px; margin: 12px 0 8px; }
     .fchip {
-      border: 2px solid var(--border);
-      background: #0c0e16;
-      padding: 3px 9px;
-      font-size: 11px;
-      letter-spacing: 1px;
+      background: #12161f; border: 1px solid var(--line); color: var(--mute);
+      padding: 4px 10px; border-radius: 4px; font-size: 11px; letter-spacing: .08em;
       cursor: pointer;
-      color: var(--paper);
-      font-family: inherit;
     }
-    .fchip:hover { box-shadow: 0 0 10px var(--glow); }
-    .fchip.active { color: #0a0c10; background: var(--amber); border-color: var(--amber); }
-    .fchip.pass.active { background: var(--green); border-color: var(--green); }
-    .fchip.skip.active { background: var(--red); border-color: var(--red); color: #fff; }
-    .fchip.mayhem.active { background: #c06020; border-color: #e08030; }
-    .rulechip {
-      border: 2px solid #2a5a68;
-      color: var(--cyan);
-      background: #0c1418;
-      padding: 3px 8px;
-      font-size: 10px;
-      letter-spacing: 0.3px;
+    .fchip.on { color: var(--lime); border-color: #2a4a24; background: #132016; }
+    .book {
+      width: 100%; border-collapse: collapse; background: var(--panel);
+      border: 1px solid var(--line); border-radius: 6px; overflow: hidden;
     }
-    .stat {
-      border: 2px solid var(--border);
-      background: #0c0e16;
-      padding: 2px 7px;
-      font-size: 10px;
+    .book th {
+      text-align: left; font-size: 10px; letter-spacing: .1em; color: var(--mute);
+      font-weight: 650; padding: 8px 10px; border-bottom: 1px solid var(--line);
+      background: #0e1118;
     }
-    .stat.on { color: var(--green); border-color: #2a5a38; }
-    .stat.off { color: var(--red); border-color: #5a2a2a; }
-
-    .ticker-wrap {
-      border: 3px solid #2a2038;
-      background: #080a10;
-      overflow: hidden;
-      white-space: nowrap;
-      margin-bottom: 6px;
-      height: 24px;
-      line-height: 24px;
+    .book td { padding: 9px 10px; border-bottom: 1px solid #161b25; vertical-align: top; }
+    .book tr:last-child td { border-bottom: 0; }
+    .book tr.closed { opacity: .72; }
+    .tok { font-weight: 700; }
+    .ca { display: block; color: var(--mute); font-size: 10px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 0; margin-top: 2px; }
+    .num { font-variant-numeric: tabular-nums; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
+    .up { color: var(--green); }
+    .dn { color: var(--red); }
+    .st { font-size: 10px; letter-spacing: .08em; font-weight: 700; }
+    .st.open { color: var(--lime); }
+    .st.closed { color: var(--mute); }
+    .sub { color: var(--mute); font-size: 10px; display: block; margin-top: 2px; }
+    .cols { display: grid; grid-template-columns: 1fr 280px; gap: 10px; margin-top: 10px; }
+    @media (max-width: 860px) { .cols { grid-template-columns: 1fr; } }
+    .feed {
+      background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px;
     }
-    .ticker {
-      display: inline-block;
-      animation: tick 38s linear infinite;
-      font-size: 11px;
-    }
-    .ticker span { margin-right: 36px; }
-    .ticker .up { color: var(--green); }
-    .ticker .dn { color: var(--red); }
-    .ticker .rule { color: var(--cyan); }
-    @keyframes tick {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 6px;
-    }
-    .chip {
-      border: 2px solid var(--border);
-      background: var(--panel);
-      padding: 3px 10px;
-      font-size: 11px;
-      letter-spacing: 0.4px;
-      white-space: nowrap;
-    }
-    .chip.pass { border-color: #2a5a38; }
-    .chip.skip { border-color: #5a2a2a; }
-    .chip .nm { color: var(--amber); }
-    .chip .up { color: var(--green); }
-    .chip .dn { color: var(--red); }
-    .chip.hidden { display: none; }
-
-    .main-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 6px;
-    }
-    @media (min-width: 780px) {
-      .main-grid { grid-template-columns: 1fr 280px; }
-    }
-
-    .floor-stage {
-      position: relative;
-      border: 3px solid #2a1828;
+    .feed h2 { font-size: 10px; letter-spacing: .12em; color: var(--mute); margin-bottom: 8px; }
+    .fill { display: grid; grid-template-columns: 62px 1fr auto; gap: 8px; padding: 5px 0; border-bottom: 1px solid #161b25; font-size: 12px; }
+    .fill:last-child { border-bottom: 0; }
+    .side.buy { color: var(--green); font-weight: 700; font-size: 11px; }
+    .side.sell { color: var(--red); font-weight: 700; font-size: 11px; }
+    .floor {
+      margin-top: 10px; height: 28px;
       background:
-        linear-gradient(90deg, var(--floor-line) 1px, transparent 1px) 0 0 / 20px 20px,
-        linear-gradient(0deg, var(--floor-line) 1px, transparent 1px) 0 0 / 20px 20px,
-        var(--floor);
-      min-height: 520px;
-      padding: 8px;
-      overflow: hidden;
+        repeating-linear-gradient(90deg, #12151c 0 8px, #0e1116 8px 16px),
+        linear-gradient(#1a1f28, #0b0d12);
+      border: 1px solid var(--line); border-radius: 4px;
+      image-rendering: pixelated; opacity: .85;
     }
-
-    .windows {
-      position: absolute; top: 0; left: 0; right: 0; height: 64px;
-      background: linear-gradient(#081018, #121828);
-      border-bottom: 3px solid #2a2030;
-      display: flex; justify-content: space-around; align-items: stretch;
-      padding: 5px 16px 0;
-    }
-    .win {
-      width: 86px; height: 48px;
-      background: var(--window);
-      border: 3px solid #3a4058;
-      position: relative;
-      box-shadow: inset 0 0 0 2px #0a1028;
-    }
-    .win::before, .win::after {
-      content: "";
-      position: absolute;
-      background: #c8d8ff;
-      width: 2px; height: 2px;
-    }
-    .win::before { top: 8px; left: 14px; box-shadow: 22px 10px 0 #fff, 50px 6px 0 #aab, 36px 20px 0 #dde; }
-    .win::after { top: 26px; left: 40px; box-shadow: -20px -4px 0 #99a, 18px 8px 0 #fff; }
-    .moon {
-      position: absolute; top: 7px; right: 9px;
-      width: 12px; height: 12px;
-      background: #e8e0c0;
-      box-shadow: 2px 2px 0 #c8c090, 0 0 10px #e8e0c088;
-      animation: moonpulse 4s ease-in-out infinite;
-    }
-    @keyframes moonpulse {
-      0%, 100% { box-shadow: 2px 2px 0 #c8c090, 0 0 8px #e8e0c066; }
-      50% { box-shadow: 2px 2px 0 #c8c090, 0 0 16px #fff8; }
-    }
-
-    .whiteboard {
-      position: absolute;
-      top: 74px; left: 50%;
-      transform: translateX(-50%);
-      width: 150px; height: 44px;
-      background: #d8d0b8;
-      border: 3px solid #5a5040;
-      color: #1a2030;
-      text-align: center;
-      font-weight: bold;
-      font-size: 15px;
-      letter-spacing: 3px;
-      line-height: 38px;
-      box-shadow: 3px 3px 0 #000;
-      z-index: 2;
-    }
-
-    .floor-logo {
-      position: absolute;
-      left: 50%;
-      top: 128px;
-      transform: translateX(-50%);
-      width: 88px;
-      height: 88px;
-      z-index: 3;
-      pointer-events: none;
-      filter: drop-shadow(0 0 14px #8fe03acc) drop-shadow(0 0 28px #8fe03a55);
-      animation: logoglow 2.8s ease-in-out infinite;
-    }
-    @keyframes logoglow {
-      0%, 100% { filter: drop-shadow(0 0 10px #8fe03aaa) drop-shadow(0 0 20px #8fe03a44); }
-      50% { filter: drop-shadow(0 0 18px #b8ff66dd) drop-shadow(0 0 36px #8fe03a77); }
-    }
-
-    .lamp {
-      position: absolute; top: 70px; width: 8px; height: 36px;
-      background: #3a3020;
-    }
-    .lamp::after {
-      content: "";
-      position: absolute; bottom: -10px; left: -8px;
-      width: 24px; height: 10px;
-      background: #f0c050;
-      animation: lampglow 2.4s ease-in-out infinite;
-    }
-    .lamp.l { left: 20px; }
-    .lamp.r { right: 20px; }
-    @keyframes lampglow {
-      0%, 100% { box-shadow: 0 8px 16px #f0b42966; }
-      50% { box-shadow: 0 12px 28px #f0b429aa; }
-    }
-
-    .desks {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px 10px;
-      margin-top: 228px;
-      position: relative;
-      z-index: 1;
-    }
-    @media (max-width: 560px) {
-      .desks { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    .desk {
-      background: var(--desk);
-      border: 3px solid #2a1810;
-      min-height: 112px;
-      position: relative;
-      padding: 6px;
-      box-shadow: 4px 4px 0 #0008;
-      cursor: pointer;
-      transition: box-shadow 0.15s, border-color 0.15s;
-    }
-    .desk:hover { box-shadow: 0 0 16px var(--glow), 4px 4px 0 #0008; }
-    .desk.lit {
-      border-color: var(--amber);
-      box-shadow: 0 0 18px var(--glow), 4px 4px 0 #0008;
-    }
-    .desk-top {
-      background: var(--desk-top);
-      height: 12px;
-      margin: -6px -6px 7px;
-      border-bottom: 3px solid #2a1810;
-    }
-    .agent-name { font-size: 11px; letter-spacing: 2px; color: var(--amber); }
-    .agent-role { font-size: 10px; color: var(--muted); }
-
-    .sprite {
-      width: 32px; height: 40px;
-      image-rendering: pixelated;
-      position: absolute;
-      right: 10px; bottom: 8px;
-      animation: bob 1.1s steps(2) infinite;
-    }
-    .desk:nth-child(1) .sprite { animation-duration: 1.05s; }
-    .desk:nth-child(2) .sprite { animation-duration: 1.25s; animation-name: walk; }
-    .desk:nth-child(3) .sprite { animation-duration: 0.95s; }
-    .desk:nth-child(4) .sprite { animation-duration: 1.4s; animation-name: walk; }
-    .desk:nth-child(5) .sprite { animation-duration: 1.15s; }
-    .desk:nth-child(6) .sprite { animation-duration: 1.3s; animation-name: walk; }
-    @keyframes bob {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-3px); }
-    }
-    @keyframes walk {
-      0%, 100% { transform: translate(0, 0); }
-      25% { transform: translate(3px, -2px); }
-      50% { transform: translate(6px, 0); }
-      75% { transform: translate(3px, -2px); }
-    }
-    .sprite .px { width: 4px; height: 4px; float: left; }
-
-    .mon {
-      position: absolute; left: 8px; bottom: 18px;
-      width: 28px; height: 20px;
-      background: #1a2030;
-      border: 2px solid #333;
-    }
-    .mon i {
-      display: block; height: 100%;
-      background: repeating-linear-gradient(180deg, #2a8 0 2px, #163 2px 4px);
-      animation: scan 1.1s steps(3) infinite;
-    }
-    .desk:nth-child(even) .mon i {
-      background: repeating-linear-gradient(180deg, #48c 0 2px, #135 2px 4px);
-      animation-duration: 0.85s;
-    }
-    @keyframes scan {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.35; }
-    }
-
-    .caption-bar {
-      position: absolute;
-      left: 8px; right: 8px; bottom: 6px;
-      background: #0a0c14ee;
-      border: 2px solid #3a3048;
-      padding: 3px 8px;
-      font-size: 10px;
-      color: var(--cyan);
-      letter-spacing: 0.3px;
-      z-index: 2;
-      min-height: 22px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .panel {
-      border: 3px solid var(--border);
-      background: var(--panel);
-      padding: 7px;
-    }
-    .panel h2 {
-      font-size: 11px;
-      letter-spacing: 2px;
-      color: var(--cyan);
-      margin-bottom: 5px;
-      border-bottom: 2px solid #2a3040;
-      padding-bottom: 3px;
-    }
-    #feed {
-      height: 480px;
-      overflow-y: auto;
-      font-size: 11px;
-      line-height: 1.45;
-    }
-    #feed p {
-      margin-bottom: 7px;
-      border-left: 3px solid #2a3048;
-      padding-left: 6px;
-      animation: slidein 0.35s ease-out;
-    }
-    #feed p.hidden { display: none; }
-    #feed p.hl { border-left-color: var(--amber); background: #1a1620; }
-    @keyframes slidein {
-      from { transform: translateX(10px); opacity: 0; }
-      to { transform: translateX(0); opacity: 1; }
-    }
-    #feed .t { color: var(--muted); }
-    #feed .a { color: var(--amber); }
-    #feed .ok { color: var(--green); }
-    #feed .no { color: var(--red); }
-    #feed .note { color: var(--cyan); }
-
-    footer {
-      margin-top: 8px;
-      font-size: 10px;
-      color: var(--muted);
-      text-align: center;
-      letter-spacing: 0.4px;
-      border-top: 2px solid #2a2030;
-      padding-top: 7px;
-    }
+    footer { margin-top: 8px; color: var(--mute); font-size: 11px; letter-spacing: .08em; }
   </style>
 </head>
 <body>
   <div class="wrap">
     <header class="top">
       <div class="brand">
-        <svg class="logo-mark" viewBox="0 0 80 80" aria-label="Grok Quant character logo" role="img">
+        <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
           <defs>
-            <radialGradient id="limeBevel" cx="34%" cy="28%" r="72%">
-              <stop offset="0%" stop-color="#c8ff6a"/>
-              <stop offset="42%" stop-color="#8fe03a"/>
-              <stop offset="78%" stop-color="#5aaa18"/>
-              <stop offset="100%" stop-color="#2e5a0c"/>
-            </radialGradient>
-            <mask id="cutouts">
-              <rect width="80" height="80" fill="white"/>
-              <g transform="rotate(45 40 40)">
-                <rect x="18" y="28" width="44" height="9" rx="4.5" fill="black"/>
-                <rect x="18" y="43" width="44" height="9" rx="4.5" fill="black"/>
+            <filter id="sh" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="0" dy="2" stdDeviation="1.6" flood-color="#000" flood-opacity=".45"/>
+            </filter>
+            <mask id="cuts">
+              <rect width="64" height="64" rx="32" fill="#fff"/>
+              <g transform="rotate(-56 32 32)">
+                <rect x="-8" y="27.2" width="36" height="8.4" rx="4.2" fill="#000"/>
+                <rect x="36" y="27.2" width="36" height="8.4" rx="4.2" fill="#000"/>
               </g>
             </mask>
           </defs>
-          <circle cx="40" cy="40" r="36" fill="#0a0c10"/>
-          <circle cx="40" cy="40" r="32" fill="url(#limeBevel)" mask="url(#cutouts)"/>
-          <circle cx="40" cy="40" r="32" fill="none" stroke="#1a2808" stroke-width="1.4" opacity="0.55"/>
-          <ellipse cx="30" cy="26" rx="14" ry="7" fill="#ffffff" opacity="0.18"/>
+          <circle cx="32" cy="32" r="30" fill="#4caf3a" filter="url(#sh)"/>
+          <circle cx="32" cy="32" r="30" fill="#78d44a" mask="url(#cuts)"/>
+          <circle cx="32" cy="32" r="30.4" fill="none" stroke="#c8f59a" stroke-width="2.2"/>
         </svg>
-        <div>
-          <h1>GROK QUANT TRENCHER FLOOR</h1>
-          <div class="sub">PAPER NIGHT SHIFT</div>
-          <div class="crew">Crew · Grok Quant Trencher Bot</div>
-        </div>
+        <div class="word">GROK QUANT TRENCHER<span>PAPER BOOK · OUR FILLS ONLY</span></div>
       </div>
-      <div class="filters" id="filters">
-        <button type="button" class="fchip active" data-filter="ALL">ALL</button>
-        <button type="button" class="fchip pass" data-filter="PASS">PASS</button>
-        <button type="button" class="fchip skip" data-filter="SKIP">SKIP</button>
-        <button type="button" class="fchip mayhem" data-filter="MAYHEM">MAYHEM</button>
-        <span class="rulechip">SOL · liq≥$5k · vol≥$80k · no Mayhem</span>
-        <span class="stat on">PAPER on</span>
-        <span class="stat off">LIVE off</span>
+      <div class="meta">
+        <div>OPEN <b>3</b></div>
+        <div>CLOSED <b>1</b></div>
+        <div>MODE <b>PAPER</b></div>
       </div>
     </header>
 
-    <div class="ticker-wrap" aria-label="last tape">
-      <div class="ticker" id="ticker"></div>
+    <div class="filters">
+      <button class="fchip on" data-f="open">OPEN</button>
+      <button class="fchip" data-f="closed">CLOSED</button>
+      <button class="fchip" data-f="all">ALL</button>
     </div>
 
-    <div class="chips" id="chips"></div>
+    <table class="book">
+      <thead>
+        <tr>
+          <th>TOKEN</th>
+          <th>SIZE SOL</th>
+          <th>ENTRY MC</th>
+          <th>NOW MC</th>
+          <th>uPnL</th>
+          <th>SL</th>
+          <th>TP</th>
+          <th>STATUS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="row open" data-status="open">
+          <td>
+            <span class="tok">Smudge</span>
+            <span class="ca">AALr9xpQ…Cugrpump</span>
+            <span class="sub">liq $33.8k · vol $809k · 24h +172%</span>
+          </td>
+          <td class="num">0.05</td>
+          <td class="num">190,456</td>
+          <td class="num">171,129</td>
+          <td class="num dn">−0.0051</td>
+          <td class="num">142,842</td>
+          <td class="num">266,638</td>
+          <td><span class="st open">OPEN</span><span class="sub">07:36:35 TR</span></td>
+        </tr>
+        <tr class="row open" data-status="open">
+          <td>
+            <span class="tok">HORSE</span>
+            <span class="ca">5te4qXdC…9rYpump</span>
+            <span class="sub">liq $4.32k · vol $48.2k · 24h −86.25%</span>
+          </td>
+          <td class="num">0.81</td>
+          <td class="num">12,544.15</td>
+          <td class="num">5,390</td>
+          <td class="num dn">−0.4618</td>
+          <td class="num">10,286</td>
+          <td class="num">17,562</td>
+          <td><span class="st open">OPEN</span><span class="sub">09:27:24 TR</span></td>
+        </tr>
+        <tr class="row open" data-status="open">
+          <td>
+            <span class="tok">PilotX1970</span>
+            <span class="ca">77RhBYwj…vZzpump</span>
+            <span class="sub">liq — · vol $160k · 24h +490%</span>
+          </td>
+          <td class="num">0.79</td>
+          <td class="num">15,866.13</td>
+          <td class="num">21,242</td>
+          <td class="num up">+0.2677</td>
+          <td class="num">13,010</td>
+          <td class="num">22,213</td>
+          <td><span class="st open">OPEN</span><span class="sub">09:27:41 TR</span></td>
+        </tr>
+        <tr class="row closed" data-status="closed">
+          <td>
+            <span class="tok">YUREI</span>
+            <span class="ca">9CjhM6w1…spdpump</span>
+            <span class="sub">paper SL same day</span>
+          </td>
+          <td class="num">0.05</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">hit</td>
+          <td class="num">—</td>
+          <td><span class="st closed">CLOSED</span><span class="sub">sell SL</span></td>
+        </tr>
+      </tbody>
+    </table>
 
-    <div class="main-grid">
-      <div class="floor-stage">
-        <div class="windows">
-          <div class="win"><div class="moon"></div></div>
-          <div class="win"></div>
-          <div class="win"></div>
-          <div class="win"></div>
-        </div>
-        <div class="lamp l"></div>
-        <div class="lamp r"></div>
-        <div class="whiteboard">TRENCH</div>
-        <svg class="floor-logo" viewBox="0 0 80 80" aria-hidden="true">
-          <defs>
-            <radialGradient id="limeBevel2" cx="34%" cy="28%" r="72%">
-              <stop offset="0%" stop-color="#c8ff6a"/>
-              <stop offset="42%" stop-color="#8fe03a"/>
-              <stop offset="78%" stop-color="#5aaa18"/>
-              <stop offset="100%" stop-color="#2e5a0c"/>
-            </radialGradient>
-            <mask id="cutouts2">
-              <rect width="80" height="80" fill="white"/>
-              <g transform="rotate(45 40 40)">
-                <rect x="18" y="28" width="44" height="9" rx="4.5" fill="black"/>
-                <rect x="18" y="43" width="44" height="9" rx="4.5" fill="black"/>
-              </g>
-            </mask>
-          </defs>
-          <circle cx="40" cy="40" r="36" fill="#0a0c10"/>
-          <circle cx="40" cy="40" r="32" fill="url(#limeBevel2)" mask="url(#cutouts2)"/>
-          <circle cx="40" cy="40" r="32" fill="none" stroke="#1a2808" stroke-width="1.4" opacity="0.55"/>
-          <ellipse cx="30" cy="26" rx="14" ry="7" fill="#ffffff" opacity="0.18"/>
-        </svg>
-
-        <div class="desks">
-          <div class="desk" data-agent="SCAN" tabindex="0">
-            <div class="desk-top"></div>
-            <div class="agent-name">SCAN</div>
-            <div class="agent-role">tape filter</div>
-            <div class="mon"><i></i></div>
-            <div class="sprite" data-shirt="shirt"></div>
-          </div>
-          <div class="desk" data-agent="LORE" tabindex="0">
-            <div class="desk-top"></div>
-            <div class="agent-name">LORE</div>
-            <div class="agent-role">serial / story</div>
-            <div class="mon"><i></i></div>
-            <div class="sprite" data-shirt="shirt2"></div>
-          </div>
-          <div class="desk" data-agent="GMGN" tabindex="0">
-            <div class="desk-top"></div>
-            <div class="agent-name">GMGN</div>
-            <div class="agent-role">flow desk</div>
-            <div class="mon"><i></i></div>
-            <div class="sprite" data-shirt="shirt3"></div>
-          </div>
-          <div class="desk" data-agent="CHART" tabindex="0">
-            <div class="desk-top"></div>
-            <div class="agent-name">CHART</div>
-            <div class="agent-role">structure</div>
-            <div class="mon"><i></i></div>
-            <div class="sprite" data-shirt="shirt4"></div>
-          </div>
-          <div class="desk" data-agent="RISK" tabindex="0">
-            <div class="desk-top"></div>
-            <div class="agent-name">RISK</div>
-            <div class="agent-role">liq / skip</div>
-            <div class="mon"><i></i></div>
-            <div class="sprite" data-shirt="shirt5"></div>
-          </div>
-          <div class="desk" data-agent="CHIEF" tabindex="0">
-            <div class="desk-top"></div>
-            <div class="agent-name">CHIEF</div>
-            <div class="agent-role">paper watch</div>
-            <div class="mon"><i></i></div>
-            <div class="sprite" data-shirt="shirt6"></div>
-          </div>
-        </div>
-        <div class="caption-bar" id="caption">PAPER ONLY · no buy · filters hold</div>
+    <div class="cols">
+      <div class="feed">
+        <h2>LIVE FEED · OUR FILLS</h2>
+        <div class="fill"><span class="side buy">BUY</span><span>Smudge · 0.05 SOL · entry MC 190,456</span><span class="sub">04:36:35Z · 07:36 TR</span></div>
+        <div class="fill"><span class="side buy">BUY</span><span>HORSE · 0.81 SOL · entry MC 12,544.15</span><span class="sub">06:27:24Z · 09:27 TR</span></div>
+        <div class="fill"><span class="side buy">BUY</span><span>PilotX1970 · 0.79 SOL · entry MC 15,866.13</span><span class="sub">06:27:41Z · 09:27 TR</span></div>
+        <div class="fill"><span class="side sell">SELL</span><span>YUREI · 0.05 SOL · paper SL</span><span class="sub">same day</span></div>
       </div>
-
-      <aside class="live-col">
-        <div class="panel">
-          <h2>LIVE FEED</h2>
-          <div id="feed"></div>
-        </div>
-      </aside>
+      <div>
+        <div class="floor" title="pixel floor strip"></div>
+        <footer>PAPER ONLY · not a live ticket</footer>
+      </div>
     </div>
-
-    <footer>
-      PAPER ONLY · no live size · reports to owner · Grok Quant Trencher Bot · not a trade ticket
-    </footer>
   </div>
-
   <script>
-    const TAPE = [
-      { name: "BORTY", mc: "$455K", liq: "$62K", vol: "$4.2M", ch: "+1096%", tag: "PASS", kind: "pass" },
-      { name: "joshua", mc: "$52K", liq: "$19K", vol: "$927K", ch: "+49%", tag: "PASS", kind: "pass" },
-      { name: "GrokBot", mc: "$992K", liq: "$85K", vol: "$1.6M", ch: "+2479%", tag: "PASS", kind: "pass" },
-      { name: "LPZ", mc: "—", liq: "$10", vol: "$423", ch: "mayhem", tag: "SKIP", kind: "skip mayhem" }
-    ];
-    const RULES = "SOL · liq≥$5k · vol≥$80k · no Mayhem";
-
-    function tickerHtml() {
-      const bit = TAPE.filter(t => t.tag === "PASS").map(t =>
-        `<span><b>${t.name}</b> MC ${t.mc} liq ${t.liq} vol ${t.vol} 24h <span class="up">${t.ch}</span></span>`
-      ).join("") + `<span class="dn">LPZ liq $10 vol $423 SKIP mayhem</span><span class="rule">${RULES}</span><span>PAPER ONLY · no buy</span>`;
-      return bit + bit;
-    }
-    document.getElementById("ticker").innerHTML = tickerHtml();
-
-    const chipsEl = document.getElementById("chips");
-    TAPE.filter(t => t.tag === "PASS").forEach(t => {
-      const el = document.createElement("div");
-      el.className = "chip pass";
-      el.dataset.kind = t.kind;
-      el.innerHTML = `<span class="nm">${t.name}</span> · MC ${t.mc} · liq ${t.liq} · vol ${t.vol} · <span class="up">${t.ch}</span> · ${t.tag}`;
-      chipsEl.appendChild(el);
-    });
-
-    document.querySelectorAll(".sprite").forEach(el => {
-      const shirt = el.getAttribute("data-shirt");
-      const grid = [
-        "....hhhh",
-        "...hsssh",
-        "...sese.",
-        "....ss..",
-        "...CCCC.",
-        "..C.CC.C",
-        "..C....C",
-        "...llll.",
-        "...l..l.",
-        "...l..l."
-      ];
-      const map = { ".": "transparent", h: "#2a1a10", s: "#e0b090", e: "#111", C: null, l: "#1a2038" };
-      const colors = { shirt: "#3a5a88", shirt2: "#2a7040", shirt3: "#704028", shirt4: "#603060", shirt5: "#306060", shirt6: "#805020" };
-      let html = "";
-      grid.forEach(row => {
-        for (const ch of row) {
-          let bg = map[ch];
-          if (ch === "C") bg = colors[shirt] || "#3a5a88";
-          html += `<div class="px" style="background:${bg}"></div>`;
-        }
+    const chips = document.querySelectorAll(".fchip");
+    const rows = document.querySelectorAll(".book tbody tr");
+    chips.forEach(c => c.addEventListener("click", () => {
+      chips.forEach(x => x.classList.remove("on"));
+      c.classList.add("on");
+      const f = c.dataset.f;
+      rows.forEach(r => {
+        r.style.display = (f === "all" || r.dataset.status === f) ? "" : "none";
       });
-      el.innerHTML = html;
-      el.style.width = "32px";
-    });
-
-    const LINES = [
-      { a: "SCAN", cls: "ok", kind: "pass", t: "BORTY pass — SOL, liq $62K ≥ $5k, vol $4.2M ≥ $80k, not Mayhem." },
-      { a: "RISK", cls: "no", kind: "skip mayhem", t: "skip LPZ — liq $10 vol $423 (below $5k / mayhem-rug)." },
-      { a: "LORE", cls: "note", kind: "pass", t: "joshua — serial launcher 102 on tape; lore flag only, paper desk." },
-      { a: "CHIEF", cls: "note", kind: "pass", t: "paper-watch, no X size. LIVE off. Reports to owner." },
-      { a: "GMGN", cls: "ok", kind: "pass", t: "GrokBot flow — MC $992K liq $85K vol $1.6M 24h +2479% last tape." },
-      { a: "CHART", cls: "ok", kind: "pass", t: "BORTY structure on last print: MC $455K, 24h +1096%, no live ticket." },
-      { a: "SCAN", cls: "ok", kind: "pass", t: "joshua pass filter — liq $19K, vol $927K, SOL, skip-mayhem clean." },
-      { a: "RISK", cls: "no", kind: "skip mayhem", t: "SKIP mayhem/rugs. No mayhem venues. PAPER on." },
-      { a: "CHIEF", cls: "note", kind: "pass", t: "WATCH 3 = BORTY, joshua, GrokBot. AGENTS 6 at desks." },
-      { a: "LORE", cls: "note", kind: "pass", t: "GrokBot name collision check — tape name only, not this crew." },
-      { a: "GMGN", cls: "ok", kind: "pass", t: "BORTY vol $4.2M vs rule vol≥$80k — pass. Paper night shift." },
-      { a: "CHART", cls: "ok", kind: "pass", t: "joshua 24h +49% last tape; no buy cue, structure only." },
-      { a: "SCAN", cls: "ok", kind: "pass", t: "Rules chip hold: SOL · liq≥$5k · vol≥$80k · no Mayhem." },
-      { a: "RISK", cls: "no", kind: "skip mayhem", t: "skip thin LP prints under $5k. LPZ cliff stands." },
-      { a: "CHIEF", cls: "note", kind: "pass", t: "paper-watch no X. Floor does not size live." }
-    ];
-
-    const feed = document.getElementById("feed");
-    let i = 0;
-    let filter = "ALL";
-    let focusAgent = null;
-
-    function stamp() {
-      return new Date().toTimeString().slice(0, 8);
-    }
-    function matchFilter(kind) {
-      if (filter === "ALL") return true;
-      if (filter === "PASS") return kind.includes("pass") && !kind.includes("skip");
-      if (filter === "SKIP") return kind.includes("skip");
-      if (filter === "MAYHEM") return kind.includes("mayhem");
-      return true;
-    }
-    function applyFilter() {
-      document.querySelectorAll(".chip").forEach(c => {
-        c.classList.toggle("hidden", !matchFilter(c.dataset.kind));
-      });
-      document.querySelectorAll("#feed p").forEach(p => {
-        p.classList.toggle("hidden", !matchFilter(p.dataset.kind));
-      });
-    }
-    function applyFocus() {
-      document.querySelectorAll("#feed p").forEach(p => {
-        p.classList.toggle("hl", !!(focusAgent && p.dataset.agent === focusAgent));
-      });
-    }
-    function pushLine() {
-      const L = LINES[i % LINES.length];
-      i++;
-      const p = document.createElement("p");
-      p.dataset.kind = L.kind;
-      p.dataset.agent = L.a;
-      p.innerHTML = `<span class="t">${stamp()}</span> <span class="a">${L.a}</span> <span class="${L.cls}">${L.t}</span>`;
-      if (!matchFilter(L.kind)) p.classList.add("hidden");
-      if (focusAgent && L.a === focusAgent) p.classList.add("hl");
-      feed.prepend(p);
-      while (feed.children.length > 28) feed.removeChild(feed.lastChild);
-    }
-    for (let n = 0; n < 8; n++) pushLine();
-    setInterval(pushLine, 2600);
-
-    document.querySelectorAll(".fchip").forEach(btn => {
-      btn.addEventListener("click", () => {
-        document.querySelectorAll(".fchip").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        filter = btn.dataset.filter;
-        applyFilter();
-      });
-    });
-
-    const CAPS = [
-      "PAPER ONLY · no buy · filters hold",
-      "Paper night shift · no buy · SOL desk",
-      "liq≥$5k · vol≥$80k · no Mayhem",
-      "No live size · reports to owner",
-      "SKIP mayhem/rugs · PAPER on · LIVE off",
-      "Filters open · tape only · no ticket"
-    ];
-    const caption = document.getElementById("caption");
-    let ci = 0;
-    setInterval(() => {
-      if (focusAgent) return;
-      ci = (ci + 1) % CAPS.length;
-      caption.textContent = CAPS[ci];
-    }, 3200);
-
-    const deskCaps = {
-      SCAN: "SCAN · tape filter · PASS/SKIP · no buy",
-      LORE: "LORE · serial / story · paper desk",
-      GMGN: "GMGN · flow desk · last tape only",
-      CHART: "CHART · structure desk · no live ticks",
-      RISK: "RISK · liq floor · SKIP mayhem/rugs",
-      CHIEF: "CHIEF · paper-watch · no X size"
-    };
-    document.querySelectorAll(".desk").forEach(desk => {
-      desk.addEventListener("click", () => {
-        const agent = desk.dataset.agent;
-        document.querySelectorAll(".desk").forEach(d => d.classList.remove("lit"));
-        if (focusAgent === agent) {
-          focusAgent = null;
-          caption.textContent = CAPS[ci];
-        } else {
-          focusAgent = agent;
-          desk.classList.add("lit");
-          caption.textContent = deskCaps[agent];
-        }
-        applyFocus();
-      });
-    });
+    }));
   </script>
 </body>
 </html>
