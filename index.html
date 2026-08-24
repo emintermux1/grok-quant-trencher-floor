@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GROK QUANT TRENCHER FLOOR — PAPER NIGHT SHIFT</title>
+  <title>GROK QUANT TRENCHER FLOOR — LIVE TRENCH</title>
   <style>
     :root {
       --bg: #0a0c14;
@@ -87,6 +87,7 @@
     }
     .ticker span { margin-right: 40px; }
     .ticker .up { color: var(--green); }
+    .ticker .down { color: var(--red); }
     .ticker .rule { color: var(--cyan); }
     @keyframes tick {
       0% { transform: translateX(0); }
@@ -290,19 +291,20 @@
     <header class="top">
       <div class="brand-row">
         <h1>GROK QUANT TRENCHER FLOOR</h1>
-        <div class="sub">PAPER NIGHT SHIFT</div>
+        <div class="sub">LIVE TRENCH</div>
       </div>
-      <div class="crew">Crew · Grok Quant Trencher Bot</div>
+      <div class="crew">Crew · Grok Quant Trencher Bot · real book only</div>
       <div class="stats">
         <span class="chip">AGENTS 6</span>
-        <span class="chip warn">WATCH 3</span>
+        <span class="chip warn" id="chip-open">OPEN —</span>
+        <span class="chip dim" id="chip-closed">CLOSED —</span>
         <span class="chip off">SKIP mayhem/rugs</span>
-        <span class="chip on">PAPER on</span>
-        <span class="chip off">LIVE off</span>
+        <span class="chip on" id="chip-live">LIVE on</span>
+        <span class="chip dim" id="chip-sync">SYNC —</span>
       </div>
     </header>
 
-    <div class="ticker-wrap" aria-label="last tape">
+    <div class="ticker-wrap" aria-label="open book">
       <div class="ticker" id="ticker"></div>
     </div>
 
@@ -357,7 +359,7 @@
           <div class="desk" data-agent="CHIEF">
             <div class="desk-top"></div>
             <div class="agent-name">CHIEF</div>
-            <div class="agent-role">paper watch</div>
+            <div class="agent-role">book watch</div>
             <div class="mon"><i></i></div>
             <div class="sprite" data-shirt="shirt6"></div>
           </div>
@@ -367,32 +369,19 @@
       <aside class="live-col">
         <div class="panel">
           <h2>LIVE FEED</h2>
-          <div id="feed"></div>
+          <div id="feed">
+            <p><span class="t">--:--:--</span> <span class="a">SYNC</span> <span class="note">loading real book from feed.json…</span></p>
+          </div>
         </div>
       </aside>
     </div>
 
     <footer>
-      PAPER ONLY · no live size · reports to owner · Grok Quant Trencher Bot · not a trade ticket
+      LIVE TRENCH · book from feed.json · live mcap via pump.fun · Grok Quant Trencher Bot · not a trade ticket
     </footer>
   </div>
 
   <script>
-    const TAPE = [
-      { name: "BORTY", mc: "$455K", liq: "$62K", vol: "$4.2M", ch: "+1096%" },
-      { name: "joshua", mc: "$52K", liq: "$19K", vol: "$927K", ch: "+49%" },
-      { name: "GrokBot", mc: "$992K", liq: "$85K", vol: "$1.6M", ch: "+2479%" }
-    ];
-    const RULES = "SOL only · liq≥$5k · vol≥$80k · no Mayhem";
-
-    function tickerHtml() {
-      const bit = TAPE.map(t =>
-        `<span><b>${t.name}</b> MC ${t.mc} liq ${t.liq} vol ${t.vol} 24h <span class="up">${t.ch}</span></span>`
-      ).join("") + `<span class="rule">${RULES}</span>`;
-      return bit + bit;
-    }
-    document.getElementById("ticker").innerHTML = tickerHtml();
-
     // tiny CSS pixel people
     document.querySelectorAll(".sprite").forEach(el => {
       const shirt = el.getAttribute("data-shirt");
@@ -424,41 +413,187 @@
       el.style.width = (8 * 4) + "px";
     });
 
-    const LINES = [
-      { a: "SCAN", cls: "ok", t: "BORTY pass — SOL, liq $62K ≥ $5k, vol $4.2M ≥ $80k, not Mayhem." },
-      { a: "RISK", cls: "no", t: "skip LPZ — liq $10 (below $5k floor)." },
-      { a: "LORE", cls: "note", t: "joshua — serial launcher 102 on tape; lore flag only, paper desk." },
-      { a: "CHIEF", cls: "note", t: "paper-watch, no X size. LIVE off. Reports to owner." },
-      { a: "GMGN", cls: "ok", t: "GrokBot flow — MC $992K liq $85K vol $1.6M 24h +2479% last tape." },
-      { a: "CHART", cls: "ok", t: "BORTY structure on last print: MC $455K, 24h +1096%, no live ticket." },
-      { a: "SCAN", cls: "ok", t: "joshua pass filter — liq $19K, vol $927K, SOL, skip-mayhem clean." },
-      { a: "RISK", cls: "no", t: "SKIP mayhem/rugs. No mayhem venues. PAPER on." },
-      { a: "CHIEF", cls: "note", t: "WATCH 3 = BORTY, joshua, GrokBot. AGENTS 6 at desks." },
-      { a: "LORE", cls: "note", t: "GrokBot name collision check — tape name only, not this crew." },
-      { a: "GMGN", cls: "ok", t: "BORTY vol $4.2M vs rule vol≥$80k — pass. Paper night shift." },
-      { a: "CHART", cls: "ok", t: "joshua 24h +49% last tape; no buy cue, structure only." },
-      { a: "SCAN", cls: "ok", t: "Rules chip hold: SOL only · liq≥$5k · vol≥$80k · no Mayhem." },
-      { a: "RISK", cls: "no", t: "skip thin LP prints under $5k. LPZ example stands." },
-      { a: "CHIEF", cls: "note", t: "paper-watch no X. Floor does not size live." }
-    ];
+    // ------------------------------------------------------------------
+    // REAL BOOK ENGINE — everything below renders the actual bot book.
+    // Source of truth: feed.json (same origin). Live mcap: pump.fun API,
+    // with DexScreener as a fallback mirror for the same CA (pump.fun's
+    // API rejects cross-origin browser requests from non-pump.fun sites).
+    // Nothing here invents coins, mcaps, volumes or tape lines.
+    // ------------------------------------------------------------------
+    const DESKS = ["SCAN", "LORE", "GMGN", "CHART", "RISK", "CHIEF"];
+    const EVENT_CLS = { ok: "ok", no: "no", note: "note" };
+    const FEED_URL = "feed.json";
+    const PUMP_COIN_API = "https://frontend-api-v3.pump.fun/coins/";
+    const DEX_MIRROR_API = "https://api.dexscreener.com/tokens/v1/solana/";
+    const REFRESH_MS = 20000;
 
-    const feed = document.getElementById("feed");
-    let i = 0;
-    function stamp() {
-      const d = new Date();
-      return d.toTimeString().slice(0, 8);
+    // Exact copy of the seeded feed.json. Used ONLY when feed.json cannot
+    // be fetched at all (e.g. page opened via file://). A successful fetch
+    // always replaces it — this is the same real book, not a second tape.
+    const FALLBACK_FEED = {
+      updatedAt: "2026-08-24T18:50:00Z",
+      mode: "live",
+      rules: "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
+      open: [
+        { ticker: "PRO", ca: "7k4JoPp1CEnm3ypLwnpqoEc9ysw95oeTdxdrTFBQpump", sizeSol: 0.02, entryMcap: 101573, liveMcap: null },
+        { ticker: "SEND", ca: "Tx67Fs4TSEnYiPzZyThExpwLabNbDy74nof9JUdpump", sizeSol: 0.02, entryMcap: 33435, liveMcap: null },
+        { ticker: "Callout", ca: "BZV1duQoQt3znWkakzzSCLUmLbE7RFtj9FRPPxx4pump", sizeSol: 0.02, entryMcap: 54836, liveMcap: null }
+      ],
+      closed: [
+        { ticker: "MARTIN", reason: "SL", entryMcap: null, exitMcap: null },
+        { ticker: "Zoe", reason: "SL", entryMcap: null, exitMcap: null },
+        { ticker: "TRASHY", reason: "SL", entryMcap: null, exitMcap: null }
+      ],
+      events: [
+        { ts: "2026-08-24T18:41:00Z", desk: "SCAN", cls: "ok", t: "rules hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem." },
+        { ts: "2026-08-24T18:42:00Z", desk: "RISK", cls: "no", t: "SL hit MARTIN — closed." },
+        { ts: "2026-08-24T18:42:30Z", desk: "RISK", cls: "no", t: "SL hit Zoe — closed." },
+        { ts: "2026-08-24T18:43:00Z", desk: "RISK", cls: "no", t: "SL hit TRASHY — closed." },
+        { ts: "2026-08-24T18:44:00Z", desk: "GMGN", cls: "ok", t: "fill SEND 0.02 SOL — entry mcap $33,435 · Tx67Fs4TSEnYiPzZyThExpwLabNbDy74nof9JUdpump" },
+        { ts: "2026-08-24T18:44:30Z", desk: "GMGN", cls: "ok", t: "fill Callout 0.02 SOL — entry mcap $54,836 · BZV1duQoQt3znWkakzzSCLUmLbE7RFtj9FRPPxx4pump" },
+        { ts: "2026-08-24T18:45:00Z", desk: "GMGN", cls: "ok", t: "fill PRO 0.02 SOL — entry mcap $101,573 · 7k4JoPp1CEnm3ypLwnpqoEc9ysw95oeTdxdrTFBQpump" },
+        { ts: "2026-08-24T18:45:30Z", desk: "LORE", cls: "note", t: "book on tape: PRO · SEND · Callout — real fills only, no invented tape." },
+        { ts: "2026-08-24T18:46:00Z", desk: "CHART", cls: "note", t: "tracking entry vs live mcap for PRO / SEND / Callout — live number refreshes from pump.fun." },
+        { ts: "2026-08-24T18:46:30Z", desk: "CHIEF", cls: "note", t: "user bags CALLOOOR and MEEKO are not bot 0.02 book — tracked off-book." },
+        { ts: "2026-08-24T18:47:00Z", desk: "CHIEF", cls: "note", t: "LIVE trench on — 3 open (PRO, SEND, Callout) · 3 closed (MARTIN SL, Zoe SL, TRASHY SL)." }
+      ]
+    };
+
+    const tickerEl = document.getElementById("ticker");
+    const feedEl = document.getElementById("feed");
+    const chipOpen = document.getElementById("chip-open");
+    const chipClosed = document.getElementById("chip-closed");
+    const chipLive = document.getElementById("chip-live");
+    const chipSync = document.getElementById("chip-sync");
+
+    const state = {
+      feed: null,       // last good feed.json payload
+      mcaps: {},        // ca -> freshest live usd market cap actually fetched
+      lastByDesk: {}    // desk -> last real event seen, so no desk goes blank
+    };
+
+    const isNum = v => typeof v === "number" && isFinite(v);
+    const esc = s => String(s).replace(/[&<>"']/g, c => (
+      { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]
+    ));
+    const fmtUsd = n => isNum(n) ? "$" + Math.round(n).toLocaleString("en-US") : "—";
+    function clockOf(iso) {
+      const t = Date.parse(iso);
+      return isNaN(t) ? "--:--:--" : new Date(t).toISOString().slice(11, 19);
     }
-    function pushLine() {
-      const L = LINES[i % LINES.length];
-      i++;
-      const p = document.createElement("p");
-      p.innerHTML = `<span class="t">${stamp()}</span> <span class="a">${L.a}</span> <span class="${L.cls}">${L.t}</span>`;
-      feed.prepend(p);
-      while (feed.children.length > 24) feed.removeChild(feed.lastChild);
+    function liveMcapOf(p) {
+      if (isNum(state.mcaps[p.ca])) return state.mcaps[p.ca];
+      return isNum(p.liveMcap) ? p.liveMcap : null;
     }
-    // seed
-    for (let n = 0; n < 6; n++) pushLine();
-    setInterval(pushLine, 2800);
+
+    function renderChips(f) {
+      chipOpen.textContent = "OPEN " + (Array.isArray(f.open) ? f.open.length : 0);
+      chipClosed.textContent = "CLOSED " + (Array.isArray(f.closed) ? f.closed.length : 0);
+      const mode = String(f.mode || "live").toUpperCase();
+      chipLive.textContent = mode + " on";
+      chipLive.className = "chip " + (mode === "LIVE" ? "on" : "warn");
+      chipSync.textContent = "SYNC " + clockOf(f.updatedAt);
+    }
+
+    function renderTicker(f) {
+      const open = Array.isArray(f.open) ? f.open : [];
+      const parts = open.map(p => {
+        const live = liveMcapOf(p);
+        let liveBit = "live MC " + fmtUsd(live);
+        if (isNum(live) && isNum(p.entryMcap) && p.entryMcap > 0) {
+          const pct = ((live - p.entryMcap) / p.entryMcap) * 100;
+          const cls = pct >= 0 ? "up" : "down";
+          liveBit += ` <span class="${cls}">${pct >= 0 ? "+" : ""}${pct.toFixed(1)}%</span>`;
+        }
+        const size = isNum(p.sizeSol) ? p.sizeSol + " SOL · " : "";
+        return `<span><b>${esc(p.ticker)}</b> ${size}entry MC ${fmtUsd(p.entryMcap)} · ${liveBit}</span>`;
+      });
+      parts.push(`<span class="rule">${esc(f.rules || "")}</span>`);
+      const half = parts.join("");
+      tickerEl.innerHTML = half + half; // doubled for the seamless -50% marquee
+    }
+
+    function renderFeed(f) {
+      const events = (Array.isArray(f.events) ? f.events : []).filter(e => e && e.t);
+      for (const e of events) {
+        if (DESKS.indexOf(e.desk) !== -1) state.lastByDesk[e.desk] = e;
+      }
+      const rows = events.slice().sort((a, b) =>
+        (Date.parse(b.ts) || 0) - (Date.parse(a.ts) || 0)
+      );
+      // A desk with no line in this payload keeps its last real line visible.
+      const present = new Set(rows.map(e => e.desk));
+      for (const d of DESKS) {
+        if (!present.has(d) && state.lastByDesk[d]) rows.push(state.lastByDesk[d]);
+      }
+      if (!rows.length) return; // keep whatever is on screen — never blank
+      feedEl.innerHTML = rows.map(e => {
+        const cls = EVENT_CLS[e.cls] || "note";
+        return `<p><span class="t">${esc(clockOf(e.ts))}</span> <span class="a">${esc(e.desk || "")}</span> <span class="${cls}">${esc(e.t)}</span></p>`;
+      }).join("");
+    }
+
+    function renderAll() {
+      if (!state.feed) return;
+      renderChips(state.feed);
+      renderTicker(state.feed);
+      renderFeed(state.feed);
+    }
+
+    async function refreshMcaps() {
+      const f = state.feed;
+      const open = f && Array.isArray(f.open) ? f.open.filter(p => p && p.ca) : [];
+      if (!open.length) return;
+      const missing = [];
+      await Promise.all(open.map(async p => {
+        try {
+          const r = await fetch(PUMP_COIN_API + encodeURIComponent(p.ca));
+          if (!r.ok) throw new Error(String(r.status));
+          const j = await r.json();
+          if (j && isNum(j.usd_market_cap)) state.mcaps[p.ca] = j.usd_market_cap;
+          else missing.push(p.ca);
+        } catch (_) {
+          missing.push(p.ca);
+        }
+      }));
+      // pump.fun 403s browser requests from other origins; mirror the same
+      // CA through DexScreener (CORS-open). Still real market data.
+      if (missing.length) {
+        try {
+          const r = await fetch(DEX_MIRROR_API + missing.map(encodeURIComponent).join(","));
+          if (r.ok) {
+            const pairs = await r.json();
+            for (const ca of missing) {
+              let best = null;
+              for (const pr of (Array.isArray(pairs) ? pairs : [])) {
+                if (!pr || !pr.baseToken || pr.baseToken.address !== ca || !isNum(pr.marketCap)) continue;
+                const liq = pr.liquidity && isNum(pr.liquidity.usd) ? pr.liquidity.usd : 0;
+                if (!best || liq > best.liq) best = { mc: pr.marketCap, liq };
+              }
+              if (best) state.mcaps[ca] = best.mc;
+            }
+          }
+        } catch (_) { /* keep last known number — never invent */ }
+      }
+      if (state.feed) renderTicker(state.feed);
+    }
+
+    async function loadFeed() {
+      try {
+        const r = await fetch(FEED_URL + "?t=" + Date.now(), { cache: "no-store" });
+        if (!r.ok) throw new Error(String(r.status));
+        state.feed = await r.json();
+      } catch (_) {
+        // keep the last good payload; fall back to the embedded copy of the
+        // seed only when nothing has ever loaded (e.g. file://)
+        if (!state.feed) state.feed = FALLBACK_FEED;
+      }
+      renderAll();
+      refreshMcaps();
+    }
+
+    loadFeed();
+    setInterval(loadFeed, REFRESH_MS);
   </script>
 </body>
 </html>
