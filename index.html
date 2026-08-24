@@ -7,25 +7,34 @@
   <meta name="description" content="Paper command HQ for Grok Quant Trencher Bot. Not affiliated with xAI." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3Cfilter id='s' x='-20%25' y='-20%25' width='140%25' height='140%25'%3E%3CfeDropShadow dx='0' dy='1.4' stdDeviation='1.2' flood-color='%23000' flood-opacity='.4'/%3E%3C/filter%3E%3Cmask id='m'%3E%3Crect width='64' height='64' rx='32' fill='%23fff'/%3E%3Cg transform='rotate(-55 32 32)'%3E%3Crect x='-8' y='27.4' width='36' height='8' rx='4' fill='%23000'/%3E%3Crect x='36' y='27.4' width='36' height='8' rx='4' fill='%23000'/%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='30' fill='%2358b83a' filter='url(%23s)'/%3E%3Ccircle cx='32' cy='32' r='30' fill='%237ce04a' mask='url(%23m)'/%3E%3Ccircle cx='32' cy='32' r='30.5' fill='none' stroke='%23d8f7b8' stroke-width='1.6'/%3E%3C/svg%3E" />
   <style>
     :root {
-      --bg: #111114;
-      --elev: #1a1b21;
-      --hair: #2a2b32;
+      --bg: #000000;
+      --body: #121212;
+      --header: #0a0a0a;
+      --elev: #171717;
+      --panel: #1d1d1d;
+      --chip: #242424;
+      --hover: #2e2e2e;
+      --hair: #1f1f1f;
       --text: #f5f5f5;
-      --mute: #8b8d97;
-      --up: #3dd68c;
-      --dn: #f6475d;
+      --mute: #808080;
+      --dim: #525252;
+      --mid: #cccccc;
+      --up: #46b87d;
+      --up2: #69cf8d;
+      --dn: #de5759;
+      --warn: #f8b951;
       --lime: #7ce04a;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body {
-      background: var(--bg);
+      background: var(--body);
       color: var(--text);
-      font-family: Inter, system-ui, sans-serif;
-      font-size: 13px;
+      font-family: Geist, Inter, system-ui, sans-serif;
+      font-size: 14px;
       line-height: 1.4;
       min-height: 100%;
     }
@@ -34,10 +43,10 @@
 
     header.bar {
       position: sticky; top: 0; z-index: 30;
-      height: 36px;
-      display: flex; align-items: center; gap: 8px;
-      padding: 0 12px;
-      background: var(--bg);
+      height: 60px;
+      display: flex; align-items: center; gap: 12px;
+      padding: 0 16px;
+      background: var(--header);
       border-bottom: 1px solid var(--hair);
     }
     .mark {
@@ -73,14 +82,14 @@
     .open-n b { color: var(--text); font-weight: 600; }
 
     nav.tabs {
-      position: sticky; top: 36px; z-index: 29;
+      position: sticky; top: 60px; z-index: 29;
       display: flex; gap: 0;
       padding: 0 12px;
-      background: var(--bg);
+      background: var(--header);
       border-bottom: 1px solid var(--hair);
     }
     .tab {
-      height: 36px; padding: 0 14px;
+      height: 40px; padding: 0 14px;
       color: var(--mute); font-size: 13px; font-weight: 600;
       border-bottom: 2px solid transparent;
     }
@@ -111,7 +120,7 @@
       gap: 12px;
     }
     .roster, .feed {
-      background: var(--elev);
+      background: var(--panel);
       border: 1px solid var(--hair);
       border-radius: 8px;
       overflow: hidden;
@@ -139,9 +148,11 @@
       grid-template-columns: 52px 1fr auto;
       gap: 10px;
       align-items: center;
+      min-height: 72px;
       padding: 10px 12px;
       border-bottom: 1px solid var(--hair);
     }
+    .agent:hover { background: var(--hover); }
     .agent:last-child { border-bottom: 0; }
     .call { font-weight: 700; letter-spacing: .06em; font-size: 12px; color: var(--lime); }
     .role { font-size: 11px; color: var(--mute); margin-top: 2px; }
@@ -150,10 +161,10 @@
       padding: 3px 7px; border-radius: 6px;
       white-space: nowrap;
     }
-    .stat.scanning { color: var(--lime); background: #1a2618; }
-    .stat.watching { color: #c9d4ff; background: #1c2030; }
-    .stat.skip { color: #e8c36a; background: #2a2416; }
-    .stat.paper { color: var(--mute); background: #22232a; }
+    .stat.scanning { color: var(--up); background: var(--chip); }
+    .stat.watching { color: #46cbf0; background: var(--chip); }
+    .stat.skip { color: var(--warn); background: var(--chip); }
+    .stat.paper { color: var(--mute); background: var(--chip); }
 
     .feed-list { display: flex; flex-direction: column; }
     .ev {
@@ -197,16 +208,17 @@
       font-size: 10px; font-weight: 700; letter-spacing: .06em;
       padding: 3px 7px; border-radius: 8px;
     }
-    .st.open { color: var(--lime); background: #1a2618; }
-    .st.closed { color: var(--mute); background: #22232a; }
+    .st.open { color: var(--up); background: var(--chip); }
+    .st.closed { color: var(--mute); background: var(--chip); }
 
     .table-wrap { display: none; overflow-x: auto; border: 1px solid var(--hair); border-radius: 8px; background: var(--elev); }
     table.book { width: 100%; border-collapse: collapse; }
     .book th {
-      text-align: left; font-size: 11px; font-weight: 600; color: var(--mute);
-      padding: 8px 12px; border-bottom: 1px solid var(--hair);
+      text-align: left; font-size: 12px; font-weight: 600; color: var(--mute);
+      padding: 8px; height: 34px; border-bottom: 1px solid var(--hair);
     }
-    .book td { padding: 8px 12px; border-bottom: 1px solid var(--hair); vertical-align: middle; }
+    .book td { padding: 8px; height: 80px; border-bottom: 1px solid var(--hair); vertical-align: middle; }
+    .book tbody tr:hover { background: var(--hover); }
     .book tr:last-child td { border-bottom: 0; }
     .book tr.closed { opacity: .78; }
 
