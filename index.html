@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GROK QUANT — Paper book</title>
+  <title>Grok Quant — Command HQ</title>
+  <meta name="description" content="Paper command HQ for Grok Quant Trencher Bot. Not affiliated with xAI." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -25,51 +26,147 @@
       color: var(--text);
       font-family: Inter, system-ui, sans-serif;
       font-size: 13px;
-      line-height: 1.35;
+      line-height: 1.4;
       min-height: 100%;
     }
-    a { color: inherit; text-decoration: none; }
     button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
     .num { font-variant-numeric: tabular-nums; }
 
     header.bar {
-      position: sticky; top: 0; z-index: 20;
-      height: 56px;
-      display: flex; align-items: center; gap: 10px;
+      position: sticky; top: 0; z-index: 30;
+      height: 36px;
+      display: flex; align-items: center; gap: 8px;
       padding: 0 12px;
       background: var(--bg);
       border-bottom: 1px solid var(--hair);
     }
-    .mark { width: 32px; height: 32px; flex-shrink: 0; filter: drop-shadow(0 2px 3px rgba(0,0,0,.45)); }
-    .brand { font-size: 13px; font-weight: 700; letter-spacing: .04em; }
+    .mark {
+      width: 22px; height: 22px; flex-shrink: 0;
+      animation: mark-idle 12s ease-in-out infinite;
+      filter: drop-shadow(0 0 6px rgba(124,224,74,.35));
+    }
+    .mark .glow { animation: glow-pulse 3.6s ease-in-out infinite; }
+    .mark .cuts { animation: cuts-breathe 4.8s ease-in-out infinite; }
+    @keyframes mark-idle {
+      0%, 100% { transform: rotate(-8deg); }
+      50% { transform: rotate(8deg); }
+    }
+    @keyframes glow-pulse {
+      0%, 100% { opacity: .55; }
+      50% { opacity: 1; }
+    }
+    @keyframes cuts-breathe {
+      0%, 100% { opacity: .72; }
+      50% { opacity: 1; }
+    }
+    .brand { font-size: 12px; font-weight: 700; letter-spacing: .06em; }
     .pill {
-      margin-left: 2px;
-      font-size: 10px; font-weight: 700; letter-spacing: .08em;
+      font-size: 9px; font-weight: 700; letter-spacing: .08em;
       color: var(--lime);
       border: 1px solid #355528;
       background: #1a2618;
-      border-radius: 8px;
-      padding: 3px 7px;
+      border-radius: 6px;
+      padding: 2px 6px;
     }
     .spacer { flex: 1; }
-    .open-n { color: var(--mute); font-size: 12px; }
+    .open-n { color: var(--mute); font-size: 11px; }
     .open-n b { color: var(--text); font-weight: 600; }
 
-    .tabs {
+    nav.tabs {
+      position: sticky; top: 36px; z-index: 29;
       display: flex; gap: 0;
       padding: 0 12px;
+      background: var(--bg);
       border-bottom: 1px solid var(--hair);
     }
     .tab {
-      height: 40px; padding: 0 14px;
+      height: 36px; padding: 0 14px;
       color: var(--mute); font-size: 13px; font-weight: 600;
       border-bottom: 2px solid transparent;
     }
     .tab.on { color: var(--text); border-bottom-color: var(--lime); }
 
+    .hero {
+      display: none;
+      height: 72px;
+      padding: 0 12px;
+      border-bottom: 1px solid var(--hair);
+      align-items: center;
+      gap: 14px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    body.floor .hero { display: flex; }
+    .hero .mark { width: 40px; height: 40px; }
+    .hero h1 { font-size: 16px; font-weight: 700; letter-spacing: .02em; }
+    .hero p { color: var(--mute); font-size: 12px; margin-top: 2px; }
+
     main { padding: 12px; max-width: 1100px; margin: 0 auto; }
     .panel { display: none; }
     .panel.on { display: block; }
+
+    .floor-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .roster, .feed {
+      background: var(--elev);
+      border: 1px solid var(--hair);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .block-h {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--hair);
+      font-size: 11px; font-weight: 700; letter-spacing: .08em;
+      color: var(--mute);
+    }
+    .live-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--lime);
+      box-shadow: 0 0 8px var(--lime);
+      animation: glow-pulse 1.8s ease-in-out infinite;
+    }
+
+    .desk {
+      display: flex;
+      flex-direction: column;
+    }
+    .agent {
+      display: grid;
+      grid-template-columns: 52px 1fr auto;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--hair);
+    }
+    .agent:last-child { border-bottom: 0; }
+    .call { font-weight: 700; letter-spacing: .06em; font-size: 12px; color: var(--lime); }
+    .role { font-size: 11px; color: var(--mute); margin-top: 2px; }
+    .stat {
+      font-size: 10px; font-weight: 700; letter-spacing: .06em;
+      padding: 3px 7px; border-radius: 6px;
+      white-space: nowrap;
+    }
+    .stat.scanning { color: var(--lime); background: #1a2618; }
+    .stat.watching { color: #c9d4ff; background: #1c2030; }
+    .stat.skip { color: #e8c36a; background: #2a2416; }
+    .stat.paper { color: var(--mute); background: #22232a; }
+
+    .feed-list { display: flex; flex-direction: column; }
+    .ev {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 10px;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--hair);
+    }
+    .ev:last-child { border-bottom: 0; }
+    .ev .when { color: var(--mute); font-size: 11px; }
+    .ev .txt { font-weight: 500; }
+    .ev .who { color: var(--lime); font-weight: 700; font-size: 11px; letter-spacing: .04em; }
 
     .cards { display: flex; flex-direction: column; gap: 12px; }
     .card {
@@ -112,7 +209,6 @@
     .book td { padding: 8px 12px; border-bottom: 1px solid var(--hair); vertical-align: middle; }
     .book tr:last-child td { border-bottom: 0; }
     .book tr.closed { opacity: .78; }
-    .book .ca { margin-top: 1px; }
 
     .fills { display: flex; flex-direction: column; gap: 8px; }
     .fill {
@@ -132,32 +228,35 @@
 
     footer {
       max-width: 1100px; margin: 0 auto;
-      padding: 8px 12px 20px;
+      padding: 8px 12px 24px;
       color: var(--mute); font-size: 12px;
     }
 
     @media (min-width: 800px) {
+      .floor-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: start; }
       .cards { display: none; }
       .table-wrap { display: block; }
       .fill { padding: 8px 12px; }
     }
   </style>
 </head>
-<body>
+<body class="floor">
   <header class="bar">
     <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
       <defs>
-        <filter id="sh" x="-20%" y="-20%" width="140%" height="140%">
+        <filter id="sh" x="-40%" y="-40%" width="180%" height="180%">
           <feDropShadow dx="0" dy="1.4" stdDeviation="1.2" flood-color="#000" flood-opacity=".4"/>
+          <feDropShadow class="glow" dx="0" dy="0" stdDeviation="3.2" flood-color="#7ce04a" flood-opacity=".55"/>
         </filter>
         <mask id="cuts">
           <rect width="64" height="64" rx="32" fill="#fff"/>
-          <g transform="rotate(-55 32 32)">
+          <g class="cuts" transform="rotate(-55 32 32)">
             <rect x="-8" y="27.4" width="36" height="8" rx="4" fill="#000"/>
             <rect x="36" y="27.4" width="36" height="8" rx="4" fill="#000"/>
           </g>
         </mask>
       </defs>
+      <circle class="glow" cx="32" cy="32" r="31" fill="none" stroke="#7ce04a" stroke-width="3" opacity=".35"/>
       <circle cx="32" cy="32" r="30" fill="#58b83a" filter="url(#sh)"/>
       <circle cx="32" cy="32" r="30" fill="#7ce04a" mask="url(#cuts)"/>
       <circle cx="32" cy="32" r="30.5" fill="none" stroke="#d8f7b8" stroke-width="1.6"/>
@@ -169,12 +268,126 @@
   </header>
 
   <nav class="tabs">
-    <button class="tab on" data-tab="pos">Positions</button>
+    <button class="tab on" data-tab="floor">Floor</button>
+    <button class="tab" data-tab="pos">Positions</button>
     <button class="tab" data-tab="act">Activity</button>
   </nav>
 
+  <div class="hero">
+    <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+      <defs>
+        <filter id="sh2" x="-40%" y="-40%" width="180%" height="180%">
+          <feDropShadow dx="0" dy="1.4" stdDeviation="1.2" flood-color="#000" flood-opacity=".4"/>
+        </filter>
+        <mask id="cuts2">
+          <rect width="64" height="64" rx="32" fill="#fff"/>
+          <g class="cuts" transform="rotate(-55 32 32)">
+            <rect x="-8" y="27.4" width="36" height="8" rx="4" fill="#000"/>
+            <rect x="36" y="27.4" width="36" height="8" rx="4" fill="#000"/>
+          </g>
+        </mask>
+      </defs>
+      <circle class="glow" cx="32" cy="32" r="31" fill="none" stroke="#7ce04a" stroke-width="3" opacity=".4"/>
+      <circle cx="32" cy="32" r="30" fill="#58b83a" filter="url(#sh2)"/>
+      <circle cx="32" cy="32" r="30" fill="#7ce04a" mask="url(#cuts2)"/>
+      <circle cx="32" cy="32" r="30.5" fill="none" stroke="#d8f7b8" stroke-width="1.6"/>
+    </svg>
+    <div>
+      <h1>Command HQ</h1>
+      <p>Six desks, one paper book. Directs the session — not a market tape.</p>
+    </div>
+  </div>
+
   <main>
-    <section id="pos" class="panel on">
+    <section id="floor" class="panel on">
+      <div class="floor-grid">
+        <div class="roster">
+          <div class="block-h">DESK ROSTER</div>
+          <div class="desk">
+            <div class="agent">
+              <div class="call">SCAN</div>
+              <div>
+                <div>New-pair intake</div>
+                <div class="role">Filters raw listings before size</div>
+              </div>
+              <span class="stat scanning">scanning</span>
+            </div>
+            <div class="agent">
+              <div class="call">LORE</div>
+              <div>
+                <div>Narrative check</div>
+                <div class="role">Name, copy, social residue</div>
+              </div>
+              <span class="stat watching">watching</span>
+            </div>
+            <div class="agent">
+              <div class="call">GMGN</div>
+              <div>
+                <div>Tape + holder read</div>
+                <div class="role">Our book vs. public tape</div>
+              </div>
+              <span class="stat watching">watching</span>
+            </div>
+            <div class="agent">
+              <div class="call">CHART</div>
+              <div>
+                <div>Structure only</div>
+                <div class="role">No sparkline wall — levels</div>
+              </div>
+              <span class="stat skip">skip-mayhem</span>
+            </div>
+            <div class="agent">
+              <div class="call">RISK</div>
+              <div>
+                <div>Size, SL, TP</div>
+                <div class="role">Hard stops on paper</div>
+              </div>
+              <span class="stat paper">paper</span>
+            </div>
+            <div class="agent">
+              <div class="call">CHIEF</div>
+              <div>
+                <div>Directs everything</div>
+                <div class="role">Go / hold / flatten</div>
+              </div>
+              <span class="stat paper">paper</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="feed">
+          <div class="block-h">LIVE FEED <span class="live-dot" aria-hidden="true"></span></div>
+          <div class="feed-list">
+            <div class="ev">
+              <div class="when">now</div>
+              <div><div class="who">CHIEF</div><div class="txt">Hold book. Three open, one closed SL. No new size.</div></div>
+            </div>
+            <div class="ev">
+              <div class="when">+0</div>
+              <div><div class="who">RISK</div><div class="txt">PilotX1970 still above paper SL 13,010. uPnL +0.2677 SOL.</div></div>
+            </div>
+            <div class="ev">
+              <div class="when">+1</div>
+              <div><div class="who">GMGN</div><div class="txt">HORSE now MC 5,390 vs entry 12,544. Watching, not adding.</div></div>
+            </div>
+            <div class="ev">
+              <div class="when">+2</div>
+              <div><div class="who">SCAN</div><div class="txt">Skipped crowded tape. CHART marked skip-mayhem.</div></div>
+            </div>
+            <div class="ev">
+              <div class="when">+3</div>
+              <div><div class="who">LORE</div><div class="txt">Smudge narrative stale. Size stays 0.05 SOL.</div></div>
+            </div>
+            <div class="ev">
+              <div class="when">+8</div>
+              <div><div class="who">RISK</div><div class="txt">YUREI flattened on paper SL. Book updated.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pos" class="panel">
       <div class="cards">
         <article class="card">
           <div class="card-top">
@@ -342,7 +555,7 @@
     </section>
   </main>
 
-  <footer>PAPER ONLY</footer>
+  <footer>Built for Grok Quant Trencher Bot · paper only</footer>
 
   <script>
     const tabs = document.querySelectorAll(".tab");
@@ -352,6 +565,7 @@
       panels.forEach(p => p.classList.remove("on"));
       t.classList.add("on");
       document.getElementById(t.dataset.tab).classList.add("on");
+      document.body.classList.toggle("floor", t.dataset.tab === "floor");
     }));
   </script>
 </body>
