@@ -3,217 +3,355 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GROK QUANT TRENCHER — PAPER BOOK</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3Cmask id='m'%3E%3Crect width='64' height='64' rx='32' fill='white'/%3E%3Crect x='-6' y='28' width='38' height='9' rx='4.5' fill='black' transform='rotate(-55 32 32)'/%3E%3Crect x='32' y='28' width='38' height='9' rx='4.5' fill='black' transform='rotate(-55 32 32)'/%3E%3C/mask%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='30' fill='%2368c43a'/%3E%3Ccircle cx='32' cy='32' r='30' fill='%2378d44a' mask='url(%23m)'/%3E%3Ccircle cx='32' cy='32' r='30.5' fill='none' stroke='%23b8f08a' stroke-width='2.4'/%3E%3C/svg%3E" />
+  <title>GROK QUANT — Paper book</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3Cfilter id='s' x='-20%25' y='-20%25' width='140%25' height='140%25'%3E%3CfeDropShadow dx='0' dy='1.4' stdDeviation='1.2' flood-color='%23000' flood-opacity='.4'/%3E%3C/filter%3E%3Cmask id='m'%3E%3Crect width='64' height='64' rx='32' fill='%23fff'/%3E%3Cg transform='rotate(-55 32 32)'%3E%3Crect x='-8' y='27.4' width='36' height='8' rx='4' fill='%23000'/%3E%3Crect x='36' y='27.4' width='36' height='8' rx='4' fill='%23000'/%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='30' fill='%2358b83a' filter='url(%23s)'/%3E%3Ccircle cx='32' cy='32' r='30' fill='%237ce04a' mask='url(%23m)'/%3E%3Ccircle cx='32' cy='32' r='30.5' fill='none' stroke='%23d8f7b8' stroke-width='1.6'/%3E%3C/svg%3E" />
   <style>
     :root {
-      --bg: #0b0d12;
-      --panel: #10131a;
-      --line: #1c2230;
-      --mute: #7d8696;
-      --text: #e8edf5;
-      --lime: #7ee04a;
-      --mid: #4caf3a;
-      --green: #3dd68c;
-      --red: #f05252;
-      --amber: #e8c36a;
+      --bg: #111114;
+      --elev: #1a1b21;
+      --hair: #2a2b32;
+      --text: #f5f5f5;
+      --mute: #8b8d97;
+      --up: #3dd68c;
+      --dn: #f6475d;
+      --lime: #7ce04a;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { background: var(--bg); color: var(--text); font: 13px/1.35 ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; }
-    a { color: inherit; }
-    .wrap { max-width: 1180px; margin: 0 auto; padding: 10px 14px 18px; }
-    header.top {
-      display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
-      padding: 8px 0 10px; border-bottom: 1px solid var(--line);
+    html, body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, system-ui, sans-serif;
+      font-size: 13px;
+      line-height: 1.35;
+      min-height: 100%;
     }
-    .brand { display: flex; align-items: center; gap: 10px; min-width: 240px; }
-    .mark { width: 38px; height: 38px; flex-shrink: 0; filter: drop-shadow(0 3px 6px rgba(0,0,0,.55)) drop-shadow(0 0 8px rgba(80,180,50,.28)); }
-    .word { font-size: 15px; font-weight: 750; letter-spacing: .08em; }
-    .word span { display: block; font-size: 10px; font-weight: 600; letter-spacing: .16em; color: var(--mute); margin-top: 1px; }
-    .meta { margin-left: auto; display: flex; gap: 14px; color: var(--mute); font-size: 11px; letter-spacing: .04em; }
-    .meta b { color: var(--amber); font-weight: 650; }
-    .filters { display: flex; gap: 6px; margin: 12px 0 8px; }
-    .fchip {
-      background: #12161f; border: 1px solid var(--line); color: var(--mute);
-      padding: 4px 10px; border-radius: 4px; font-size: 11px; letter-spacing: .08em;
-      cursor: pointer;
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+    .num { font-variant-numeric: tabular-nums; }
+
+    header.bar {
+      position: sticky; top: 0; z-index: 20;
+      height: 56px;
+      display: flex; align-items: center; gap: 10px;
+      padding: 0 12px;
+      background: var(--bg);
+      border-bottom: 1px solid var(--hair);
     }
-    .fchip.on { color: var(--lime); border-color: #2a4a24; background: #132016; }
-    .book {
-      width: 100%; border-collapse: collapse; background: var(--panel);
-      border: 1px solid var(--line); border-radius: 6px; overflow: hidden;
+    .mark { width: 32px; height: 32px; flex-shrink: 0; filter: drop-shadow(0 2px 3px rgba(0,0,0,.45)); }
+    .brand { font-size: 13px; font-weight: 700; letter-spacing: .04em; }
+    .pill {
+      margin-left: 2px;
+      font-size: 10px; font-weight: 700; letter-spacing: .08em;
+      color: var(--lime);
+      border: 1px solid #355528;
+      background: #1a2618;
+      border-radius: 8px;
+      padding: 3px 7px;
     }
+    .spacer { flex: 1; }
+    .open-n { color: var(--mute); font-size: 12px; }
+    .open-n b { color: var(--text); font-weight: 600; }
+
+    .tabs {
+      display: flex; gap: 0;
+      padding: 0 12px;
+      border-bottom: 1px solid var(--hair);
+    }
+    .tab {
+      height: 40px; padding: 0 14px;
+      color: var(--mute); font-size: 13px; font-weight: 600;
+      border-bottom: 2px solid transparent;
+    }
+    .tab.on { color: var(--text); border-bottom-color: var(--lime); }
+
+    main { padding: 12px; max-width: 1100px; margin: 0 auto; }
+    .panel { display: none; }
+    .panel.on { display: block; }
+
+    .cards { display: flex; flex-direction: column; gap: 12px; }
+    .card {
+      background: var(--elev);
+      border: 1px solid var(--hair);
+      border-radius: 8px;
+      padding: 12px;
+    }
+    .card.closed { opacity: .78; }
+    .card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 10px; }
+    .tok { font-weight: 700; font-size: 13px; }
+    .ca { color: var(--mute); font-size: 11px; margin-top: 2px; word-break: break-all; }
+    .size { text-align: right; }
+    .size .v { font-weight: 600; }
+    .size .l { display: block; color: var(--mute); font-size: 11px; }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 12px;
+    }
+    .cell .l { display: block; color: var(--mute); font-size: 11px; margin-bottom: 2px; }
+    .cell .v { font-weight: 600; }
+    .up { color: var(--up); }
+    .dn { color: var(--dn); }
+    .meta { margin-top: 10px; color: var(--mute); font-size: 11px; }
+    .st {
+      display: inline-block; margin-top: 8px;
+      font-size: 10px; font-weight: 700; letter-spacing: .06em;
+      padding: 3px 7px; border-radius: 8px;
+    }
+    .st.open { color: var(--lime); background: #1a2618; }
+    .st.closed { color: var(--mute); background: #22232a; }
+
+    .table-wrap { display: none; overflow-x: auto; border: 1px solid var(--hair); border-radius: 8px; background: var(--elev); }
+    table.book { width: 100%; border-collapse: collapse; }
     .book th {
-      text-align: left; font-size: 10px; letter-spacing: .1em; color: var(--mute);
-      font-weight: 650; padding: 8px 10px; border-bottom: 1px solid var(--line);
-      background: #0e1118;
+      text-align: left; font-size: 11px; font-weight: 600; color: var(--mute);
+      padding: 8px 12px; border-bottom: 1px solid var(--hair);
     }
-    .book td { padding: 9px 10px; border-bottom: 1px solid #161b25; vertical-align: top; }
+    .book td { padding: 8px 12px; border-bottom: 1px solid var(--hair); vertical-align: middle; }
     .book tr:last-child td { border-bottom: 0; }
-    .book tr.closed { opacity: .72; }
-    .tok { font-weight: 700; }
-    .ca { display: block; color: var(--mute); font-size: 10px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 0; margin-top: 2px; }
-    .num { font-variant-numeric: tabular-nums; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
-    .up { color: var(--green); }
-    .dn { color: var(--red); }
-    .st { font-size: 10px; letter-spacing: .08em; font-weight: 700; }
-    .st.open { color: var(--lime); }
-    .st.closed { color: var(--mute); }
-    .sub { color: var(--mute); font-size: 10px; display: block; margin-top: 2px; }
-    .cols { display: grid; grid-template-columns: 1fr 280px; gap: 10px; margin-top: 10px; }
-    @media (max-width: 860px) { .cols { grid-template-columns: 1fr; } }
-    .feed {
-      background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px;
+    .book tr.closed { opacity: .78; }
+    .book .ca { margin-top: 1px; }
+
+    .fills { display: flex; flex-direction: column; gap: 8px; }
+    .fill {
+      display: grid;
+      grid-template-columns: 52px 1fr auto;
+      gap: 12px; align-items: center;
+      background: var(--elev);
+      border: 1px solid var(--hair);
+      border-radius: 8px;
+      padding: 12px;
     }
-    .feed h2 { font-size: 10px; letter-spacing: .12em; color: var(--mute); margin-bottom: 8px; }
-    .fill { display: grid; grid-template-columns: 62px 1fr auto; gap: 8px; padding: 5px 0; border-bottom: 1px solid #161b25; font-size: 12px; }
-    .fill:last-child { border-bottom: 0; }
-    .side.buy { color: var(--green); font-weight: 700; font-size: 11px; }
-    .side.sell { color: var(--red); font-weight: 700; font-size: 11px; }
-    .floor {
-      margin-top: 10px; height: 28px;
-      background:
-        repeating-linear-gradient(90deg, #12151c 0 8px, #0e1116 8px 16px),
-        linear-gradient(#1a1f28, #0b0d12);
-      border: 1px solid var(--line); border-radius: 4px;
-      image-rendering: pixelated; opacity: .85;
+    .side { font-size: 12px; font-weight: 700; letter-spacing: .04em; }
+    .side.buy { color: var(--up); }
+    .side.sell { color: var(--dn); }
+    .fill .who { font-weight: 600; }
+    .fill .det { display: block; color: var(--mute); font-size: 12px; margin-top: 2px; }
+
+    footer {
+      max-width: 1100px; margin: 0 auto;
+      padding: 8px 12px 20px;
+      color: var(--mute); font-size: 12px;
     }
-    footer { margin-top: 8px; color: var(--mute); font-size: 11px; letter-spacing: .08em; }
+
+    @media (min-width: 800px) {
+      .cards { display: none; }
+      .table-wrap { display: block; }
+      .fill { padding: 8px 12px; }
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header class="top">
-      <div class="brand">
-        <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
-          <defs>
-            <filter id="sh" x="-20%" y="-20%" width="140%" height="140%">
-              <feDropShadow dx="0" dy="2" stdDeviation="1.6" flood-color="#000" flood-opacity=".45"/>
-            </filter>
-            <mask id="cuts">
-              <rect width="64" height="64" rx="32" fill="#fff"/>
-              <g transform="rotate(-56 32 32)">
-                <rect x="-8" y="27.2" width="36" height="8.4" rx="4.2" fill="#000"/>
-                <rect x="36" y="27.2" width="36" height="8.4" rx="4.2" fill="#000"/>
-              </g>
-            </mask>
-          </defs>
-          <circle cx="32" cy="32" r="30" fill="#4caf3a" filter="url(#sh)"/>
-          <circle cx="32" cy="32" r="30" fill="#78d44a" mask="url(#cuts)"/>
-          <circle cx="32" cy="32" r="30.4" fill="none" stroke="#c8f59a" stroke-width="2.2"/>
-        </svg>
-        <div class="word">GROK QUANT TRENCHER<span>PAPER BOOK · OUR FILLS ONLY</span></div>
-      </div>
-      <div class="meta">
-        <div>OPEN <b>3</b></div>
-        <div>CLOSED <b>1</b></div>
-        <div>MODE <b>PAPER</b></div>
-      </div>
-    </header>
+  <header class="bar">
+    <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+      <defs>
+        <filter id="sh" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="1.4" stdDeviation="1.2" flood-color="#000" flood-opacity=".4"/>
+        </filter>
+        <mask id="cuts">
+          <rect width="64" height="64" rx="32" fill="#fff"/>
+          <g transform="rotate(-55 32 32)">
+            <rect x="-8" y="27.4" width="36" height="8" rx="4" fill="#000"/>
+            <rect x="36" y="27.4" width="36" height="8" rx="4" fill="#000"/>
+          </g>
+        </mask>
+      </defs>
+      <circle cx="32" cy="32" r="30" fill="#58b83a" filter="url(#sh)"/>
+      <circle cx="32" cy="32" r="30" fill="#7ce04a" mask="url(#cuts)"/>
+      <circle cx="32" cy="32" r="30.5" fill="none" stroke="#d8f7b8" stroke-width="1.6"/>
+    </svg>
+    <div class="brand">GROK QUANT</div>
+    <span class="pill">PAPER</span>
+    <div class="spacer"></div>
+    <div class="open-n">Open <b>3</b></div>
+  </header>
 
-    <div class="filters">
-      <button class="fchip on" data-f="open">OPEN</button>
-      <button class="fchip" data-f="closed">CLOSED</button>
-      <button class="fchip" data-f="all">ALL</button>
-    </div>
+  <nav class="tabs">
+    <button class="tab on" data-tab="pos">Positions</button>
+    <button class="tab" data-tab="act">Activity</button>
+  </nav>
 
-    <table class="book">
-      <thead>
-        <tr>
-          <th>TOKEN</th>
-          <th>SIZE SOL</th>
-          <th>ENTRY MC</th>
-          <th>NOW MC</th>
-          <th>uPnL</th>
-          <th>SL</th>
-          <th>TP</th>
-          <th>STATUS</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="row open" data-status="open">
-          <td>
-            <span class="tok">Smudge</span>
-            <span class="ca">AALr9xpQ…Cugrpump</span>
-            <span class="sub">liq $33.8k · vol $809k · 24h +172%</span>
-          </td>
-          <td class="num">0.05</td>
-          <td class="num">190,456</td>
-          <td class="num">171,129</td>
-          <td class="num dn">−0.0051</td>
-          <td class="num">142,842</td>
-          <td class="num">266,638</td>
-          <td><span class="st open">OPEN</span><span class="sub">07:36:35 TR</span></td>
-        </tr>
-        <tr class="row open" data-status="open">
-          <td>
-            <span class="tok">HORSE</span>
-            <span class="ca">5te4qXdC…9rYpump</span>
-            <span class="sub">liq $4.32k · vol $48.2k · 24h −86.25%</span>
-          </td>
-          <td class="num">0.81</td>
-          <td class="num">12,544.15</td>
-          <td class="num">5,390</td>
-          <td class="num dn">−0.4618</td>
-          <td class="num">10,286</td>
-          <td class="num">17,562</td>
-          <td><span class="st open">OPEN</span><span class="sub">09:27:24 TR</span></td>
-        </tr>
-        <tr class="row open" data-status="open">
-          <td>
-            <span class="tok">PilotX1970</span>
-            <span class="ca">77RhBYwj…vZzpump</span>
-            <span class="sub">liq — · vol $160k · 24h +490%</span>
-          </td>
-          <td class="num">0.79</td>
-          <td class="num">15,866.13</td>
-          <td class="num">21,242</td>
-          <td class="num up">+0.2677</td>
-          <td class="num">13,010</td>
-          <td class="num">22,213</td>
-          <td><span class="st open">OPEN</span><span class="sub">09:27:41 TR</span></td>
-        </tr>
-        <tr class="row closed" data-status="closed">
-          <td>
-            <span class="tok">YUREI</span>
-            <span class="ca">9CjhM6w1…spdpump</span>
-            <span class="sub">paper SL same day</span>
-          </td>
-          <td class="num">0.05</td>
-          <td class="num">—</td>
-          <td class="num">—</td>
-          <td class="num">—</td>
-          <td class="num">hit</td>
-          <td class="num">—</td>
-          <td><span class="st closed">CLOSED</span><span class="sub">sell SL</span></td>
-        </tr>
-      </tbody>
-    </table>
+  <main>
+    <section id="pos" class="panel on">
+      <div class="cards">
+        <article class="card">
+          <div class="card-top">
+            <div>
+              <div class="tok">Smudge</div>
+              <div class="ca">AALr9xpQ…Cugrpump</div>
+            </div>
+            <div class="size">
+              <span class="v num">0.05 SOL</span>
+              <span class="l">Size</span>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="cell"><span class="l">Entry MC</span><span class="v num">190,456</span></div>
+            <div class="cell"><span class="l">Now MC</span><span class="v num">171,129</span></div>
+            <div class="cell"><span class="l">uPnL</span><span class="v num dn">−0.0051 SOL</span></div>
+            <div class="cell"><span class="l">SL / TP</span><span class="v num">142,842 / 266,638</span></div>
+          </div>
+          <div class="meta">Liq 33,783 · Vol 808,621 · 24h <span class="up">+172%</span></div>
+          <span class="st open">OPEN</span>
+        </article>
 
-    <div class="cols">
-      <div class="feed">
-        <h2>LIVE FEED · OUR FILLS</h2>
-        <div class="fill"><span class="side buy">BUY</span><span>Smudge · 0.05 SOL · entry MC 190,456</span><span class="sub">04:36:35Z · 07:36 TR</span></div>
-        <div class="fill"><span class="side buy">BUY</span><span>HORSE · 0.81 SOL · entry MC 12,544.15</span><span class="sub">06:27:24Z · 09:27 TR</span></div>
-        <div class="fill"><span class="side buy">BUY</span><span>PilotX1970 · 0.79 SOL · entry MC 15,866.13</span><span class="sub">06:27:41Z · 09:27 TR</span></div>
-        <div class="fill"><span class="side sell">SELL</span><span>YUREI · 0.05 SOL · paper SL</span><span class="sub">same day</span></div>
+        <article class="card">
+          <div class="card-top">
+            <div>
+              <div class="tok">HORSE</div>
+              <div class="ca">5te4qXdC…9rYpump</div>
+            </div>
+            <div class="size">
+              <span class="v num">0.81 SOL</span>
+              <span class="l">Size</span>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="cell"><span class="l">Entry MC</span><span class="v num">12,544</span></div>
+            <div class="cell"><span class="l">Now MC</span><span class="v num">5,390</span></div>
+            <div class="cell"><span class="l">uPnL</span><span class="v num dn">−0.4618 SOL</span></div>
+            <div class="cell"><span class="l">SL / TP</span><span class="v num">10,286 / 17,562</span></div>
+          </div>
+          <div class="meta">Liq 4,324 · Vol 48,159 · 24h <span class="dn">−86.25%</span></div>
+          <span class="st open">OPEN</span>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <div>
+              <div class="tok">PilotX1970</div>
+              <div class="ca">77RhBYwj…vZzpump</div>
+            </div>
+            <div class="size">
+              <span class="v num">0.79 SOL</span>
+              <span class="l">Size</span>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="cell"><span class="l">Entry MC</span><span class="v num">15,866</span></div>
+            <div class="cell"><span class="l">Now MC</span><span class="v num">21,242</span></div>
+            <div class="cell"><span class="l">uPnL</span><span class="v num up">+0.2677 SOL</span></div>
+            <div class="cell"><span class="l">SL / TP</span><span class="v num">13,010 / 22,213</span></div>
+          </div>
+          <div class="meta">Liq — · Vol 159,671 · 24h <span class="up">+490%</span></div>
+          <span class="st open">OPEN</span>
+        </article>
+
+        <article class="card closed">
+          <div class="card-top">
+            <div>
+              <div class="tok">YUREI</div>
+              <div class="ca">9Cjh…pump</div>
+            </div>
+            <div class="size">
+              <span class="v num">0.05 SOL</span>
+              <span class="l">Size</span>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="cell"><span class="l">Entry MC</span><span class="v num">—</span></div>
+            <div class="cell"><span class="l">Now MC</span><span class="v num">—</span></div>
+            <div class="cell"><span class="l">uPnL</span><span class="v num">—</span></div>
+            <div class="cell"><span class="l">SL / TP</span><span class="v num">paper SL</span></div>
+          </div>
+          <span class="st closed">CLOSED</span>
+        </article>
       </div>
-      <div>
-        <div class="floor" title="pixel floor strip"></div>
-        <footer>PAPER ONLY · not a live ticket</footer>
+
+      <div class="table-wrap">
+        <table class="book">
+          <thead>
+            <tr>
+              <th>Token</th>
+              <th>Size</th>
+              <th>Entry MC</th>
+              <th>Now MC</th>
+              <th>uPnL</th>
+              <th>SL / TP</th>
+              <th>24h</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="tok">Smudge</span><div class="ca">AALr9xpQ…Cugrpump</div></td>
+              <td class="num">0.05 SOL</td>
+              <td class="num">190,456</td>
+              <td class="num">171,129</td>
+              <td class="num dn">−0.0051</td>
+              <td class="num">142,842 / 266,638</td>
+              <td class="num up">+172%</td>
+              <td><span class="st open">OPEN</span></td>
+            </tr>
+            <tr>
+              <td><span class="tok">HORSE</span><div class="ca">5te4qXdC…9rYpump</div></td>
+              <td class="num">0.81 SOL</td>
+              <td class="num">12,544</td>
+              <td class="num">5,390</td>
+              <td class="num dn">−0.4618</td>
+              <td class="num">10,286 / 17,562</td>
+              <td class="num dn">−86.25%</td>
+              <td><span class="st open">OPEN</span></td>
+            </tr>
+            <tr>
+              <td><span class="tok">PilotX1970</span><div class="ca">77RhBYwj…vZzpump</div></td>
+              <td class="num">0.79 SOL</td>
+              <td class="num">15,866</td>
+              <td class="num">21,242</td>
+              <td class="num up">+0.2677</td>
+              <td class="num">13,010 / 22,213</td>
+              <td class="num up">+490%</td>
+              <td><span class="st open">OPEN</span></td>
+            </tr>
+            <tr class="closed">
+              <td><span class="tok">YUREI</span><div class="ca">9Cjh…pump</div></td>
+              <td class="num">0.05 SOL</td>
+              <td class="num">—</td>
+              <td class="num">—</td>
+              <td class="num">—</td>
+              <td>paper SL</td>
+              <td class="num">—</td>
+              <td><span class="st closed">CLOSED</span></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-    </div>
-  </div>
+    </section>
+
+    <section id="act" class="panel">
+      <div class="fills">
+        <div class="fill">
+          <span class="side buy">BUY</span>
+          <div><span class="who">Smudge</span><span class="det">0.05 SOL · entry MC 190,456</span></div>
+        </div>
+        <div class="fill">
+          <span class="side buy">BUY</span>
+          <div><span class="who">HORSE</span><span class="det">0.81 SOL · entry MC 12,544</span></div>
+        </div>
+        <div class="fill">
+          <span class="side buy">BUY</span>
+          <div><span class="who">PilotX1970</span><span class="det">0.79 SOL · entry MC 15,866</span></div>
+        </div>
+        <div class="fill">
+          <span class="side sell">SELL</span>
+          <div><span class="who">YUREI</span><span class="det">0.05 SOL · paper SL</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>PAPER ONLY</footer>
+
   <script>
-    const chips = document.querySelectorAll(".fchip");
-    const rows = document.querySelectorAll(".book tbody tr");
-    chips.forEach(c => c.addEventListener("click", () => {
-      chips.forEach(x => x.classList.remove("on"));
-      c.classList.add("on");
-      const f = c.dataset.f;
-      rows.forEach(r => {
-        r.style.display = (f === "all" || r.dataset.status === f) ? "" : "none";
-      });
+    const tabs = document.querySelectorAll(".tab");
+    const panels = document.querySelectorAll(".panel");
+    tabs.forEach(t => t.addEventListener("click", () => {
+      tabs.forEach(x => x.classList.remove("on"));
+      panels.forEach(p => p.classList.remove("on"));
+      t.classList.add("on");
+      document.getElementById(t.dataset.tab).classList.add("on");
     }));
   </script>
 </body>
