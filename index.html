@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GROK QUANT TRENCHER FLOOR — LIVE TRENCH</title>
+  <title>GROK QUANT TRENCHER FLOOR — $QUANTBOT LIVE TRENCH</title>
   <style>
     :root {
       --bg: #0a0c14;
@@ -69,6 +69,64 @@
     .chip.off { color: var(--red); border-color: #5a2a2a; }
     .chip.warn { color: var(--amber); }
     .chip.dim { color: var(--muted); }
+
+    .coin-banner {
+      border: 4px solid #8a6414;
+      background: #14100a;
+      padding: 8px 10px;
+      margin-bottom: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px 12px;
+    }
+    .coin-badge {
+      background: var(--amber);
+      color: #14100a;
+      font-size: 10px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      padding: 4px 6px;
+    }
+    .coin-name { font-size: 12px; letter-spacing: 1px; color: var(--paper); font-weight: bold; }
+    .coin-tick { font-size: 12px; letter-spacing: 1px; color: var(--green); font-weight: bold; }
+    .coin-ca-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; min-width: 0; }
+    .coin-ca {
+      font-family: inherit;
+      font-size: 11px;
+      color: var(--paper);
+      background: #0c0e16;
+      border: 2px solid var(--border);
+      padding: 4px 8px;
+      word-break: break-all;
+      cursor: copy;
+      user-select: all;
+    }
+    .coin-ca:hover { border-color: var(--amber); }
+    .coin-ca.copied { border-color: var(--green); color: var(--green); }
+    .coin-copy {
+      font-family: inherit;
+      font-size: 11px;
+      letter-spacing: 1px;
+      border: 2px solid #2a5a38;
+      background: #0c0e16;
+      color: var(--green);
+      padding: 4px 8px;
+      cursor: pointer;
+    }
+    .coin-copy:hover { background: #14231a; }
+    .coin-copy.done { background: var(--green); border-color: var(--green); color: #06140a; }
+    .coin-link {
+      font-size: 11px;
+      letter-spacing: 1px;
+      border: 2px solid #1e4a56;
+      background: #0c0e16;
+      color: var(--cyan);
+      padding: 4px 8px;
+      text-decoration: none;
+    }
+    .coin-link:hover { background: #10232a; }
+    .coin-thesis { flex-basis: 100%; font-size: 10px; color: var(--muted); letter-spacing: 0.5px; }
 
     .ticker-wrap {
       border: 4px solid #2a2038;
@@ -284,6 +342,8 @@
       border-top: 2px solid #2a2030;
       padding-top: 8px;
     }
+    .foot-ca { margin-top: 4px; word-break: break-all; }
+    .foot-ca b { color: var(--amber); font-weight: normal; }
   </style>
 </head>
 <body>
@@ -303,6 +363,18 @@
         <span class="chip dim" id="chip-sync">SYNC —</span>
       </div>
     </header>
+
+    <div class="coin-banner" aria-label="official coin">
+      <span class="coin-badge">OFFICIAL COIN</span>
+      <span class="coin-name">GROK QUANT BOT</span>
+      <span class="coin-tick">$QUANTBOT</span>
+      <div class="coin-ca-row">
+        <code class="coin-ca" id="coin-ca" title="click to copy the official CA">AHM5zpc5XfjEjVEC3mKcohvBJ2T9f2w84APbtbixpump</code>
+        <button class="coin-copy" id="coin-copy" type="button" aria-label="copy official contract address">COPY CA</button>
+        <a class="coin-link" href="https://pump.fun/coin/AHM5zpc5XfjEjVEC3mKcohvBJ2T9f2w84APbtbixpump" target="_blank" rel="noopener noreferrer">PUMP.FUN ↗</a>
+      </div>
+      <div class="coin-thesis">the first pumpfun trencher agent should run.</div>
+    </div>
 
     <div class="ticker-wrap" aria-label="open book">
       <div class="ticker" id="ticker"></div>
@@ -378,6 +450,7 @@
 
     <footer>
       LIVE TRENCH · book from feed.json · live mcap via pump.fun · Grok Quant Trencher Bot · not a trade ticket
+      <div class="foot-ca">official coin <b>$QUANTBOT</b> · AHM5zpc5XfjEjVEC3mKcohvBJ2T9f2w84APbtbixpump</div>
     </footer>
   </div>
 
@@ -412,6 +485,42 @@
       el.innerHTML = html;
       el.style.width = (8 * 4) + "px";
     });
+
+    // Official coin copy — the CA rendered in the banner markup is the
+    // single source of truth; the script never holds a second copy of it.
+    const coinCaEl = document.getElementById("coin-ca");
+    const coinCopyBtn = document.getElementById("coin-copy");
+    let coinCopyTimer = null;
+    async function copyOfficialCa() {
+      const ca = coinCaEl.textContent.trim();
+      let ok = false;
+      try {
+        await navigator.clipboard.writeText(ca);
+        ok = true;
+      } catch (_) {
+        // clipboard API needs a secure context; fall back to execCommand
+        const tmp = document.createElement("textarea");
+        tmp.value = ca;
+        tmp.setAttribute("readonly", "");
+        tmp.style.position = "fixed";
+        tmp.style.opacity = "0";
+        document.body.appendChild(tmp);
+        tmp.select();
+        try { ok = document.execCommand("copy"); } catch (_) { ok = false; }
+        tmp.remove();
+      }
+      coinCopyBtn.textContent = ok ? "COPIED ✓" : "COPY FAILED";
+      coinCopyBtn.classList.toggle("done", ok);
+      coinCaEl.classList.toggle("copied", ok);
+      clearTimeout(coinCopyTimer);
+      coinCopyTimer = setTimeout(() => {
+        coinCopyBtn.textContent = "COPY CA";
+        coinCopyBtn.classList.remove("done");
+        coinCaEl.classList.remove("copied");
+      }, 1600);
+    }
+    coinCopyBtn.addEventListener("click", copyOfficialCa);
+    coinCaEl.addEventListener("click", copyOfficialCa);
 
     // ------------------------------------------------------------------
     // REAL BOOK ENGINE — everything below renders the actual bot book.
