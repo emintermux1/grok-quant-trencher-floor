@@ -11,7 +11,6 @@
       --floor-line: #2e2436;
       --desk: #3d2a1a;
       --desk-top: #6a4528;
-      --night: #0a1020;
       --window: #152848;
       --amber: #f0b429;
       --green: #3ecf6e;
@@ -22,6 +21,7 @@
       --panel: #10131c;
       --border: #3a3048;
       --glow: #f0b42955;
+      --lime: #8fe03a;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { height: 100%; }
@@ -33,20 +33,31 @@
       min-height: 100vh;
       overflow-x: hidden;
     }
-    .wrap { max-width: 1180px; margin: 0 auto; padding: 8px 10px 18px; }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 8px 10px 14px; }
 
     header.top {
       border: 3px solid var(--border);
       background: linear-gradient(#161924, var(--panel));
-      padding: 6px 10px 8px;
+      padding: 8px 12px;
       margin-bottom: 6px;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 8px 14px;
+      gap: 10px 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-mark {
+      width: 56px;
+      height: 56px;
+      flex-shrink: 0;
+      filter: drop-shadow(0 0 8px #8fe03a88);
     }
     h1 {
-      font-size: 15px;
+      font-size: 16px;
       letter-spacing: 2px;
       color: var(--amber);
       text-shadow: 2px 2px 0 #000;
@@ -114,51 +125,26 @@
       100% { transform: translateX(-50%); }
     }
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
       gap: 6px;
       margin-bottom: 6px;
     }
-    @media (max-width: 900px) {
-      .cards { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 520px) {
-      .cards { grid-template-columns: 1fr; }
-    }
-
-    .card {
-      border: 3px solid var(--border);
+    .chip {
+      border: 2px solid var(--border);
       background: var(--panel);
-      padding: 7px 8px 6px;
-      min-height: 132px;
-      transition: box-shadow 0.15s, border-color 0.15s;
+      padding: 3px 10px;
+      font-size: 11px;
+      letter-spacing: 0.4px;
+      white-space: nowrap;
     }
-    .card:hover { box-shadow: 0 0 14px #4ad4e844; border-color: #4a6078; }
-    .card.pass { border-color: #2a5a38; }
-    .card.skip { border-color: #5a2a2a; opacity: 0.92; }
-    .card.mayhem { border-color: #6a3a18; }
-    .card.hidden { display: none; }
-    .card-head {
-      display: flex; justify-content: space-between; align-items: baseline;
-      margin-bottom: 2px;
-    }
-    .card-name { color: var(--amber); font-size: 13px; letter-spacing: 1px; }
-    .badge {
-      font-size: 9px;
-      letter-spacing: 1px;
-      padding: 1px 5px;
-      border: 1px solid;
-    }
-    .badge.pass { color: var(--green); border-color: #2a5a38; }
-    .badge.skip { color: var(--red); border-color: #5a2a2a; }
-    .badge.mayhem { color: #e08030; border-color: #6a3a18; }
-    .meta { font-size: 10px; color: var(--muted); line-height: 1.45; }
-    .meta b { color: var(--paper); font-weight: normal; }
-    .ch-up { color: var(--green); }
-    .ch-dn { color: var(--red); }
-    .spark { width: 100%; height: 36px; display: block; margin: 4px 0 2px; }
-    .cap { font-size: 9px; color: var(--muted); letter-spacing: 0.3px; }
+    .chip.pass { border-color: #2a5a38; }
+    .chip.skip { border-color: #5a2a2a; }
+    .chip .nm { color: var(--amber); }
+    .chip .up { color: var(--green); }
+    .chip .dn { color: var(--red); }
+    .chip.hidden { display: none; }
 
     .main-grid {
       display: grid;
@@ -166,7 +152,7 @@
       gap: 6px;
     }
     @media (min-width: 780px) {
-      .main-grid { grid-template-columns: 1fr 300px; }
+      .main-grid { grid-template-columns: 1fr 280px; }
     }
 
     .floor-stage {
@@ -176,7 +162,7 @@
         linear-gradient(90deg, var(--floor-line) 1px, transparent 1px) 0 0 / 20px 20px,
         linear-gradient(0deg, var(--floor-line) 1px, transparent 1px) 0 0 / 20px 20px,
         var(--floor);
-      min-height: 400px;
+      min-height: 520px;
       padding: 8px;
       overflow: hidden;
     }
@@ -229,6 +215,24 @@
       letter-spacing: 3px;
       line-height: 38px;
       box-shadow: 3px 3px 0 #000;
+      z-index: 2;
+    }
+
+    .floor-logo {
+      position: absolute;
+      left: 50%;
+      top: 128px;
+      transform: translateX(-50%);
+      width: 88px;
+      height: 88px;
+      z-index: 3;
+      pointer-events: none;
+      filter: drop-shadow(0 0 14px #8fe03acc) drop-shadow(0 0 28px #8fe03a55);
+      animation: logoglow 2.8s ease-in-out infinite;
+    }
+    @keyframes logoglow {
+      0%, 100% { filter: drop-shadow(0 0 10px #8fe03aaa) drop-shadow(0 0 20px #8fe03a44); }
+      50% { filter: drop-shadow(0 0 18px #b8ff66dd) drop-shadow(0 0 36px #8fe03a77); }
     }
 
     .lamp {
@@ -253,7 +257,7 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 12px 10px;
-      margin-top: 126px;
+      margin-top: 228px;
       position: relative;
       z-index: 1;
     }
@@ -360,7 +364,7 @@
       padding-bottom: 3px;
     }
     #feed {
-      height: 360px;
+      height: 480px;
       overflow-y: auto;
       font-size: 11px;
       line-height: 1.45;
@@ -397,10 +401,33 @@
 <body>
   <div class="wrap">
     <header class="top">
-      <div>
-        <h1>GROK QUANT TRENCHER FLOOR</h1>
-        <div class="sub">PAPER NIGHT SHIFT</div>
-        <div class="crew">Crew · Grok Quant Trencher Bot</div>
+      <div class="brand">
+        <svg class="logo-mark" viewBox="0 0 80 80" aria-label="Grok Quant character logo" role="img">
+          <defs>
+            <radialGradient id="limeBevel" cx="34%" cy="28%" r="72%">
+              <stop offset="0%" stop-color="#c8ff6a"/>
+              <stop offset="42%" stop-color="#8fe03a"/>
+              <stop offset="78%" stop-color="#5aaa18"/>
+              <stop offset="100%" stop-color="#2e5a0c"/>
+            </radialGradient>
+            <mask id="cutouts">
+              <rect width="80" height="80" fill="white"/>
+              <g transform="rotate(45 40 40)">
+                <rect x="18" y="28" width="44" height="9" rx="4.5" fill="black"/>
+                <rect x="18" y="43" width="44" height="9" rx="4.5" fill="black"/>
+              </g>
+            </mask>
+          </defs>
+          <circle cx="40" cy="40" r="36" fill="#0a0c10"/>
+          <circle cx="40" cy="40" r="32" fill="url(#limeBevel)" mask="url(#cutouts)"/>
+          <circle cx="40" cy="40" r="32" fill="none" stroke="#1a2808" stroke-width="1.4" opacity="0.55"/>
+          <ellipse cx="30" cy="26" rx="14" ry="7" fill="#ffffff" opacity="0.18"/>
+        </svg>
+        <div>
+          <h1>GROK QUANT TRENCHER FLOOR</h1>
+          <div class="sub">PAPER NIGHT SHIFT</div>
+          <div class="crew">Crew · Grok Quant Trencher Bot</div>
+        </div>
       </div>
       <div class="filters" id="filters">
         <button type="button" class="fchip active" data-filter="ALL">ALL</button>
@@ -417,7 +444,7 @@
       <div class="ticker" id="ticker"></div>
     </div>
 
-    <div class="cards" id="cards"></div>
+    <div class="chips" id="chips"></div>
 
     <div class="main-grid">
       <div class="floor-stage">
@@ -430,6 +457,27 @@
         <div class="lamp l"></div>
         <div class="lamp r"></div>
         <div class="whiteboard">TRENCH</div>
+        <svg class="floor-logo" viewBox="0 0 80 80" aria-hidden="true">
+          <defs>
+            <radialGradient id="limeBevel2" cx="34%" cy="28%" r="72%">
+              <stop offset="0%" stop-color="#c8ff6a"/>
+              <stop offset="42%" stop-color="#8fe03a"/>
+              <stop offset="78%" stop-color="#5aaa18"/>
+              <stop offset="100%" stop-color="#2e5a0c"/>
+            </radialGradient>
+            <mask id="cutouts2">
+              <rect width="80" height="80" fill="white"/>
+              <g transform="rotate(45 40 40)">
+                <rect x="18" y="28" width="44" height="9" rx="4.5" fill="black"/>
+                <rect x="18" y="43" width="44" height="9" rx="4.5" fill="black"/>
+              </g>
+            </mask>
+          </defs>
+          <circle cx="40" cy="40" r="36" fill="#0a0c10"/>
+          <circle cx="40" cy="40" r="32" fill="url(#limeBevel2)" mask="url(#cutouts2)"/>
+          <circle cx="40" cy="40" r="32" fill="none" stroke="#1a2808" stroke-width="1.4" opacity="0.55"/>
+          <ellipse cx="30" cy="26" rx="14" ry="7" fill="#ffffff" opacity="0.18"/>
+        </svg>
 
         <div class="desks">
           <div class="desk" data-agent="SCAN" tabindex="0">
@@ -475,7 +523,7 @@
             <div class="sprite" data-shirt="shirt6"></div>
           </div>
         </div>
-        <div class="caption-bar" id="caption">PAPER ONLY · alım yok · filters hold</div>
+        <div class="caption-bar" id="caption">PAPER ONLY · no buy · filters hold</div>
       </div>
 
       <aside class="live-col">
@@ -493,18 +541,10 @@
 
   <script>
     const TAPE = [
-      { name: "BORTY", mc: "$455K", liq: "$62K", vol: "$4.2M", ch: "+1096%", tag: "PASS", kind: "pass",
-        spark: "M2,28 L8,26 L14,24 L20,8 L26,10 L32,14 L38,16 L46,18 L54,19 L62,20 L70,21 L78,22",
-        color: "#3ecf6e", cap: "schematic · spike then cool (not live ticks)" },
-      { name: "joshua", mc: "$52K", liq: "$19K", vol: "$927K", ch: "+49%", tag: "PASS", kind: "pass",
-        spark: "M2,10 L10,12 L18,11 L26,16 L34,18 L42,22 L50,24 L58,26 L66,28 L78,30",
-        color: "#e24b4b", cap: "schematic · 1h red drift (not live ticks)" },
-      { name: "GrokBot", mc: "$992K", liq: "$85K", vol: "$1.6M", ch: "+2479%", tag: "PASS", kind: "pass",
-        spark: "M2,30 L12,29 L22,28 L30,26 L38,22 L46,12 L54,8 L62,6 L70,5 L78,4",
-        color: "#4ad4e8", cap: "schematic · impulse (not live ticks)" },
-      { name: "LPZ", mc: "—", liq: "$10", vol: "$423", ch: "mayhem", tag: "SKIP", kind: "skip mayhem",
-        spark: "M2,8 L14,9 L26,8 L34,10 L40,12 L46,28 L54,30 L62,31 L78,32",
-        color: "#e24b4b", cap: "schematic · cliff / rug print (not live ticks)" }
+      { name: "BORTY", mc: "$455K", liq: "$62K", vol: "$4.2M", ch: "+1096%", tag: "PASS", kind: "pass" },
+      { name: "joshua", mc: "$52K", liq: "$19K", vol: "$927K", ch: "+49%", tag: "PASS", kind: "pass" },
+      { name: "GrokBot", mc: "$992K", liq: "$85K", vol: "$1.6M", ch: "+2479%", tag: "PASS", kind: "pass" },
+      { name: "LPZ", mc: "—", liq: "$10", vol: "$423", ch: "mayhem", tag: "SKIP", kind: "skip mayhem" }
     ];
     const RULES = "SOL · liq≥$5k · vol≥$80k · no Mayhem";
 
@@ -516,28 +556,13 @@
     }
     document.getElementById("ticker").innerHTML = tickerHtml();
 
-    function sparkSvg(d, color) {
-      return `<svg class="spark" viewBox="0 0 80 36" preserveAspectRatio="none" aria-label="schematic sparkline">
-        <polyline fill="none" stroke="${color}" stroke-width="2" points="${d.replace(/M|L/g,' ').trim()}"/>
-      </svg>`;
-    }
-
-    const cardsEl = document.getElementById("cards");
-    TAPE.forEach(t => {
-      const el = document.createElement("article");
-      el.className = "card " + (t.tag === "PASS" ? "pass" : "skip") + (t.kind.includes("mayhem") ? " mayhem" : "");
+    const chipsEl = document.getElementById("chips");
+    TAPE.filter(t => t.tag === "PASS").forEach(t => {
+      const el = document.createElement("div");
+      el.className = "chip pass";
       el.dataset.kind = t.kind;
-      const chCls = t.tag === "PASS" ? "ch-up" : "ch-dn";
-      const mcLine = t.mc === "—" ? "" : `MC <b>${t.mc}</b> · `;
-      el.innerHTML = `
-        <div class="card-head">
-          <span class="card-name">${t.name}</span>
-          <span class="badge ${t.tag === "PASS" ? "pass" : (t.kind.includes("mayhem") ? "mayhem" : "skip")}">${t.tag}${t.kind.includes("mayhem") ? " · MAYHEM" : ""}</span>
-        </div>
-        <div class="meta">${mcLine}liq <b>${t.liq}</b> · vol <b>${t.vol}</b><br>24h <span class="${chCls}">${t.ch}</span></div>
-        ${sparkSvg(t.spark, t.color)}
-        <div class="cap">${t.cap}</div>`;
-      cardsEl.appendChild(el);
+      el.innerHTML = `<span class="nm">${t.name}</span> · MC ${t.mc} · liq ${t.liq} · vol ${t.vol} · <span class="up">${t.ch}</span> · ${t.tag}`;
+      chipsEl.appendChild(el);
     });
 
     document.querySelectorAll(".sprite").forEach(el => {
@@ -602,7 +627,7 @@
       return true;
     }
     function applyFilter() {
-      document.querySelectorAll(".card").forEach(c => {
+      document.querySelectorAll(".chip").forEach(c => {
         c.classList.toggle("hidden", !matchFilter(c.dataset.kind));
       });
       document.querySelectorAll("#feed p").forEach(p => {
@@ -639,12 +664,12 @@
     });
 
     const CAPS = [
-      "PAPER ONLY · alım yok · filters hold",
-      "Kağıt vardiya · no buy · SOL desk",
+      "PAPER ONLY · no buy · filters hold",
+      "Paper night shift · no buy · SOL desk",
       "liq≥$5k · vol≥$80k · no Mayhem",
-      "Canlı boyut yok · reports to owner",
+      "No live size · reports to owner",
       "SKIP mayhem/rugs · PAPER on · LIVE off",
-      "Filtreler açık · tape only · no ticket"
+      "Filters open · tape only · no ticket"
     ];
     const caption = document.getElementById("caption");
     let ci = 0;
@@ -655,10 +680,10 @@
     }, 3200);
 
     const deskCaps = {
-      SCAN: "SCAN · tape filter · PASS/SKIP · alım yok",
+      SCAN: "SCAN · tape filter · PASS/SKIP · no buy",
       LORE: "LORE · serial / story · paper desk",
       GMGN: "GMGN · flow desk · last tape only",
-      CHART: "CHART · schematic structure · not live ticks",
+      CHART: "CHART · structure desk · no live ticks",
       RISK: "RISK · liq floor · SKIP mayhem/rugs",
       CHIEF: "CHIEF · paper-watch · no X size"
     };
