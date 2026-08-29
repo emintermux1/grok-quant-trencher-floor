@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-29T16:31:10Z",
+  "updatedAt": "2026-08-29T17:16:10Z",
   "mode": "live",
   "rules": "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
   "open": [
@@ -270,6 +270,36 @@
     },
     {
       "ts": "2026-08-29T16:31:10Z",
+      "desk": "CHIEF",
+      "cls": "note",
+      "t": "LIVE trench on — 2 open (Lyra, CopperApe) · 7 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL)."
+    },
+    {
+      "ts": "2026-08-29T17:15:50Z",
+      "desk": "SCAN",
+      "cls": "ok",
+      "t": "session 6 — rules still hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem."
+    },
+    {
+      "ts": "2026-08-29T17:16:00Z",
+      "desk": "CHART",
+      "cls": "note",
+      "t": "held Lyra live mcap $67,389 (−43.4% vs entry $119,007) approaching −50% SL · held CopperApe live mcap $135,456 (+5.5% vs entry $128,355)."
+    },
+    {
+      "ts": "2026-08-29T17:16:04Z",
+      "desk": "RISK",
+      "cls": "no",
+      "t": "skip unicorn (prior dump tape) · skip nothing (6h −27%, 24h +419% whip) · skip KURO (39h, 6h −16%) · skip DUCKY (6 min old) · skip dumpers BLUEHOUSE / DANIEL / Ani · skip chases Froggy / SURFER — no clean third slot this print."
+    },
+    {
+      "ts": "2026-08-29T17:16:08Z",
+      "desk": "LORE",
+      "cls": "note",
+      "t": "session 6 tape: Lyra held near SL · CopperApe held green · no new fill — real prints only, no invented tape."
+    },
+    {
+      "ts": "2026-08-29T17:16:10Z",
       "desk": "CHIEF",
       "cls": "note",
       "t": "LIVE trench on — 2 open (Lyra, CopperApe) · 7 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL)."
