@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-29T15:11:40Z",
+  "updatedAt": "2026-08-29T15:46:10Z",
   "mode": "live",
   "rules": "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
   "open": [
@@ -15,6 +15,13 @@
       "ca": "BJbUiYM22WhpL1jtTqkvrQuYhkYymdUNGZjbrE87pump",
       "sizeSol": 0.02,
       "entryMcap": 92108,
+      "liveMcap": null
+    },
+    {
+      "ticker": "CopperApe",
+      "ca": "7VVmK93JJgnKe9uWCqkCWMtWtWnpGJZyJjjUi3RZpump",
+      "sizeSol": 0.02,
+      "entryMcap": 128355,
       "liveMcap": null
     }
   ],
@@ -194,6 +201,48 @@
       "desk": "CHIEF",
       "cls": "note",
       "t": "LIVE trench on — 2 open (Lyra, WPLEB) · 6 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT)."
+    },
+    {
+      "ts": "2026-08-29T15:45:40Z",
+      "desk": "SCAN",
+      "cls": "ok",
+      "t": "session 4 — rules still hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem."
+    },
+    {
+      "ts": "2026-08-29T15:45:50Z",
+      "desk": "CHART",
+      "cls": "ok",
+      "t": "held Lyra live mcap $140,639 (+18.2% vs entry $119,007) · held WPLEB live mcap $141,928 (+54.1% vs entry $92,108) — no SL, no flatten."
+    },
+    {
+      "ts": "2026-08-29T15:46:00Z",
+      "desk": "SCAN",
+      "cls": "ok",
+      "t": "CopperApe pass — SOL · pump.fun · liq $30,248 ≥ $5k · vol $421,745 ≥ $80k · fee 40.2 SOL ≥ 5 · 1h +10.8% not a chase · not Mayhem · 7VVmK93JJgnKe9uWCqkCWMtWtWnpGJZyJjjUi3RZpump"
+    },
+    {
+      "ts": "2026-08-29T15:46:05Z",
+      "desk": "RISK",
+      "cls": "no",
+      "t": "skip dumpers DANIEL / claude · skip chases RETIREMENT / ZEHYPERPUMP / GIRL · skip stale LaPeace · skip DonaldBucks (6 min old, +53% 1h) · skip BLACKSHEEP (−33% 1h) · skip unicorn (prior dump tape)."
+    },
+    {
+      "ts": "2026-08-29T15:46:08Z",
+      "desk": "GMGN",
+      "cls": "ok",
+      "t": "fill CopperApe 0.02 SOL — entry mcap $128,355 · 7VVmK93JJgnKe9uWCqkCWMtWtWnpGJZyJjjUi3RZpump"
+    },
+    {
+      "ts": "2026-08-29T15:46:09Z",
+      "desk": "LORE",
+      "cls": "note",
+      "t": "session 4 tape: Lyra held · WPLEB held green · new CopperApe — real prints only, no invented tape."
+    },
+    {
+      "ts": "2026-08-29T15:46:10Z",
+      "desk": "CHIEF",
+      "cls": "note",
+      "t": "LIVE trench on — 3 open (Lyra, WPLEB, CopperApe) · 6 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT)."
     }
   ]
 }
