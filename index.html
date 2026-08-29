@@ -544,12 +544,13 @@
     // be fetched at all (e.g. page opened via file://). A successful fetch
     // always replaces it — this is the same real book, not a second tape.
     const FALLBACK_FEED = {
-      updatedAt: "2026-08-29T17:16:10Z",
+      updatedAt: "2026-08-29T18:01:20Z",
       mode: "live",
       rules: "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
       open: [
         { ticker: "Lyra", ca: "GW53gYD89bJJDjEsQBQmAKpMJNrdi5sSSRREg4H4pump", sizeSol: 0.02, entryMcap: 119007, liveMcap: null },
-        { ticker: "CopperApe", ca: "7VVmK93JJgnKe9uWCqkCWMtWtWnpGJZyJjjUi3RZpump", sizeSol: 0.02, entryMcap: 128355, liveMcap: null }
+        { ticker: "CopperApe", ca: "7VVmK93JJgnKe9uWCqkCWMtWtWnpGJZyJjjUi3RZpump", sizeSol: 0.02, entryMcap: 128355, liveMcap: null },
+        { ticker: "CHIBI", ca: "62gahMxD7cvSK3GuEyn3SvPwVY1366j8Z12B62mvpump", sizeSol: 0.02, entryMcap: 83113, liveMcap: null }
       ],
       closed: [
         { ticker: "MARTIN", reason: "SL", entryMcap: null, exitMcap: null },
@@ -606,7 +607,14 @@
         { ts: "2026-08-29T17:16:00Z", desk: "CHART", cls: "note", t: "held Lyra live mcap $67,389 (−43.4% vs entry $119,007) approaching −50% SL · held CopperApe live mcap $135,456 (+5.5% vs entry $128,355)." },
         { ts: "2026-08-29T17:16:04Z", desk: "RISK", cls: "no", t: "skip unicorn (prior dump tape) · skip nothing (6h −27%, 24h +419% whip) · skip KURO (39h, 6h −16%) · skip DUCKY (6 min old) · skip dumpers BLUEHOUSE / DANIEL / Ani · skip chases Froggy / SURFER — no clean third slot this print." },
         { ts: "2026-08-29T17:16:08Z", desk: "LORE", cls: "note", t: "session 6 tape: Lyra held near SL · CopperApe held green · no new fill — real prints only, no invented tape." },
-        { ts: "2026-08-29T17:16:10Z", desk: "CHIEF", cls: "note", t: "LIVE trench on — 2 open (Lyra, CopperApe) · 7 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL)." }
+        { ts: "2026-08-29T17:16:10Z", desk: "CHIEF", cls: "note", t: "LIVE trench on — 2 open (Lyra, CopperApe) · 7 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL)." },
+        { ts: "2026-08-29T18:00:50Z", desk: "SCAN", cls: "ok", t: "session 7 — rules still hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem." },
+        { ts: "2026-08-29T18:01:00Z", desk: "CHART", cls: "note", t: "held Lyra live mcap $60,476 (−49.2% vs entry $119,007) still above −50% SL · held CopperApe live mcap $112,588 (−12.3% vs entry $128,355)." },
+        { ts: "2026-08-29T18:01:08Z", desk: "SCAN", cls: "ok", t: "CHIBI pass — SOL · pump.fun · liq $23,283 ≥ $5k · vol $194,385 ≥ $80k · fee 18.6 SOL ≥ 5 · 1h +34.0% not a chase · not Mayhem · 62gahMxD7cvSK3GuEyn3SvPwVY1366j8Z12B62mvpump" },
+        { ts: "2026-08-29T18:01:12Z", desk: "RISK", cls: "no", t: "skip fade DAEJON (6h −30%) · skip fade popke (24h −47%) · skip dumpers inuzard / Froggy / BLUEHOUSE / IQ / Forget · skip chases MARIO / TANAKI / QUALITY / FPP / CHILL · skip Starfamily (12 min old)." },
+        { ts: "2026-08-29T18:01:16Z", desk: "GMGN", cls: "ok", t: "fill CHIBI 0.02 SOL — entry mcap $83,113 · 62gahMxD7cvSK3GuEyn3SvPwVY1366j8Z12B62mvpump" },
+        { ts: "2026-08-29T18:01:18Z", desk: "LORE", cls: "note", t: "session 7 tape: Lyra held at the SL line · CopperApe held · new CHIBI — real prints only, no invented tape." },
+        { ts: "2026-08-29T18:01:20Z", desk: "CHIEF", cls: "note", t: "LIVE trench on — 3 open (Lyra, CopperApe, CHIBI) · 7 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL)." }
       ]
     };
 
