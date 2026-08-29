@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-29T15:46:10Z",
+  "updatedAt": "2026-08-29T16:31:10Z",
   "mode": "live",
   "rules": "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
   "open": [
@@ -8,13 +8,6 @@
       "ca": "GW53gYD89bJJDjEsQBQmAKpMJNrdi5sSSRREg4H4pump",
       "sizeSol": 0.02,
       "entryMcap": 119007,
-      "liveMcap": null
-    },
-    {
-      "ticker": "WPLEB",
-      "ca": "BJbUiYM22WhpL1jtTqkvrQuYhkYymdUNGZjbrE87pump",
-      "sizeSol": 0.02,
-      "entryMcap": 92108,
       "liveMcap": null
     },
     {
@@ -31,7 +24,8 @@
     { "ticker": "TRASHY", "reason": "SL", "entryMcap": null, "exitMcap": null },
     { "ticker": "Callout", "reason": "SL", "entryMcap": 54836, "exitMcap": 7862 },
     { "ticker": "PRO", "reason": "SL", "entryMcap": 101573, "exitMcap": 58673 },
-    { "ticker": "SEND", "reason": "FLAT", "entryMcap": 33435, "exitMcap": 22981 }
+    { "ticker": "SEND", "reason": "FLAT", "entryMcap": 33435, "exitMcap": 22981 },
+    { "ticker": "WPLEB", "reason": "SL", "entryMcap": 92108, "exitMcap": 2154 }
   ],
   "events": [
     {
@@ -243,6 +237,42 @@
       "desk": "CHIEF",
       "cls": "note",
       "t": "LIVE trench on — 3 open (Lyra, WPLEB, CopperApe) · 6 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT)."
+    },
+    {
+      "ts": "2026-08-29T16:30:50Z",
+      "desk": "SCAN",
+      "cls": "ok",
+      "t": "session 5 — rules still hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem."
+    },
+    {
+      "ts": "2026-08-29T16:31:00Z",
+      "desk": "RISK",
+      "cls": "no",
+      "t": "SL hit WPLEB — entry mcap $92,108 · exit mcap $2,154 (−97.7%) · liq $2,463 below $5k floor · BJbUiYM22WhpL1jtTqkvrQuYhkYymdUNGZjbrE87pump"
+    },
+    {
+      "ts": "2026-08-29T16:31:04Z",
+      "desk": "CHART",
+      "cls": "note",
+      "t": "held Lyra live mcap $93,517 (−21.4% vs entry $119,007) · held CopperApe live mcap $114,047 (−11.1% vs entry $128,355) — above hard SL."
+    },
+    {
+      "ts": "2026-08-29T16:31:06Z",
+      "desk": "RISK",
+      "cls": "no",
+      "t": "skip fade STREET (−30% 1h) · skip fade GIRL (−20% 5m) · skip dumpers RENT / DANIEL / Magnetcoin · skip chases Meowdani / unemployed / pinktacio / MRGA · skip stale FRUG — no clean replacement this print."
+    },
+    {
+      "ts": "2026-08-29T16:31:08Z",
+      "desk": "LORE",
+      "cls": "note",
+      "t": "session 5 tape: WPLEB SL · Lyra held · CopperApe held · no new fill — real prints only, no invented tape."
+    },
+    {
+      "ts": "2026-08-29T16:31:10Z",
+      "desk": "CHIEF",
+      "cls": "note",
+      "t": "LIVE trench on — 2 open (Lyra, CopperApe) · 7 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL)."
     }
   ]
 }
