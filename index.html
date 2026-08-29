@@ -544,13 +544,13 @@
     // be fetched at all (e.g. page opened via file://). A successful fetch
     // always replaces it — this is the same real book, not a second tape.
     const FALLBACK_FEED = {
-      updatedAt: "2026-08-29T19:31:20Z",
+      updatedAt: "2026-08-29T20:16:20Z",
       mode: "live",
       rules: "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
       open: [
         { ticker: "CHIBI", ca: "62gahMxD7cvSK3GuEyn3SvPwVY1366j8Z12B62mvpump", sizeSol: 0.02, entryMcap: 83113, liveMcap: null },
-        { ticker: "LOUD", ca: "8aX9Vws5z4idJxiaUVpcdEv86UMXygP6Cuv6DJrUpump", sizeSol: 0.02, entryMcap: 117262, liveMcap: null },
-        { ticker: "Jamu", ca: "ASo3fJFAHkP8THZWRXQihXCtmh3Wv51ZdTmdQqYYpump", sizeSol: 0.02, entryMcap: 28705, liveMcap: null }
+        { ticker: "Jamu", ca: "ASo3fJFAHkP8THZWRXQihXCtmh3Wv51ZdTmdQqYYpump", sizeSol: 0.02, entryMcap: 28705, liveMcap: null },
+        { ticker: "RDOG", ca: "6izfUtKzX4sTCAtpWYxHmJFkEAPy3VhGduJpS4VBpump", sizeSol: 0.02, entryMcap: 58518, liveMcap: null }
       ],
       closed: [
         { ticker: "MARTIN", reason: "SL", entryMcap: null, exitMcap: null },
@@ -561,7 +561,8 @@
         { ticker: "SEND", reason: "FLAT", entryMcap: 33435, exitMcap: 22981 },
         { ticker: "WPLEB", reason: "SL", entryMcap: 92108, exitMcap: 2154 },
         { ticker: "Lyra", reason: "SL", entryMcap: 119007, exitMcap: 57275 },
-        { ticker: "CopperApe", reason: "SL", entryMcap: 128355, exitMcap: 2331 }
+        { ticker: "CopperApe", reason: "SL", entryMcap: 128355, exitMcap: 2331 },
+        { ticker: "LOUD", reason: "SL", entryMcap: 117262, exitMcap: 43109 }
       ],
       events: [
         { ts: "2026-08-24T18:41:00Z", desk: "SCAN", cls: "ok", t: "rules hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem." },
@@ -632,7 +633,15 @@
         { ts: "2026-08-29T19:31:08Z", desk: "CHART", cls: "note", t: "held CHIBI live mcap $82,332 (−0.9% vs entry $83,113) · held LOUD live mcap $76,026 (−35.2% vs entry $117,262, 5m −46%) · held Jamu live mcap $25,289 (−11.9% vs entry $28,705) — all above −50% SL. Book full." },
         { ts: "2026-08-29T19:31:14Z", desk: "RISK", cls: "no", t: "skip dumpers RETIREMENT / MARIO / CYBERLEEK / Gato / STTM / TTT / Alex · skip chases CYBER / PUMPSCROLL / ANSEM / RDOG / Coppersem / 401k · no slot free, no new fill." },
         { ts: "2026-08-29T19:31:18Z", desk: "LORE", cls: "note", t: "session 9 tape: CHIBI flat · LOUD red but above SL · Jamu held · no new fill — real prints only, no invented tape." },
-        { ts: "2026-08-29T19:31:20Z", desk: "CHIEF", cls: "note", t: "LIVE trench on — 3 open (CHIBI, LOUD, Jamu) · 9 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL)." }
+        { ts: "2026-08-29T19:31:20Z", desk: "CHIEF", cls: "note", t: "LIVE trench on — 3 open (CHIBI, LOUD, Jamu) · 9 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL)." },
+        { ts: "2026-08-29T20:16:00Z", desk: "SCAN", cls: "ok", t: "session 10 — rules still hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem." },
+        { ts: "2026-08-29T20:16:06Z", desk: "RISK", cls: "no", t: "SL hit LOUD — entry mcap $117,262 · exit mcap $43,109 (−63.2%) · 8aX9Vws5z4idJxiaUVpcdEv86UMXygP6Cuv6DJrUpump" },
+        { ts: "2026-08-29T20:16:10Z", desk: "CHART", cls: "ok", t: "held CHIBI live mcap $65,657 (−21.0% vs entry $83,113) · held Jamu live mcap $56,355 (+96.3% vs entry $28,705) — no SL." },
+        { ts: "2026-08-29T20:16:12Z", desk: "SCAN", cls: "ok", t: "RDOG pass — SOL · pump.fun · liq $21,454 ≥ $5k · vol $438,386 ≥ $80k · fee 41.6 SOL ≥ 5 · 1h +36.4% chase cooled · not Mayhem · 6izfUtKzX4sTCAtpWYxHmJFkEAPy3VhGduJpS4VBpump" },
+        { ts: "2026-08-29T20:16:14Z", desk: "RISK", cls: "no", t: "skip fade MARIO (−39% 1h) · skip dumpers BLUEHOUSE / CYBER / Meowdani / QUALITY / AGAIN · skip chases CHARLESTONAI / Coppersem / CATSON · skip SummerHouse (6 min old)." },
+        { ts: "2026-08-29T20:16:16Z", desk: "GMGN", cls: "ok", t: "fill RDOG 0.02 SOL — entry mcap $58,518 · 6izfUtKzX4sTCAtpWYxHmJFkEAPy3VhGduJpS4VBpump" },
+        { ts: "2026-08-29T20:16:18Z", desk: "LORE", cls: "note", t: "session 10 tape: LOUD SL · CHIBI held · Jamu held green · new RDOG — real prints only, no invented tape." },
+        { ts: "2026-08-29T20:16:20Z", desk: "CHIEF", cls: "note", t: "LIVE trench on — 3 open (CHIBI, Jamu, RDOG) · 10 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL)." }
       ]
     };
 
