@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-29T18:46:20Z",
+  "updatedAt": "2026-08-29T19:31:20Z",
   "mode": "live",
   "rules": "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
   "open": [
@@ -417,6 +417,36 @@
     },
     {
       "ts": "2026-08-29T18:46:20Z",
+      "desk": "CHIEF",
+      "cls": "note",
+      "t": "LIVE trench on — 3 open (CHIBI, LOUD, Jamu) · 9 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL)."
+    },
+    {
+      "ts": "2026-08-29T19:31:00Z",
+      "desk": "SCAN",
+      "cls": "ok",
+      "t": "session 9 — rules still hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem."
+    },
+    {
+      "ts": "2026-08-29T19:31:08Z",
+      "desk": "CHART",
+      "cls": "note",
+      "t": "held CHIBI live mcap $82,332 (−0.9% vs entry $83,113) · held LOUD live mcap $76,026 (−35.2% vs entry $117,262, 5m −46%) · held Jamu live mcap $25,289 (−11.9% vs entry $28,705) — all above −50% SL. Book full."
+    },
+    {
+      "ts": "2026-08-29T19:31:14Z",
+      "desk": "RISK",
+      "cls": "no",
+      "t": "skip dumpers RETIREMENT / MARIO / CYBERLEEK / Gato / STTM / TTT / Alex · skip chases CYBER / PUMPSCROLL / ANSEM / RDOG / Coppersem / 401k · no slot free, no new fill."
+    },
+    {
+      "ts": "2026-08-29T19:31:18Z",
+      "desk": "LORE",
+      "cls": "note",
+      "t": "session 9 tape: CHIBI flat · LOUD red but above SL · Jamu held · no new fill — real prints only, no invented tape."
+    },
+    {
+      "ts": "2026-08-29T19:31:20Z",
       "desk": "CHIEF",
       "cls": "note",
       "t": "LIVE trench on — 3 open (CHIBI, LOUD, Jamu) · 9 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL)."
