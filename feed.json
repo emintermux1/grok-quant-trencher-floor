@@ -1,15 +1,8 @@
 {
-  "updatedAt": "2026-08-24T18:50:00Z",
+  "updatedAt": "2026-08-29T14:59:30Z",
   "mode": "live",
   "rules": "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
   "open": [
-    {
-      "ticker": "PRO",
-      "ca": "7k4JoPp1CEnm3ypLwnpqoEc9ysw95oeTdxdrTFBQpump",
-      "sizeSol": 0.02,
-      "entryMcap": 101573,
-      "liveMcap": null
-    },
     {
       "ticker": "SEND",
       "ca": "Tx67Fs4TSEnYiPzZyThExpwLabNbDy74nof9JUdpump",
@@ -18,17 +11,26 @@
       "liveMcap": null
     },
     {
-      "ticker": "Callout",
-      "ca": "BZV1duQoQt3znWkakzzSCLUmLbE7RFtj9FRPPxx4pump",
+      "ticker": "Lyra",
+      "ca": "GW53gYD89bJJDjEsQBQmAKpMJNrdi5sSSRREg4H4pump",
       "sizeSol": 0.02,
-      "entryMcap": 54836,
+      "entryMcap": 119007,
+      "liveMcap": null
+    },
+    {
+      "ticker": "WPLEB",
+      "ca": "BJbUiYM22WhpL1jtTqkvrQuYhkYymdUNGZjbrE87pump",
+      "sizeSol": 0.02,
+      "entryMcap": 92108,
       "liveMcap": null
     }
   ],
   "closed": [
     { "ticker": "MARTIN", "reason": "SL", "entryMcap": null, "exitMcap": null },
     { "ticker": "Zoe", "reason": "SL", "entryMcap": null, "exitMcap": null },
-    { "ticker": "TRASHY", "reason": "SL", "entryMcap": null, "exitMcap": null }
+    { "ticker": "TRASHY", "reason": "SL", "entryMcap": null, "exitMcap": null },
+    { "ticker": "Callout", "reason": "SL", "entryMcap": 54836, "exitMcap": 7862 },
+    { "ticker": "PRO", "reason": "SL", "entryMcap": 101573, "exitMcap": 58673 }
   ],
   "events": [
     {
@@ -96,6 +98,72 @@
       "desk": "CHIEF",
       "cls": "note",
       "t": "LIVE trench on — 3 open (PRO, SEND, Callout) · 3 closed (MARTIN SL, Zoe SL, TRASHY SL)."
+    },
+    {
+      "ts": "2026-08-29T14:56:00Z",
+      "desk": "SCAN",
+      "cls": "ok",
+      "t": "session 2 — rules still hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem. Book was stale since 2026-08-24."
+    },
+    {
+      "ts": "2026-08-29T14:56:20Z",
+      "desk": "RISK",
+      "cls": "no",
+      "t": "SL hit Callout — entry mcap $54,836 · exit mcap $7,862 (−85.7%) · BZV1duQoQt3znWkakzzSCLUmLbE7RFtj9FRPPxx4pump"
+    },
+    {
+      "ts": "2026-08-29T14:56:40Z",
+      "desk": "RISK",
+      "cls": "no",
+      "t": "SL hit PRO — entry mcap $101,573 · exit mcap $58,673 (−42.2%) · 24h vol $24,353 / fee 2.3 SOL below entry floor after 5-day hold · 7k4JoPp1CEnm3ypLwnpqoEc9ysw95oeTdxdrTFBQpump"
+    },
+    {
+      "ts": "2026-08-29T14:57:00Z",
+      "desk": "SCAN",
+      "cls": "ok",
+      "t": "Lyra pass — SOL · pump.fun · liq $31,712 ≥ $5k · vol $2,932,551 ≥ $80k · fee 278.7 SOL ≥ 5 · not Mayhem · GW53gYD89bJJDjEsQBQmAKpMJNrdi5sSSRREg4H4pump"
+    },
+    {
+      "ts": "2026-08-29T14:57:20Z",
+      "desk": "SCAN",
+      "cls": "ok",
+      "t": "WPLEB pass — SOL · pump.fun · liq $25,384 ≥ $5k · vol $422,141 ≥ $80k · fee 40.1 SOL ≥ 5 · not Mayhem · BJbUiYM22WhpL1jtTqkvrQuYhkYymdUNGZjbrE87pump"
+    },
+    {
+      "ts": "2026-08-29T14:57:40Z",
+      "desk": "RISK",
+      "cls": "no",
+      "t": "skip chase ApeTrump (1h +68.5%, mcap $233k near range top) · skip fade Loose (6h −19%) · skip dumpers inuzard / unicorn / Ducks — real tape, not Mayhem."
+    },
+    {
+      "ts": "2026-08-29T14:58:00Z",
+      "desk": "GMGN",
+      "cls": "ok",
+      "t": "fill Lyra 0.02 SOL — entry mcap $119,007 · GW53gYD89bJJDjEsQBQmAKpMJNrdi5sSSRREg4H4pump"
+    },
+    {
+      "ts": "2026-08-29T14:58:20Z",
+      "desk": "GMGN",
+      "cls": "ok",
+      "t": "fill WPLEB 0.02 SOL — entry mcap $92,108 · BJbUiYM22WhpL1jtTqkvrQuYhkYymdUNGZjbrE87pump"
+    },
+    {
+      "ts": "2026-08-29T14:58:40Z",
+      "desk": "CHART",
+      "cls": "note",
+      "t": "tracking entry vs live mcap for SEND / Lyra / WPLEB — live number refreshes from pump.fun."
+    },
+    {
+      "ts": "2026-08-29T14:59:00Z",
+      "desk": "LORE",
+      "cls": "note",
+      "t": "session 2 tape: SEND held · Callout SL · PRO SL · new Lyra · new WPLEB — real prints only, no invented tape."
+    },
+    {
+      "ts": "2026-08-29T14:59:20Z",
+      "desk": "CHIEF",
+      "cls": "note",
+      "t": "LIVE trench on — 3 open (SEND, Lyra, WPLEB) · 5 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL)."
     }
   ]
 }
