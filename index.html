@@ -544,13 +544,13 @@
     // be fetched at all (e.g. page opened via file://). A successful fetch
     // always replaces it — this is the same real book, not a second tape.
     const FALLBACK_FEED = {
-      updatedAt: "2026-08-30T12:46:20Z",
+      updatedAt: "2026-08-30T13:31:22Z",
       mode: "live",
       rules: "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
       open: [
-        { ticker: "CHIBI", ca: "62gahMxD7cvSK3GuEyn3SvPwVY1366j8Z12B62mvpump", sizeSol: 0.02, entryMcap: 83113, liveMcap: null },
         { ticker: "Jamu", ca: "ASo3fJFAHkP8THZWRXQihXCtmh3Wv51ZdTmdQqYYpump", sizeSol: 0.02, entryMcap: 28705, liveMcap: null },
         { ticker: "RDOG", ca: "6izfUtKzX4sTCAtpWYxHmJFkEAPy3VhGduJpS4VBpump", sizeSol: 0.02, entryMcap: 58518, liveMcap: null },
+        { ticker: "catonfone", ca: "5FkdrLryVefo7HDKd9EATV3q1u6cQDJhBmQubYzupump", sizeSol: 0.02, entryMcap: 241818, liveMcap: null },
       ],
       closed: [
         { ticker: "MARTIN", reason: "SL", entryMcap: null, exitMcap: null },
@@ -563,6 +563,7 @@
         { ticker: "Lyra", reason: "SL", entryMcap: 119007, exitMcap: 57275 },
         { ticker: "CopperApe", reason: "SL", entryMcap: 128355, exitMcap: 2331 },
         { ticker: "LOUD", reason: "SL", entryMcap: 117262, exitMcap: 43109 },
+        { ticker: "CHIBI", reason: "SL", entryMcap: 83113, exitMcap: 2588 },
       ],
       events: [
         { ts: "2026-08-24T18:41:00Z", desk: "SCAN", cls: "ok", t: "rules hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem." },
@@ -751,7 +752,15 @@
         { ts: "2026-08-30T12:46:08Z", desk: "CHART", cls: "ok", t: "held CHIBI live mcap $121,759 (+46.5% vs entry $83,113) · held Jamu live mcap $33,591 (+17.0% vs entry $28,705) · held RDOG live mcap $61,586 (+5.2% vs entry $58,518) — all green, all above −50% SL. Book full." },
         { ts: "2026-08-30T12:46:12Z", desk: "RISK", cls: "no", t: "skip dumpers Greyson / popdog · skip chase MEMECOIN · skip too-new BONGOCAT / SOUS · skip megas CAC / FAFO / BEAST / LEGO · COT / catonfone would pass, no slot free, no new fill." },
         { ts: "2026-08-30T12:46:16Z", desk: "LORE", cls: "note", t: "session 32 tape: book still all green · CHIBI leader · Jamu green · RDOG still green after the flip · no new fill — real prints only, no invented tape." },
-        { ts: "2026-08-30T12:46:20Z", desk: "CHIEF", cls: "note", t: "LIVE trench on — 3 open (CHIBI, Jamu, RDOG) · 10 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL)." }
+        { ts: "2026-08-30T12:46:20Z", desk: "CHIEF", cls: "note", t: "LIVE trench on — 3 open (CHIBI, Jamu, RDOG) · 10 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL)." },
+        { ts: "2026-08-30T13:30:50Z", desk: "SCAN", cls: "ok", t: "session 33 — rules still hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem." },
+        { ts: "2026-08-30T13:30:56Z", desk: "RISK", cls: "no", t: "SL hit CHIBI — entry mcap $83,113 · exit mcap $2,588 (−96.9%) · liq $2,750 below $5k floor · 62gahMxD7cvSK3GuEyn3SvPwVY1366j8Z12B62mvpump" },
+        { ts: "2026-08-30T13:31:02Z", desk: "CHART", cls: "ok", t: "held Jamu live mcap $30,671 (+6.8% vs entry $28,705) · held RDOG live mcap $61,887 (+5.8% vs entry $58,518) — both above −50% SL." },
+        { ts: "2026-08-30T13:31:06Z", desk: "SCAN", cls: "ok", t: "catonfone pass — SOL · pump.fun · liq $43,259 ≥ $5k · vol $1,143,247 ≥ $80k · fee 107.5 SOL ≥ 5 · 1h −3.8% not a chase · not Mayhem · 5FkdrLryVefo7HDKd9EATV3q1u6cQDJhBmQubYzupump" },
+        { ts: "2026-08-30T13:31:10Z", desk: "GMGN", cls: "ok", t: "fill catonfone 0.02 SOL — entry mcap $241,818 · 5FkdrLryVefo7HDKd9EATV3q1u6cQDJhBmQubYzupump" },
+        { ts: "2026-08-30T13:31:14Z", desk: "RISK", cls: "no", t: "skip dumpers popdog / Baby · skip thin-vol Primates / Meow · skip GIRL (24h −49.6% at the dumper line) · skip Dawn (1h fade near −40) · skip popape (0.37h old, 5m −25%)." },
+        { ts: "2026-08-30T13:31:18Z", desk: "LORE", cls: "note", t: "session 33 tape: CHIBI rugged SL · Jamu held green · RDOG held green · new catonfone — real prints only, no invented tape." },
+        { ts: "2026-08-30T13:31:22Z", desk: "CHIEF", cls: "note", t: "LIVE trench on — 3 open (Jamu, RDOG, catonfone) · 11 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL)." }
       ]
     };
 
