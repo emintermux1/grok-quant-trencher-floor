@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-30T22:32:00Z",
+  "updatedAt": "2026-08-30T23:16:00Z",
   "mode": "live",
   "rules": "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
   "open": [
@@ -1603,6 +1603,36 @@
     },
     {
       "ts": "2026-08-30T22:32:00Z",
+      "desk": "CHIEF",
+      "cls": "note",
+      "t": "LIVE trench on — 2 open (Jamu, RDOG) · 14 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL, early SL)."
+    },
+    {
+      "ts": "2026-08-30T23:15:40Z",
+      "desk": "SCAN",
+      "cls": "ok",
+      "t": "session 46 — rules still hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem."
+    },
+    {
+      "ts": "2026-08-30T23:15:48Z",
+      "desk": "CHART",
+      "cls": "ok",
+      "t": "held Jamu live mcap $111,762 (+289.3% vs entry $28,705) · held RDOG live mcap $50,430 (−13.8% vs entry $58,518) — both above −50% SL. RDOG 24h vol $42,730 / fee 4.1 SOL under floor and materially red but age 47.8h so no flatten yet."
+    },
+    {
+      "ts": "2026-08-30T23:15:52Z",
+      "desk": "RISK",
+      "cls": "no",
+      "t": "skip dumpers SFM / sharav · skip chases APEINDEX / chair · skip thin-vol BABYFONE · skip RUGBURN (liq 0) · no clean passer this print, no new fill."
+    },
+    {
+      "ts": "2026-08-30T23:15:56Z",
+      "desk": "LORE",
+      "cls": "note",
+      "t": "session 46 tape: Jamu still leader · RDOG back to material red on the flatten line · free slot stays empty — real prints only, no invented tape."
+    },
+    {
+      "ts": "2026-08-30T23:16:00Z",
       "desk": "CHIEF",
       "cls": "note",
       "t": "LIVE trench on — 2 open (Jamu, RDOG) · 14 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL, early SL)."
