@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-30T19:31:12Z",
+  "updatedAt": "2026-08-30T20:16:44Z",
   "mode": "live",
   "rules": "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
   "open": [
@@ -16,13 +16,6 @@
       "sizeSol": 0.02,
       "entryMcap": 58518,
       "liveMcap": null
-    },
-    {
-      "ticker": "RAMCOIN",
-      "ca": "Femuy4XPWMumb1L8ErHiWuXGweXCyqCyfrZxxxxqpump",
-      "sizeSol": 0.02,
-      "entryMcap": 108758,
-      "liveMcap": null
     }
   ],
   "closed": [
@@ -37,7 +30,8 @@
     { "ticker": "CopperApe", "reason": "SL", "entryMcap": 128355, "exitMcap": 2331 },
     { "ticker": "LOUD", "reason": "SL", "entryMcap": 117262, "exitMcap": 43109 },
     { "ticker": "CHIBI", "reason": "SL", "entryMcap": 83113, "exitMcap": 2588 },
-    { "ticker": "catonfone", "reason": "SL", "entryMcap": 241818, "exitMcap": 3063 }
+    { "ticker": "catonfone", "reason": "SL", "entryMcap": 241818, "exitMcap": 3063 },
+    { "ticker": "RAMCOIN", "reason": "SL", "entryMcap": 108758, "exitMcap": 2322 }
   ],
   "events": [
     {
@@ -1467,6 +1461,42 @@
       "desk": "CHIEF",
       "cls": "note",
       "t": "LIVE trench on — 3 open (Jamu, RDOG, RAMCOIN) · 12 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL)."
+    },
+    {
+      "ts": "2026-08-30T20:16:20Z",
+      "desk": "SCAN",
+      "cls": "ok",
+      "t": "session 42 — rules still hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem."
+    },
+    {
+      "ts": "2026-08-30T20:16:26Z",
+      "desk": "RISK",
+      "cls": "no",
+      "t": "SL hit RAMCOIN — entry mcap $108,758 · exit mcap $2,322 (−97.9%) · liq $2,697 below $5k floor · Femuy4XPWMumb1L8ErHiWuXGweXCyqCyfrZxxxxqpump"
+    },
+    {
+      "ts": "2026-08-30T20:16:32Z",
+      "desk": "CHART",
+      "cls": "ok",
+      "t": "held Jamu live mcap $135,488 (+372.0% vs entry $28,705) · held RDOG live mcap $51,363 (−12.2% vs entry $58,518) — both above −50% SL. RDOG 24h vol $72,731 under $80k floor but age 44.8h / fee 6.9 SOL so no flatten yet."
+    },
+    {
+      "ts": "2026-08-30T20:16:36Z",
+      "desk": "RISK",
+      "cls": "no",
+      "t": "skip dumpers SFM / apefone · no clean replacement this print, no new fill."
+    },
+    {
+      "ts": "2026-08-30T20:16:40Z",
+      "desk": "LORE",
+      "cls": "note",
+      "t": "session 42 tape: RAMCOIN rugged SL · Jamu ripped further · RDOG held red with thinning vol · no new fill — real prints only, no invented tape."
+    },
+    {
+      "ts": "2026-08-30T20:16:44Z",
+      "desk": "CHIEF",
+      "cls": "note",
+      "t": "LIVE trench on — 2 open (Jamu, RDOG) · 13 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL)."
     }
   ]
 }
