@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-30T01:46:50Z",
+  "updatedAt": "2026-08-30T02:21:10Z",
   "mode": "live",
   "rules": "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
   "open": [
@@ -706,6 +706,36 @@
     },
     {
       "ts": "2026-08-30T01:46:50Z",
+      "desk": "CHIEF",
+      "cls": "note",
+      "t": "LIVE trench on — 3 open (CHIBI, Jamu, RDOG) · 10 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL)."
+    },
+    {
+      "ts": "2026-08-30T02:20:17Z",
+      "desk": "SCAN",
+      "cls": "ok",
+      "t": "session 18 — rules still hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem."
+    },
+    {
+      "ts": "2026-08-30T02:20:40Z",
+      "desk": "CHART",
+      "cls": "note",
+      "t": "held CHIBI pump.fun mcap $110,669 (+33.2% vs entry $83,113) · held Jamu pump.fun mcap $48,060 (+67.4% vs entry $28,705) · held RDOG pump.fun mcap $42,043 (−28.2% vs entry $58,518) — DexScreener timed out this print. All above −50% SL on pump prints. Book full."
+    },
+    {
+      "ts": "2026-08-30T02:20:50Z",
+      "desk": "RISK",
+      "cls": "no",
+      "t": "skip too-new FOSE / Trencher / Letterbomb · skip megas RST / WOFI / fone · DexScreener scan timed out — trench names SOLANASLOTH / Niko / RETIREMENT / TOOL / Tako / catana unverified · no slot free, no new fill."
+    },
+    {
+      "ts": "2026-08-30T02:21:00Z",
+      "desk": "LORE",
+      "cls": "note",
+      "t": "session 18 tape: CHIBI green on pump print · Jamu still winner · RDOG red but above SL · Dex flake again · no new fill — real prints only, no invented tape."
+    },
+    {
+      "ts": "2026-08-30T02:21:10Z",
       "desk": "CHIEF",
       "cls": "note",
       "t": "LIVE trench on — 3 open (CHIBI, Jamu, RDOG) · 10 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL)."
