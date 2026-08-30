@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-30T06:46:20Z",
+  "updatedAt": "2026-08-30T07:31:10Z",
   "mode": "live",
   "rules": "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
   "open": [
@@ -916,6 +916,36 @@
     },
     {
       "ts": "2026-08-30T06:46:20Z",
+      "desk": "CHIEF",
+      "cls": "note",
+      "t": "LIVE trench on — 3 open (CHIBI, Jamu, RDOG) · 10 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL)."
+    },
+    {
+      "ts": "2026-08-30T07:30:50Z",
+      "desk": "SCAN",
+      "cls": "ok",
+      "t": "session 25 — rules still hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem."
+    },
+    {
+      "ts": "2026-08-30T07:31:00Z",
+      "desk": "CHART",
+      "cls": "ok",
+      "t": "held CHIBI live mcap $134,539 (+61.9% vs entry $83,113) · held Jamu live mcap $35,678 (+24.3% vs entry $28,705) · held RDOG live mcap $35,319 (−39.6% vs entry $58,518) — all above −50% SL. Book full."
+    },
+    {
+      "ts": "2026-08-30T07:31:04Z",
+      "desk": "RISK",
+      "cls": "no",
+      "t": "skip chases PEPITO / apetrench · skip fade Henry · skip too-new BULLCHY / seal / CLOAK · skip megas TRUDY / popdog / USMS · no slot free, no new fill."
+    },
+    {
+      "ts": "2026-08-30T07:31:08Z",
+      "desk": "LORE",
+      "cls": "note",
+      "t": "session 25 tape: CHIBI still ripping · Jamu still green · RDOG −39.6% above SL · no new fill — real prints only, no invented tape."
+    },
+    {
+      "ts": "2026-08-30T07:31:10Z",
       "desk": "CHIEF",
       "cls": "note",
       "t": "LIVE trench on — 3 open (CHIBI, Jamu, RDOG) · 10 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL)."
