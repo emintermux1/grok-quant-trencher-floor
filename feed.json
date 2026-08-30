@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-30T20:16:44Z",
+  "updatedAt": "2026-08-30T21:03:08Z",
   "mode": "live",
   "rules": "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
   "open": [
@@ -15,6 +15,13 @@
       "ca": "6izfUtKzX4sTCAtpWYxHmJFkEAPy3VhGduJpS4VBpump",
       "sizeSol": 0.02,
       "entryMcap": 58518,
+      "liveMcap": null
+    },
+    {
+      "ticker": "early",
+      "ca": "CaAYBGo6efKkrV1A9cL2Jd7VpfrNzN5ri1khLgdypump",
+      "sizeSol": 0.02,
+      "entryMcap": 35688,
       "liveMcap": null
     }
   ],
@@ -1497,6 +1504,48 @@
       "desk": "CHIEF",
       "cls": "note",
       "t": "LIVE trench on — 2 open (Jamu, RDOG) · 13 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL)."
+    },
+    {
+      "ts": "2026-08-30T21:02:40Z",
+      "desk": "SCAN",
+      "cls": "ok",
+      "t": "session 43 — rules still hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem."
+    },
+    {
+      "ts": "2026-08-30T21:02:48Z",
+      "desk": "CHART",
+      "cls": "ok",
+      "t": "held Jamu live mcap $120,242 (+318.9% vs entry $28,705) · held RDOG live mcap $50,158 (−14.3% vs entry $58,518) — both above −50% SL. RDOG 24h vol $56,290 under $80k floor but age 45.6h / fee 5.4 SOL so no flatten yet."
+    },
+    {
+      "ts": "2026-08-30T21:02:52Z",
+      "desk": "SCAN",
+      "cls": "ok",
+      "t": "early pass — SOL · pump.fun · liq $13,858 ≥ $5k · vol $218,049 ≥ $80k · fee 21.0 SOL ≥ 5 · 1h −22.9% not a chase · not Mayhem · CaAYBGo6efKkrV1A9cL2Jd7VpfrNzN5ri1khLgdypump"
+    },
+    {
+      "ts": "2026-08-30T21:02:56Z",
+      "desk": "GMGN",
+      "cls": "ok",
+      "t": "fill early 0.02 SOL — entry mcap $35,688 · CaAYBGo6efKkrV1A9cL2Jd7VpfrNzN5ri1khLgdypump"
+    },
+    {
+      "ts": "2026-08-30T21:03:00Z",
+      "desk": "RISK",
+      "cls": "no",
+      "t": "skip chases POON · skip WRITER / STACYCOIN (liq 0)."
+    },
+    {
+      "ts": "2026-08-30T21:03:04Z",
+      "desk": "LORE",
+      "cls": "note",
+      "t": "session 43 tape: Jamu still leader · RDOG held red with thinning vol · new early into the free slot — real prints only, no invented tape."
+    },
+    {
+      "ts": "2026-08-30T21:03:08Z",
+      "desk": "CHIEF",
+      "cls": "note",
+      "t": "LIVE trench on — 3 open (Jamu, RDOG, early) · 13 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL)."
     }
   ]
 }
