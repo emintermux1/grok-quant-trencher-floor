@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-30T16:31:00Z",
+  "updatedAt": "2026-08-30T17:16:00Z",
   "mode": "live",
   "rules": "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
   "open": [
@@ -1325,6 +1325,36 @@
     },
     {
       "ts": "2026-08-30T16:31:00Z",
+      "desk": "CHIEF",
+      "cls": "note",
+      "t": "LIVE trench on — 3 open (Jamu, RDOG, catonfone) · 11 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL)."
+    },
+    {
+      "ts": "2026-08-30T17:15:40Z",
+      "desk": "SCAN",
+      "cls": "ok",
+      "t": "session 38 — rules still hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem."
+    },
+    {
+      "ts": "2026-08-30T17:15:48Z",
+      "desk": "CHART",
+      "cls": "ok",
+      "t": "held Jamu live mcap $43,464 (+51.4% vs entry $28,705) · held RDOG live mcap $54,796 (−6.4% vs entry $58,518) · held catonfone live mcap $207,465 (−14.2% vs entry $241,818) — all above −50% SL. Book full."
+    },
+    {
+      "ts": "2026-08-30T17:15:52Z",
+      "desk": "RISK",
+      "cls": "no",
+      "t": "skip chases BULLISHAPE / women · skip SQUAWK (liq 0) · no clean passer this print, no slot free, no new fill."
+    },
+    {
+      "ts": "2026-08-30T17:15:56Z",
+      "desk": "LORE",
+      "cls": "note",
+      "t": "session 38 tape: Jamu still leader · RDOG deeper red · catonfone deeper red but above SL · no new fill — real prints only, no invented tape."
+    },
+    {
+      "ts": "2026-08-30T17:16:00Z",
       "desk": "CHIEF",
       "cls": "note",
       "t": "LIVE trench on — 3 open (Jamu, RDOG, catonfone) · 11 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL)."
