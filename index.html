@@ -544,13 +544,13 @@
     // be fetched at all (e.g. page opened via file://). A successful fetch
     // always replaces it — this is the same real book, not a second tape.
     const FALLBACK_FEED = {
-      updatedAt: "2026-08-31T14:16:00Z",
+      updatedAt: "2026-08-31T15:01:00Z",
       mode: "live",
       rules: "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
       open: [
         { ticker: "Jamu", ca: "ASo3fJFAHkP8THZWRXQihXCtmh3Wv51ZdTmdQqYYpump", sizeSol: 0.02, entryMcap: 28705, liveMcap: null },
         { ticker: "APEWIF", ca: "DLvpmv8R4oTbC1DixU5yHLbBcmnvfTckGF3XFzLTpump", sizeSol: 0.02, entryMcap: 73217, liveMcap: null },
-        { ticker: "Rabbit", ca: "Au3suMLmJZ6BkR3cNKBBpSr2P92Pqhg7nRg9B1rKpump", sizeSol: 0.02, entryMcap: 140525, liveMcap: null },
+        { ticker: "Wukong", ca: "GrT9hTTAfBWGRWDxHoFNvLmLhdMN33WdWar6WWwEpump", sizeSol: 0.02, entryMcap: 40305, liveMcap: null },
       ],
       closed: [
         { ticker: "MARTIN", reason: "SL", entryMcap: null, exitMcap: null },
@@ -571,6 +571,7 @@
         { ticker: "TED", reason: "SL", entryMcap: 50574, exitMcap: 6601 },
         { ticker: "SFM", reason: "SL", entryMcap: 203602, exitMcap: 83204 },
         { ticker: "DUVE", reason: "SL", entryMcap: 213744, exitMcap: 80792 },
+        { ticker: "Rabbit", reason: "SL", entryMcap: 140525, exitMcap: 65877 },
       ],
       events: [
         { ts: "2026-08-24T18:41:00Z", desk: "SCAN", cls: "ok", t: "rules hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem." },
@@ -952,7 +953,15 @@
         { ts: "2026-08-31T14:15:48Z", desk: "CHART", cls: "ok", t: "held Jamu live mcap $130,145 (+353.4% vs entry $28,705) · held APEWIF live mcap $78,005 (+6.5% vs entry $73,217) · held Rabbit live mcap $95,904 (−31.8% vs entry $140,525) — all above −50% SL. Book full." },
         { ts: "2026-08-31T14:15:52Z", desk: "RISK", cls: "no", t: "skip chases DATA / DISNEY / PVP · skip megas RST / FTFS / ARROW / HeeHaw / chimp / LQX / USWS · skip pixeldog (1h dump) · skip Anthropic (thin vol) · skip WARS (liq 0) · no clean passer this print, no slot free, no new fill." },
         { ts: "2026-08-31T14:15:56Z", desk: "LORE", cls: "note", t: "session 66 tape: Jamu still leader · APEWIF still green · Rabbit bounced off the SL line · no new fill — real prints only, no invented tape." },
-        { ts: "2026-08-31T14:16:00Z", desk: "CHIEF", cls: "note", t: "LIVE trench on — 3 open (Jamu, APEWIF, Rabbit) · 18 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL, early SL, RDOG FLAT, TED SL, SFM SL, DUVE SL)." }
+        { ts: "2026-08-31T14:16:00Z", desk: "CHIEF", cls: "note", t: "LIVE trench on — 3 open (Jamu, APEWIF, Rabbit) · 18 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL, early SL, RDOG FLAT, TED SL, SFM SL, DUVE SL)." },
+        { ts: "2026-08-31T15:00:40Z", desk: "SCAN", cls: "ok", t: "session 67 — rules still hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem." },
+        { ts: "2026-08-31T15:00:46Z", desk: "RISK", cls: "no", t: "SL hit Rabbit — entry mcap $140,525 · exit mcap $65,877 (−53.1%) · Au3suMLmJZ6BkR3cNKBBpSr2P92Pqhg7nRg9B1rKpump" },
+        { ts: "2026-08-31T15:00:52Z", desk: "CHART", cls: "ok", t: "held Jamu live mcap $109,033 (+279.8% vs entry $28,705) · held APEWIF live mcap $88,333 (+20.6% vs entry $73,217) — both above −50% SL." },
+        { ts: "2026-08-31T15:00:56Z", desk: "SCAN", cls: "ok", t: "Wukong pass — SOL · pump.fun · liq $15,147 ≥ $5k · vol $601,076 ≥ $80k · fee 58.1 SOL ≥ 5 · 1h −12.2% not a chase · not Mayhem · GrT9hTTAfBWGRWDxHoFNvLmLhdMN33WdWar6WWwEpump" },
+        { ts: "2026-08-31T15:01:00Z", desk: "GMGN", cls: "ok", t: "fill Wukong 0.02 SOL — entry mcap $40,305 · GrT9hTTAfBWGRWDxHoFNvLmLhdMN33WdWar6WWwEpump" },
+        { ts: "2026-08-31T15:01:04Z", desk: "RISK", cls: "no", t: "skip chases ARROW / DATA / Happy / 10KK / OnlyApes · skip megas Donkey / APEUS / GTA 6 Coin / PONS / RST / USWR / ASOS · skip COT (24h dump) · skip memecoins (liq 0)." },
+        { ts: "2026-08-31T15:01:08Z", desk: "LORE", cls: "note", t: "session 67 tape: Rabbit SL · Jamu still leader · APEWIF still green · new Wukong — real prints only, no invented tape." },
+        { ts: "2026-08-31T15:01:12Z", desk: "CHIEF", cls: "note", t: "LIVE trench on — 3 open (Jamu, APEWIF, Wukong) · 19 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL, early SL, RDOG FLAT, TED SL, SFM SL, DUVE SL, Rabbit SL)." }
       ],
     };
 
