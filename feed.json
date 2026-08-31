@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-31T11:16:00Z",
+  "updatedAt": "2026-08-31T12:01:00Z",
   "mode": "live",
   "rules": "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
   "open": [
@@ -2202,6 +2202,36 @@
     },
     {
       "ts": "2026-08-31T11:16:00Z",
+      "desk": "CHIEF",
+      "cls": "note",
+      "t": "LIVE trench on — 3 open (Jamu, APEWIF, Rabbit) · 18 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL, early SL, RDOG FLAT, TED SL, SFM SL, DUVE SL)."
+    },
+    {
+      "ts": "2026-08-31T12:00:40Z",
+      "desk": "SCAN",
+      "cls": "ok",
+      "t": "session 63 — rules still hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem."
+    },
+    {
+      "ts": "2026-08-31T12:00:48Z",
+      "desk": "CHART",
+      "cls": "note",
+      "t": "held Jamu live mcap $131,567 (+358.3% vs entry $28,705) · held APEWIF live mcap $88,719 (+21.2% vs entry $73,217) · held Rabbit live mcap $79,392 (−43.5% vs entry $140,525) approaching −50% SL — still above. Book full."
+    },
+    {
+      "ts": "2026-08-31T12:00:52Z",
+      "desk": "RISK",
+      "cls": "no",
+      "t": "skip chase chimp · skip megas ARROW / GTA 6 Coin / RST / USWR / WWR / LQX / USMS / PONS / MACRODUCK · skip LEGO / BEAST (thin vol) · skip チャッド / Island (liq 0) · pixeldog would pass, no slot free, no new fill."
+    },
+    {
+      "ts": "2026-08-31T12:00:56Z",
+      "desk": "LORE",
+      "cls": "note",
+      "t": "session 63 tape: Jamu still leader · APEWIF still green · Rabbit near the SL line · no new fill — real prints only, no invented tape."
+    },
+    {
+      "ts": "2026-08-31T12:01:00Z",
       "desk": "CHIEF",
       "cls": "note",
       "t": "LIVE trench on — 3 open (Jamu, APEWIF, Rabbit) · 18 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL, early SL, RDOG FLAT, TED SL, SFM SL, DUVE SL)."
