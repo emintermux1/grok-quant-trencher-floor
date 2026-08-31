@@ -544,12 +544,12 @@
     // be fetched at all (e.g. page opened via file://). A successful fetch
     // always replaces it — this is the same real book, not a second tape.
     const FALLBACK_FEED = {
-      updatedAt: "2026-08-31T00:46:04Z",
+      updatedAt: "2026-08-31T01:31:52Z",
       mode: "live",
       rules: "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
       open: [
         { ticker: "Jamu", ca: "ASo3fJFAHkP8THZWRXQihXCtmh3Wv51ZdTmdQqYYpump", sizeSol: 0.02, entryMcap: 28705, liveMcap: null },
-        { ticker: "SFM", ca: "aTUfRuPj3tp7FEpzAXLjs4VnQgAFbExD5JHGTyvpump", sizeSol: 0.02, entryMcap: 203602, liveMcap: null },
+        { ticker: "APEWIF", ca: "DLvpmv8R4oTbC1DixU5yHLbBcmnvfTckGF3XFzLTpump", sizeSol: 0.02, entryMcap: 73217, liveMcap: null },
       ],
       closed: [
         { ticker: "MARTIN", reason: "SL", entryMcap: null, exitMcap: null },
@@ -568,6 +568,7 @@
         { ticker: "early", reason: "SL", entryMcap: 35688, exitMcap: 3425 },
         { ticker: "RDOG", reason: "FLAT", entryMcap: 58518, exitMcap: 44606 },
         { ticker: "TED", reason: "SL", entryMcap: 50574, exitMcap: 6601 },
+        { ticker: "SFM", reason: "SL", entryMcap: 203602, exitMcap: 83204 },
       ],
       events: [
         { ts: "2026-08-24T18:41:00Z", desk: "SCAN", cls: "ok", t: "rules hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem." },
@@ -851,7 +852,15 @@
         { ts: "2026-08-31T00:45:52Z", desk: "CHART", cls: "ok", t: "held Jamu live mcap $88,701 (+209.0% vs entry $28,705) · held SFM live mcap $109,651 (−46.1% vs entry $203,602) approaching −50% SL." },
         { ts: "2026-08-31T00:45:56Z", desk: "RISK", cls: "no", t: "skip dumpers chair / TRENCHCAT / BABYFONE / CHUD · skip 1GIRL / Eggface (liq 0) · skip thin-vol GROKPOCKET · no clean replacement this print, no new fill." },
         { ts: "2026-08-31T00:46:00Z", desk: "LORE", cls: "note", t: "session 48 tape: TED rugged SL · Jamu still leader · SFM near the SL line · no new fill — real prints only, no invented tape." },
-        { ts: "2026-08-31T00:46:04Z", desk: "CHIEF", cls: "note", t: "LIVE trench on — 2 open (Jamu, SFM) · 16 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL, early SL, RDOG FLAT, TED SL)." }
+        { ts: "2026-08-31T00:46:04Z", desk: "CHIEF", cls: "note", t: "LIVE trench on — 2 open (Jamu, SFM) · 16 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL, early SL, RDOG FLAT, TED SL)." },
+        { ts: "2026-08-31T01:31:20Z", desk: "SCAN", cls: "ok", t: "session 49 — rules still hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem." },
+        { ts: "2026-08-31T01:31:26Z", desk: "RISK", cls: "no", t: "SL hit SFM — entry mcap $203,602 · exit mcap $83,204 (−59.1%) · aTUfRuPj3tp7FEpzAXLjs4VnQgAFbExD5JHGTyvpump" },
+        { ts: "2026-08-31T01:31:32Z", desk: "CHART", cls: "ok", t: "held Jamu live mcap $69,582 (+142.4% vs entry $28,705) — above −50% SL." },
+        { ts: "2026-08-31T01:31:36Z", desk: "SCAN", cls: "ok", t: "APEWIF pass — SOL · pump.fun · liq $21,386 ≥ $5k · vol $120,716 ≥ $80k · fee 11.8 SOL ≥ 5 · 1h −6.6% not a chase · not Mayhem · DLvpmv8R4oTbC1DixU5yHLbBcmnvfTckGF3XFzLTpump" },
+        { ts: "2026-08-31T01:31:40Z", desk: "GMGN", cls: "ok", t: "fill APEWIF 0.02 SOL — entry mcap $73,217 · DLvpmv8R4oTbC1DixU5yHLbBcmnvfTckGF3XFzLTpump" },
+        { ts: "2026-08-31T01:31:44Z", desk: "RISK", cls: "no", t: "skip DUVE (liq 0) · no second clean passer this print." },
+        { ts: "2026-08-31T01:31:48Z", desk: "LORE", cls: "note", t: "session 49 tape: SFM SL · Jamu still green · new APEWIF — real prints only, no invented tape." },
+        { ts: "2026-08-31T01:31:52Z", desk: "CHIEF", cls: "note", t: "LIVE trench on — 2 open (Jamu, APEWIF) · 17 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL, early SL, RDOG FLAT, TED SL, SFM SL)." }
       ]
     };
 
