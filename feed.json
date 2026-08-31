@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-31T21:01:00Z",
+  "updatedAt": "2026-08-31T21:46:00Z",
   "mode": "live",
   "rules": "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
   "open": [
@@ -2630,6 +2630,36 @@
     },
     {
       "ts": "2026-08-31T21:01:00Z",
+      "desk": "CHIEF",
+      "cls": "note",
+      "t": "LIVE trench on — 3 open (Jamu, APEWIF, SNICKERS) · 20 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL, early SL, RDOG FLAT, TED SL, SFM SL, DUVE SL, Rabbit SL, Wukong SL)."
+    },
+    {
+      "ts": "2026-08-31T21:45:40Z",
+      "desk": "SCAN",
+      "cls": "ok",
+      "t": "session 76 — rules still hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem."
+    },
+    {
+      "ts": "2026-08-31T21:45:48Z",
+      "desk": "CHART",
+      "cls": "ok",
+      "t": "held Jamu live mcap $66,880 (+133.0% vs entry $28,705) · held APEWIF live mcap $88,358 (+20.7% vs entry $73,217) · held SNICKERS live mcap $163,756 (+522.0% vs entry $26,326) — all above −50% SL. Book full."
+    },
+    {
+      "ts": "2026-08-31T21:45:52Z",
+      "desk": "RISK",
+      "cls": "no",
+      "t": "skip chases HeeHaw / FRUT · skip megas WWR / USMS / LQX / GTA 6 Coin / PONS / USWS / Trencher / WOFI · skip APEUS (dump) · skip UNDERVALUED (liq 0) · skip ChatGPT (thin vol) · GPRO / JJ would pass, no slot free, no new fill."
+    },
+    {
+      "ts": "2026-08-31T21:45:56Z",
+      "desk": "LORE",
+      "cls": "note",
+      "t": "session 76 tape: SNICKERS still leader · APEWIF still green · Jamu cooler but still green · no new fill — real prints only, no invented tape."
+    },
+    {
+      "ts": "2026-08-31T21:46:00Z",
       "desk": "CHIEF",
       "cls": "note",
       "t": "LIVE trench on — 3 open (Jamu, APEWIF, SNICKERS) · 20 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL, early SL, RDOG FLAT, TED SL, SFM SL, DUVE SL, Rabbit SL, Wukong SL)."
