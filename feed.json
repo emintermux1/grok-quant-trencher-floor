@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-31T06:46:00Z",
+  "updatedAt": "2026-08-31T07:31:00Z",
   "mode": "live",
   "rules": "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
   "open": [
@@ -2003,6 +2003,36 @@
     },
     {
       "ts": "2026-08-31T06:46:00Z",
+      "desk": "CHIEF",
+      "cls": "note",
+      "t": "LIVE trench on — 3 open (Jamu, APEWIF, DUVE) · 17 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL, early SL, RDOG FLAT, TED SL, SFM SL)."
+    },
+    {
+      "ts": "2026-08-31T07:30:40Z",
+      "desk": "SCAN",
+      "cls": "ok",
+      "t": "session 57 — rules still hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem."
+    },
+    {
+      "ts": "2026-08-31T07:30:48Z",
+      "desk": "CHART",
+      "cls": "ok",
+      "t": "held Jamu live mcap $131,401 (+357.8% vs entry $28,705) · held APEWIF live mcap $97,737 (+33.5% vs entry $73,217) · held DUVE live mcap $160,226 (−25.0% vs entry $213,744) — all above −50% SL. Book full."
+    },
+    {
+      "ts": "2026-08-31T07:30:52Z",
+      "desk": "RISK",
+      "cls": "no",
+      "t": "skip chase owlin · skip megas MACRODUCK / HOME / Max / APEUS / WOFI / PONS / ARROW / GOAF / USWR · skip Redbull (thin vol / chase) · skip MACRODUCK dumper · no clean passer this print, no slot free, no new fill."
+    },
+    {
+      "ts": "2026-08-31T07:30:56Z",
+      "desk": "LORE",
+      "cls": "note",
+      "t": "session 57 tape: Jamu ripped further · APEWIF flipped back green · DUVE still red but above SL · no new fill — real prints only, no invented tape."
+    },
+    {
+      "ts": "2026-08-31T07:31:00Z",
       "desk": "CHIEF",
       "cls": "note",
       "t": "LIVE trench on — 3 open (Jamu, APEWIF, DUVE) · 17 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL, early SL, RDOG FLAT, TED SL, SFM SL)."
