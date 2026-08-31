@@ -544,12 +544,13 @@
     // be fetched at all (e.g. page opened via file://). A successful fetch
     // always replaces it — this is the same real book, not a second tape.
     const FALLBACK_FEED = {
-      updatedAt: "2026-08-31T03:00:50Z",
+      updatedAt: "2026-08-31T03:46:48Z",
       mode: "live",
       rules: "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
       open: [
         { ticker: "Jamu", ca: "ASo3fJFAHkP8THZWRXQihXCtmh3Wv51ZdTmdQqYYpump", sizeSol: 0.02, entryMcap: 28705, liveMcap: null },
         { ticker: "APEWIF", ca: "DLvpmv8R4oTbC1DixU5yHLbBcmnvfTckGF3XFzLTpump", sizeSol: 0.02, entryMcap: 73217, liveMcap: null },
+        { ticker: "DUVE", ca: "7E9cL2XHb2TSkR7TSSnhG6z9yVnD1xMemR9wjGABpump", sizeSol: 0.02, entryMcap: 213744, liveMcap: null },
       ],
       closed: [
         { ticker: "MARTIN", reason: "SL", entryMcap: null, exitMcap: null },
@@ -870,7 +871,14 @@
         { ts: "2026-08-31T03:00:38Z", desk: "CHART", cls: "ok", t: "held Jamu live mcap $71,726 (+149.9% vs entry $28,705) · held APEWIF live mcap $78,184 (+6.8% vs entry $73,217) — both above −50% SL." },
         { ts: "2026-08-31T03:00:42Z", desk: "RISK", cls: "no", t: "skip chase sollo · skip dumpers COT / popape / DUVE / MOTHS · skip COZY (liq 0) · no clean passer this print, no new fill." },
         { ts: "2026-08-31T03:00:46Z", desk: "LORE", cls: "note", t: "session 51 tape: Jamu still leader · APEWIF still green · free slot stays empty — real prints only, no invented tape." },
-        { ts: "2026-08-31T03:00:50Z", desk: "CHIEF", cls: "note", t: "LIVE trench on — 2 open (Jamu, APEWIF) · 17 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL, early SL, RDOG FLAT, TED SL, SFM SL)." }
+        { ts: "2026-08-31T03:00:50Z", desk: "CHIEF", cls: "note", t: "LIVE trench on — 2 open (Jamu, APEWIF) · 17 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL, early SL, RDOG FLAT, TED SL, SFM SL)." },
+        { ts: "2026-08-31T03:46:20Z", desk: "SCAN", cls: "ok", t: "session 52 — rules still hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem." },
+        { ts: "2026-08-31T03:46:28Z", desk: "CHART", cls: "ok", t: "held Jamu live mcap $69,712 (+142.9% vs entry $28,705) · held APEWIF live mcap $76,139 (+4.0% vs entry $73,217) — both above −50% SL." },
+        { ts: "2026-08-31T03:46:32Z", desk: "SCAN", cls: "ok", t: "DUVE pass — SOL · pump.fun · liq $40,595 ≥ $5k · vol $3,210,131 ≥ $80k · fee 314.2 SOL ≥ 5 · 1h +14.4% not a chase · not Mayhem · 7E9cL2XHb2TSkR7TSSnhG6z9yVnD1xMemR9wjGABpump" },
+        { ts: "2026-08-31T03:46:36Z", desk: "GMGN", cls: "ok", t: "fill DUVE 0.02 SOL — entry mcap $213,744 · 7E9cL2XHb2TSkR7TSSnhG6z9yVnD1xMemR9wjGABpump" },
+        { ts: "2026-08-31T03:46:40Z", desk: "RISK", cls: "no", t: "skip chase sollo · skip dumpers Kumakichi · skip thin-vol STYXX · skip COZY (liq 0)." },
+        { ts: "2026-08-31T03:46:44Z", desk: "LORE", cls: "note", t: "session 52 tape: Jamu still leader · APEWIF still green · new DUVE into the free slot — real prints only, no invented tape." },
+        { ts: "2026-08-31T03:46:48Z", desk: "CHIEF", cls: "note", t: "LIVE trench on — 3 open (Jamu, APEWIF, DUVE) · 17 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL, early SL, RDOG FLAT, TED SL, SFM SL)." }
       ]
     };
 
