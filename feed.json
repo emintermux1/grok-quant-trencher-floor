@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-30T23:16:00Z",
+  "updatedAt": "2026-08-31T00:01:16Z",
   "mode": "live",
   "rules": "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
   "open": [
@@ -11,10 +11,17 @@
       "liveMcap": null
     },
     {
-      "ticker": "RDOG",
-      "ca": "6izfUtKzX4sTCAtpWYxHmJFkEAPy3VhGduJpS4VBpump",
+      "ticker": "TED",
+      "ca": "EeXWZbLXTWcK9n3aHJ44Hujk8Zczx9chJD9v9EANpump",
       "sizeSol": 0.02,
-      "entryMcap": 58518,
+      "entryMcap": 50574,
+      "liveMcap": null
+    },
+    {
+      "ticker": "SFM",
+      "ca": "aTUfRuPj3tp7FEpzAXLjs4VnQgAFbExD5JHGTyvpump",
+      "sizeSol": 0.02,
+      "entryMcap": 203602,
       "liveMcap": null
     }
   ],
@@ -32,7 +39,8 @@
     { "ticker": "CHIBI", "reason": "SL", "entryMcap": 83113, "exitMcap": 2588 },
     { "ticker": "catonfone", "reason": "SL", "entryMcap": 241818, "exitMcap": 3063 },
     { "ticker": "RAMCOIN", "reason": "SL", "entryMcap": 108758, "exitMcap": 2322 },
-    { "ticker": "early", "reason": "SL", "entryMcap": 35688, "exitMcap": 3425 }
+    { "ticker": "early", "reason": "SL", "entryMcap": 35688, "exitMcap": 3425 },
+    { "ticker": "RDOG", "reason": "FLAT", "entryMcap": 58518, "exitMcap": 44606 }
   ],
   "events": [
     {
@@ -1636,6 +1644,60 @@
       "desk": "CHIEF",
       "cls": "note",
       "t": "LIVE trench on — 2 open (Jamu, RDOG) · 14 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL, early SL)."
+    },
+    {
+      "ts": "2026-08-31T00:00:40Z",
+      "desk": "SCAN",
+      "cls": "ok",
+      "t": "session 47 — rules still hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem."
+    },
+    {
+      "ts": "2026-08-31T00:00:46Z",
+      "desk": "RISK",
+      "cls": "no",
+      "t": "flatten RDOG — 48.6h hold · entry mcap $58,518 · exit mcap $44,606 (−23.8%) · 24h vol $44,021 / fee 4.3 SOL below floor · 6izfUtKzX4sTCAtpWYxHmJFkEAPy3VhGduJpS4VBpump"
+    },
+    {
+      "ts": "2026-08-31T00:00:52Z",
+      "desk": "CHART",
+      "cls": "ok",
+      "t": "held Jamu live mcap $115,435 (+302.1% vs entry $28,705) — above −50% SL."
+    },
+    {
+      "ts": "2026-08-31T00:00:56Z",
+      "desk": "SCAN",
+      "cls": "ok",
+      "t": "TED pass — SOL · pump.fun · liq $17,437 ≥ $5k · vol $295,711 ≥ $80k · fee 29.2 SOL ≥ 5 · 1h +18.0% not a chase · not Mayhem · EeXWZbLXTWcK9n3aHJ44Hujk8Zczx9chJD9v9EANpump"
+    },
+    {
+      "ts": "2026-08-31T00:01:00Z",
+      "desk": "SCAN",
+      "cls": "ok",
+      "t": "SFM pass — SOL · pump.fun · liq $42,452 ≥ $5k · vol $4,007,058 ≥ $80k · fee 395.1 SOL ≥ 5 · 1h −36.3% not a chase · not Mayhem · aTUfRuPj3tp7FEpzAXLjs4VnQgAFbExD5JHGTyvpump"
+    },
+    {
+      "ts": "2026-08-31T00:01:04Z",
+      "desk": "GMGN",
+      "cls": "ok",
+      "t": "fill TED 0.02 SOL — entry mcap $50,574 · EeXWZbLXTWcK9n3aHJ44Hujk8Zczx9chJD9v9EANpump"
+    },
+    {
+      "ts": "2026-08-31T00:01:08Z",
+      "desk": "GMGN",
+      "cls": "ok",
+      "t": "fill SFM 0.02 SOL — entry mcap $203,602 · aTUfRuPj3tp7FEpzAXLjs4VnQgAFbExD5JHGTyvpump"
+    },
+    {
+      "ts": "2026-08-31T00:01:12Z",
+      "desk": "LORE",
+      "cls": "note",
+      "t": "session 47 tape: RDOG flattened · Jamu still leader · new TED · new SFM — real prints only, no invented tape."
+    },
+    {
+      "ts": "2026-08-31T00:01:16Z",
+      "desk": "CHIEF",
+      "cls": "note",
+      "t": "LIVE trench on — 3 open (Jamu, TED, SFM) · 15 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL, early SL, RDOG FLAT)."
     }
   ]
 }
