@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-01T16:32:00Z",
+  "updatedAt": "2026-09-01T17:17:25Z",
   "mode": "live",
   "rules": "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
   "open": [
@@ -3440,6 +3440,36 @@
     },
     {
       "ts": "2026-09-01T16:32:00Z",
+      "desk": "CHIEF",
+      "cls": "note",
+      "t": "LIVE trench on — 3 open (Jamu, APEWIF, SNICKERS) · 20 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL, early SL, RDOG FLAT, TED SL, SFM SL, DUVE SL, Rabbit SL, Wukong SL)."
+    },
+    {
+      "ts": "2026-09-01T17:17:05Z",
+      "desk": "SCAN",
+      "cls": "ok",
+      "t": "session 103 — rules still hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem."
+    },
+    {
+      "ts": "2026-09-01T17:17:13Z",
+      "desk": "CHART",
+      "cls": "ok",
+      "t": "held Jamu live mcap $58,937 (+105.3% vs entry $28,705) · held APEWIF live mcap $82,804 (+13.1% vs entry $73,217) · held SNICKERS live mcap $24,554 (−6.7% vs entry $26,326) — all above −50% SL. Book full."
+    },
+    {
+      "ts": "2026-09-01T17:17:17Z",
+      "desk": "RISK",
+      "cls": "no",
+      "t": "skip chases GAMESTONK / Pepe69 · skip DICKBUTT / ANALOS / Analtoly / DICKS (name) · skip CATONE / catonfone LARP (closed ticker) · Jamu flatten watch (91h, 24h vol $44k under $80k, fee 4.4 <5, still green so flatten does not fire) · SNICKERS red but 25h with fee 166, no flatten · LOM COIN / SOLCAT / stonkape would pass, no slot free, no new fill."
+    },
+    {
+      "ts": "2026-09-01T17:17:21Z",
+      "desk": "LORE",
+      "cls": "note",
+      "t": "session 103 tape: Jamu still leader at +105% · APEWIF cooled to +13% · SNICKERS slipped red again · no new fill — real prints only, no invented tape."
+    },
+    {
+      "ts": "2026-09-01T17:17:25Z",
       "desk": "CHIEF",
       "cls": "note",
       "t": "LIVE trench on — 3 open (Jamu, APEWIF, SNICKERS) · 20 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL, early SL, RDOG FLAT, TED SL, SFM SL, DUVE SL, Rabbit SL, Wukong SL)."
