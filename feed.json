@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-01T08:16:10Z",
+  "updatedAt": "2026-09-01T09:01:20Z",
   "mode": "live",
   "rules": "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
   "open": [
@@ -3110,6 +3110,36 @@
     },
     {
       "ts": "2026-09-01T08:16:10Z",
+      "desk": "CHIEF",
+      "cls": "note",
+      "t": "LIVE trench on — 3 open (Jamu, APEWIF, SNICKERS) · 20 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL, early SL, RDOG FLAT, TED SL, SFM SL, DUVE SL, Rabbit SL, Wukong SL)."
+    },
+    {
+      "ts": "2026-09-01T09:01:00Z",
+      "desk": "SCAN",
+      "cls": "ok",
+      "t": "session 92 — rules still hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem."
+    },
+    {
+      "ts": "2026-09-01T09:01:08Z",
+      "desk": "CHART",
+      "cls": "ok",
+      "t": "held Jamu live mcap $97,656 (+240.2% vs entry $28,705) · held APEWIF live mcap $120,194 (+64.2% vs entry $73,217) · held SNICKERS live mcap $44,387 (+68.6% vs entry $26,326) — all above −50% SL. Book full."
+    },
+    {
+      "ts": "2026-09-01T09:01:12Z",
+      "desk": "RISK",
+      "cls": "no",
+      "t": "skip chase 084BEAR · skip dumpers YARL / Ape-1 / catfish · skip JIGGLE (thin) · Jamu flatten watch (83h, 24h vol $48k under $80k, fee 4.7 <5, still green so flatten does not fire) · pixeldog / OLDWEB would pass, no slot free, no new fill."
+    },
+    {
+      "ts": "2026-09-01T09:01:16Z",
+      "desk": "LORE",
+      "cls": "note",
+      "t": "session 92 tape: Jamu still leader · SNICKERS still green · APEWIF still green · no new fill — real prints only, no invented tape."
+    },
+    {
+      "ts": "2026-09-01T09:01:20Z",
       "desk": "CHIEF",
       "cls": "note",
       "t": "LIVE trench on — 3 open (Jamu, APEWIF, SNICKERS) · 20 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL, early SL, RDOG FLAT, TED SL, SFM SL, DUVE SL, Rabbit SL, Wukong SL)."
