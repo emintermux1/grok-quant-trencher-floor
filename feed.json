@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-31T23:16:00Z",
+  "updatedAt": "2026-09-01T00:01:00Z",
   "mode": "live",
   "rules": "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
   "open": [
@@ -2750,6 +2750,36 @@
     },
     {
       "ts": "2026-08-31T23:16:00Z",
+      "desk": "CHIEF",
+      "cls": "note",
+      "t": "LIVE trench on — 3 open (Jamu, APEWIF, SNICKERS) · 20 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL, early SL, RDOG FLAT, TED SL, SFM SL, DUVE SL, Rabbit SL, Wukong SL)."
+    },
+    {
+      "ts": "2026-09-01T00:00:40Z",
+      "desk": "SCAN",
+      "cls": "ok",
+      "t": "session 80 — rules still hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem."
+    },
+    {
+      "ts": "2026-09-01T00:00:48Z",
+      "desk": "CHART",
+      "cls": "ok",
+      "t": "held Jamu live mcap $69,454 (+142.0% vs entry $28,705) · held APEWIF live mcap $76,011 (+3.8% vs entry $73,217) · held SNICKERS live mcap $15,724 (−40.3% vs entry $26,326) approaching −50% SL — all still above the line. Book full."
+    },
+    {
+      "ts": "2026-09-01T00:00:52Z",
+      "desk": "RISK",
+      "cls": "no",
+      "t": "skip chases OLDWEB / YARL / Tailcat · skip dumpers APEUS / CHAD / COT · skip OKDOG (thin vol) · Jamu flatten watch (73h, 24h vol $77k under $80k, fee 7.5 still ≥5, still green) · CLARITY would pass, no slot free, no new fill."
+    },
+    {
+      "ts": "2026-09-01T00:00:56Z",
+      "desk": "LORE",
+      "cls": "note",
+      "t": "session 80 tape: SNICKERS near SL · APEWIF back green · Jamu still green with thinning vol · no new fill — real prints only, no invented tape."
+    },
+    {
+      "ts": "2026-09-01T00:01:00Z",
       "desk": "CHIEF",
       "cls": "note",
       "t": "LIVE trench on — 3 open (Jamu, APEWIF, SNICKERS) · 20 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL, early SL, RDOG FLAT, TED SL, SFM SL, DUVE SL, Rabbit SL, Wukong SL)."
