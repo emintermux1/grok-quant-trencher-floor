@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-01T05:16:10Z",
+  "updatedAt": "2026-09-01T06:02:30Z",
   "mode": "live",
   "rules": "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
   "open": [
@@ -2990,6 +2990,36 @@
     },
     {
       "ts": "2026-09-01T05:16:10Z",
+      "desk": "CHIEF",
+      "cls": "note",
+      "t": "LIVE trench on — 3 open (Jamu, APEWIF, SNICKERS) · 20 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL, early SL, RDOG FLAT, TED SL, SFM SL, DUVE SL, Rabbit SL, Wukong SL)."
+    },
+    {
+      "ts": "2026-09-01T06:02:10Z",
+      "desk": "SCAN",
+      "cls": "ok",
+      "t": "session 88 — rules still hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem."
+    },
+    {
+      "ts": "2026-09-01T06:02:18Z",
+      "desk": "CHART",
+      "cls": "ok",
+      "t": "held Jamu live mcap $85,326 (+197.3% vs entry $28,705) · held APEWIF live mcap $133,348 (+82.1% vs entry $73,217) · held SNICKERS live mcap $21,750 (−17.4% vs entry $26,326) — all above −50% SL. Book full."
+    },
+    {
+      "ts": "2026-09-01T06:02:22Z",
+      "desk": "RISK",
+      "cls": "no",
+      "t": "skip chases DRIP / MARKPRO · skip dumpers DATA / BLUEBALLS · skip MECHA (name) · Jamu flatten watch (80h, 24h vol $52k under $80k, fee 5.0 still ≥5, still green) · catfish / CLARITY / OLDWEB would pass, no slot free, no new fill."
+    },
+    {
+      "ts": "2026-09-01T06:02:26Z",
+      "desk": "LORE",
+      "cls": "note",
+      "t": "session 88 tape: APEWIF bounced · Jamu still leader · SNICKERS red again above SL · no new fill — real prints only, no invented tape."
+    },
+    {
+      "ts": "2026-09-01T06:02:30Z",
       "desk": "CHIEF",
       "cls": "note",
       "t": "LIVE trench on — 3 open (Jamu, APEWIF, SNICKERS) · 20 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL, early SL, RDOG FLAT, TED SL, SFM SL, DUVE SL, Rabbit SL, Wukong SL)."
