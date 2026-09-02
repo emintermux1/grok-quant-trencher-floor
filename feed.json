@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-02T22:31:40Z",
+  "updatedAt": "2026-09-02T23:16:40Z",
   "mode": "live",
   "rules": "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
   "open": [
@@ -4648,6 +4648,36 @@
     },
     {
       "ts": "2026-09-02T22:31:40Z",
+      "desk": "CHIEF",
+      "cls": "note",
+      "t": "LIVE trench on — 3 open (Jamu, APEWIF, Mobi) · 22 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL, early SL, RDOG FLAT, TED SL, SFM SL, DUVE SL, Rabbit SL, Wukong SL, SNICKERS SL, LOMCOIN SL)."
+    },
+    {
+      "ts": "2026-09-02T23:16:20Z",
+      "desk": "SCAN",
+      "cls": "ok",
+      "t": "session 142 — rules still hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem."
+    },
+    {
+      "ts": "2026-09-02T23:16:28Z",
+      "desk": "CHART",
+      "cls": "ok",
+      "t": "held Jamu live mcap $61,288 (+113.5% vs entry $28,705) · held APEWIF live mcap $224,510 (+206.6% vs entry $73,217) · held Mobi live mcap $56,991 (−42.9% vs entry $99,758) — all above −50% SL. Book full."
+    },
+    {
+      "ts": "2026-09-02T23:16:32Z",
+      "desk": "RISK",
+      "cls": "no",
+      "t": "skip dumpers FUCK / COMET / Addog · skip chase Shrek (1h +89%) · skip chases TFC / POPO / OSAMA · skip mega ALON / UPTOBER / MONK · skip BNIGGA (name) · skip LOMCOIN / SNICKERS (closed) · skip rugged HOPEJAK · Jamu flatten watch (121h, 24h vol $28k under $80k, fee 2.8 <5, still green so flatten does not fire) · Mobi slid to −43% closer to SL floor $49,879 · CharlestonAI / PumpCity / Syoma / NXTME / HOPE would pass, no slot free, no new fill."
+    },
+    {
+      "ts": "2026-09-02T23:16:36Z",
+      "desk": "LORE",
+      "cls": "note",
+      "t": "session 142 tape: Jamu ripped to a new +114% high · APEWIF +207% · Mobi slid back to −43% toward the SL line · no new fill — real prints only, no invented tape."
+    },
+    {
+      "ts": "2026-09-02T23:16:40Z",
       "desk": "CHIEF",
       "cls": "note",
       "t": "LIVE trench on — 3 open (Jamu, APEWIF, Mobi) · 22 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL, early SL, RDOG FLAT, TED SL, SFM SL, DUVE SL, Rabbit SL, Wukong SL, SNICKERS SL, LOMCOIN SL)."
