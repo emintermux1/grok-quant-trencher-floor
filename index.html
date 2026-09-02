@@ -544,13 +544,13 @@
     // be fetched at all (e.g. page opened via file://). A successful fetch
     // always replaces it — this is the same real book, not a second tape.
     const FALLBACK_FEED = {
-      updatedAt: "2026-09-02T09:46:35Z",
+      updatedAt: "2026-09-02T10:31:38Z",
       mode: "live",
       rules: "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
       open: [
         { ticker: "Jamu", ca: "ASo3fJFAHkP8THZWRXQihXCtmh3Wv51ZdTmdQqYYpump", sizeSol: 0.02, entryMcap: 28705, liveMcap: null },
         { ticker: "APEWIF", ca: "DLvpmv8R4oTbC1DixU5yHLbBcmnvfTckGF3XFzLTpump", sizeSol: 0.02, entryMcap: 73217, liveMcap: null },
-        { ticker: "SNICKERS", ca: "6QzDWAmH63qDW6Lrap5BYMpjZuwgC7KkYMxCb3Japump", sizeSol: 0.02, entryMcap: 26326, liveMcap: null },
+        { ticker: "LOMCOIN", ca: "DQ4KNVV3tuhn483boMKfDkEhCzYpGRdTLA4kpSpCpump", sizeSol: 0.02, entryMcap: 85106, liveMcap: null },
       ],
       closed: [
         { ticker: "MARTIN", reason: "SL", entryMcap: null, exitMcap: null },
@@ -573,6 +573,7 @@
         { ticker: "DUVE", reason: "SL", entryMcap: 213744, exitMcap: 80792 },
         { ticker: "Rabbit", reason: "SL", entryMcap: 140525, exitMcap: 65877 },
         { ticker: "Wukong", reason: "SL", entryMcap: 40305, exitMcap: 6119 },
+        { ticker: "SNICKERS", reason: "SL", entryMcap: 26326, exitMcap: 12385 },
       ],
       events: [
         { ts: "2026-08-24T18:41:00Z", desk: "SCAN", cls: "ok", t: "rules hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem." },
@@ -1250,7 +1251,15 @@
         { ts: "2026-09-02T09:46:23Z", desk: "CHART", cls: "ok", t: "held Jamu live mcap $34,840 (+21.4% vs entry $28,705) · held APEWIF live mcap $198,997 (+171.8% vs entry $73,217) · held SNICKERS live mcap $14,713 (−44.1% vs entry $26,326) — all above −50% SL. Book full." },
         { ts: "2026-09-02T09:46:27Z", desk: "RISK", cls: "no", t: "skip dumpers VOXIE / solly / ☉ · skip chase QCAT (also mega) · skip thin Bros / むぎ · skip DICKBUTT / BNIGGA / CUMINU (name) · Jamu flatten watch (107h, 24h vol $39k under $80k, fee 3.9 <5, still green so flatten does not fire) · SNICKERS −44% still above SL floor $13,163 · LOM COIN / SOLCAT / AI / CharlestonAI would pass, no slot free, no new fill." },
         { ts: "2026-09-02T09:46:31Z", desk: "LORE", cls: "note", t: "session 124 tape: APEWIF cooled to +172% · SNICKERS −44% closest to SL this cycle · Jamu +21% · no new fill — real prints only, no invented tape." },
-        { ts: "2026-09-02T09:46:35Z", desk: "CHIEF", cls: "note", t: "LIVE trench on — 3 open (Jamu, APEWIF, SNICKERS) · 20 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL, early SL, RDOG FLAT, TED SL, SFM SL, DUVE SL, Rabbit SL, Wukong SL)." }
+        { ts: "2026-09-02T09:46:35Z", desk: "CHIEF", cls: "note", t: "LIVE trench on — 3 open (Jamu, APEWIF, SNICKERS) · 20 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL, early SL, RDOG FLAT, TED SL, SFM SL, DUVE SL, Rabbit SL, Wukong SL)." },
+        { ts: "2026-09-02T10:31:10Z", desk: "SCAN", cls: "ok", t: "session 125 — rules still hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem." },
+        { ts: "2026-09-02T10:31:14Z", desk: "RISK", cls: "no", t: "SL hit SNICKERS — entry mcap $26,326 · exit mcap $12,385 (−53.0%) · 6QzDWAmH63qDW6Lrap5BYMpjZuwgC7KkYMxCb3Japump" },
+        { ts: "2026-09-02T10:31:18Z", desk: "SCAN", cls: "ok", t: "LOMCOIN pass — SOL · pump.fun · liq $23,546 ≥ $5k · vol $722,693 ≥ $80k · fee 73.5 SOL ≥ 5 · 1h +9.0% not a chase · ~22h · not Mayhem · DQ4KNVV3tuhn483boMKfDkEhCzYpGRdTLA4kpSpCpump" },
+        { ts: "2026-09-02T10:31:22Z", desk: "GMGN", cls: "ok", t: "fill LOMCOIN 0.02 SOL — entry mcap $85,106 · DQ4KNVV3tuhn483boMKfDkEhCzYpGRdTLA4kpSpCpump" },
+        { ts: "2026-09-02T10:31:26Z", desk: "CHART", cls: "ok", t: "held Jamu live mcap $34,306 (+19.5% vs entry $28,705) · held APEWIF live mcap $197,036 (+169.1% vs entry $73,217) · new LOMCOIN entry mcap $85,106 — Jamu / APEWIF above −50% SL." },
+        { ts: "2026-09-02T10:31:30Z", desk: "RISK", cls: "no", t: "skip dumpers SINK / ☉ · skip thin Bros / Syoma / MIP · skip mega AURA · skip BNIGGA / PUSSYBUTT (name) · skip SNICKERS (just closed) · Jamu flatten watch (108h, 24h vol $39k under $80k, fee 3.9 <5, still green so flatten does not fire) · filled established LOMCOIN over younger NXTME / CharlestonAI / AI." },
+        { ts: "2026-09-02T10:31:34Z", desk: "LORE", cls: "note", t: "session 125 tape: SNICKERS SL −53% · new LOMCOIN 0.02 · APEWIF +169% · Jamu +20% — real prints only, no invented tape." },
+        { ts: "2026-09-02T10:31:38Z", desk: "CHIEF", cls: "note", t: "LIVE trench on — 3 open (Jamu, APEWIF, LOMCOIN) · 21 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL, early SL, RDOG FLAT, TED SL, SFM SL, DUVE SL, Rabbit SL, Wukong SL, SNICKERS SL)." }
       ],
     };
 
