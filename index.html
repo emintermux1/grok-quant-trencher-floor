@@ -544,13 +544,13 @@
     // be fetched at all (e.g. page opened via file://). A successful fetch
     // always replaces it — this is the same real book, not a second tape.
     const FALLBACK_FEED = {
-      updatedAt: "2026-09-02T16:31:40Z",
+      updatedAt: "2026-09-02T17:18:40Z",
       mode: "live",
       rules: "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
       open: [
         { ticker: "Jamu", ca: "ASo3fJFAHkP8THZWRXQihXCtmh3Wv51ZdTmdQqYYpump", sizeSol: 0.02, entryMcap: 28705, liveMcap: null },
         { ticker: "APEWIF", ca: "DLvpmv8R4oTbC1DixU5yHLbBcmnvfTckGF3XFzLTpump", sizeSol: 0.02, entryMcap: 73217, liveMcap: null },
-        { ticker: "Mobi", ca: "3oY5NnNAbnRK4eNzPWZFmtAWVW4RNumpni4XtGarpump", sizeSol: 0.02, entryMcap: 99758, liveMcap: null },
+        { ticker: "Mobi", ca: "3oY5NnNAbnRK4eNzPWZFmtAWVW4RNumpni4XtGarpump", sizeSol: 0.02, entryMcap: 99758, liveMcap: null }
       ],
       closed: [
         { ticker: "MARTIN", reason: "SL", entryMcap: null, exitMcap: null },
@@ -574,7 +574,7 @@
         { ticker: "Rabbit", reason: "SL", entryMcap: 140525, exitMcap: 65877 },
         { ticker: "Wukong", reason: "SL", entryMcap: 40305, exitMcap: 6119 },
         { ticker: "SNICKERS", reason: "SL", entryMcap: 26326, exitMcap: 12385 },
-        { ticker: "LOMCOIN", reason: "SL", entryMcap: 85106, exitMcap: 34840 },
+        { ticker: "LOMCOIN", reason: "SL", entryMcap: 85106, exitMcap: 34840 }
       ],
       events: [
         { ts: "2026-08-24T18:41:00Z", desk: "SCAN", cls: "ok", t: "rules hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem." },
@@ -1303,7 +1303,12 @@
         { ts: "2026-09-02T16:31:28Z", desk: "CHART", cls: "ok", t: "held Jamu live mcap $41,226 (+43.6% vs entry $28,705) · held APEWIF live mcap $237,919 (+225.0% vs entry $73,217) · held Mobi live mcap $68,765 (−31.1% vs entry $99,758) — all above −50% SL. Book full." },
         { ts: "2026-09-02T16:31:32Z", desk: "RISK", cls: "no", t: "skip thin Jareld · skip chases HOPE / Addog / SOLDOG · skip mega MOGGY / Ape1 · skip dumper SOLAMI · skip BNIGGA (name) · skip LOMCOIN / SNICKERS (closed) · Jamu flatten watch (114h, 24h vol $33k under $80k, fee 3.4 <5, still green so flatten does not fire) · Mobi bounced to −31% still above SL floor $49,879 · Shrek / CharlestonAI / PumpCity would pass, no slot free, no new fill." },
         { ts: "2026-09-02T16:31:36Z", desk: "LORE", cls: "note", t: "session 133 tape: APEWIF back at the +225% peak · Mobi lifted to −31% · Jamu +44% · no new fill — real prints only, no invented tape." },
-        { ts: "2026-09-02T16:31:40Z", desk: "CHIEF", cls: "note", t: "LIVE trench on — 3 open (Jamu, APEWIF, Mobi) · 22 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL, early SL, RDOG FLAT, TED SL, SFM SL, DUVE SL, Rabbit SL, Wukong SL, SNICKERS SL, LOMCOIN SL)." }
+        { ts: "2026-09-02T16:31:40Z", desk: "CHIEF", cls: "note", t: "LIVE trench on — 3 open (Jamu, APEWIF, Mobi) · 22 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL, early SL, RDOG FLAT, TED SL, SFM SL, DUVE SL, Rabbit SL, Wukong SL, SNICKERS SL, LOMCOIN SL)." },
+        { ts: "2026-09-02T17:18:20Z", desk: "SCAN", cls: "ok", t: "session 134 — rules still hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem." },
+        { ts: "2026-09-02T17:18:28Z", desk: "CHART", cls: "ok", t: "held Jamu live mcap $36,913 (+28.6% vs entry $28,705) · held APEWIF live mcap $196,770 (+168.7% vs entry $73,217) · held Mobi live mcap $59,278 (−40.6% vs entry $99,758) — all above −50% SL. Book full." },
+        { ts: "2026-09-02T17:18:32Z", desk: "RISK", cls: "no", t: "skip dumpers MOGGY / HOPE · skip chase PumpCity (1h +66%) · skip chases CRASHCAT / Chicken · skip mega Ape1 · skip DICKBUTT / DICKCAT (name) · skip LOMCOIN / SNICKERS (closed) · skip young HOPEJAK (0.45h, 1h +56% near chase) · Jamu flatten watch (115h, 24h vol $34k under $80k, fee 3.5 <5, still green so flatten does not fire) · Mobi −41% still above SL floor $49,879 · Shrek / CharlestonAI / Addog would pass, no slot free, no new fill." },
+        { ts: "2026-09-02T17:18:36Z", desk: "LORE", cls: "note", t: "session 134 tape: APEWIF cooled to +169% off the +225% reprint · Mobi slid to −41% · Jamu +29% flatten watch · no new fill — real prints only, no invented tape." },
+        { ts: "2026-09-02T17:18:40Z", desk: "CHIEF", cls: "note", t: "LIVE trench on — 3 open (Jamu, APEWIF, Mobi) · 22 closed (MARTIN SL, Zoe SL, TRASHY SL, Callout SL, PRO SL, SEND FLAT, WPLEB SL, Lyra SL, CopperApe SL, LOUD SL, CHIBI SL, catonfone SL, RAMCOIN SL, early SL, RDOG FLAT, TED SL, SFM SL, DUVE SL, Rabbit SL, Wukong SL, SNICKERS SL, LOMCOIN SL)." }
       ],
     };
 
