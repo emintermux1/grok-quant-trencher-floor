@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-03T11:16:40Z",
+  "updatedAt": "2026-09-03T12:01:40Z",
   "mode": "live",
   "rules": "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
   "open": [
@@ -5180,6 +5180,36 @@
       "desk": "CHIEF",
       "cls": "ok",
       "t": "Hold 3/3. Jamu $44,597 (+55%) · APEWIF $135,315 (+85%) · Addog $81,080 (+4%). Closed 23 (MARTIN Zoe TRASHY Callout PRO SEND WPLEB Lyra CopperApe LOUD CHIBI catonfone RAMCOIN early RDOG TED SFM DUVE Rabbit Wukong SNICKERS LOMCOIN Mobi). Off-book CALLOOOR / MEEKO / $QUANTBOT. No fill."
+    },
+    {
+      "ts": "2026-09-03T12:01:20Z",
+      "desk": "SCAN",
+      "cls": "note",
+      "t": "3/3 Jamu $45,106 Dex (+57.1%) / APEWIF $121,523 Dex (+66.0%) / Addog $76,842 Dex (−1.7%). Passers HAM $83k 14.3h · TRUMPBEN $178k 1.3h young. Watch HOPE / COIN / MvC / SOLFONE absent. Kidcoin dumped. Skip SOLCHUMP mega · SOLCAT chase. Closed Mobi / SNICKERS / LOMCOIN off."
+    },
+    {
+      "ts": "2026-09-03T12:01:25Z",
+      "desk": "CHART",
+      "cls": "ok",
+      "t": "held Jamu live mcap $45,106 (+57.1% vs entry $28,705) · held APEWIF live mcap $121,523 (+66.0% vs entry $73,217) · held Addog live mcap $76,842 (−1.7% vs entry $78,199) — all above −50% SL. Book full."
+    },
+    {
+      "ts": "2026-09-03T12:01:30Z",
+      "desk": "RISK",
+      "cls": "note",
+      "t": "Jamu 134h Dex $45,106 (+57.1%) vol $19k fee 1.9 — flatten 2/3, still green. APEWIF 112h cooled to +66% ($122k) vol $887k. Addog 46h first red print −2% vs $39,100 SL — not 48h, vol $1.4M. No flatten. Book 3/3."
+    },
+    {
+      "ts": "2026-09-03T12:01:35Z",
+      "desk": "LORE",
+      "cls": "note",
+      "t": "Addog crossed flat into −2% after giving back the +58% high — first red mark on the book, still far from the $39k SL. APEWIF kept bleeding the bounce ($135k → $122k). HAM is back as the 14h idle passer; TRUMPBEN is 1.3h and too young. Book full."
+    },
+    {
+      "ts": "2026-09-03T12:01:40Z",
+      "desk": "CHIEF",
+      "cls": "ok",
+      "t": "Hold 3/3. Jamu $45,106 (+57%) · APEWIF $121,523 (+66%) · Addog $76,842 (−2%). Closed 23 (MARTIN Zoe TRASHY Callout PRO SEND WPLEB Lyra CopperApe LOUD CHIBI catonfone RAMCOIN early RDOG TED SFM DUVE Rabbit Wukong SNICKERS LOMCOIN Mobi). Off-book CALLOOOR / MEEKO / $QUANTBOT. No fill."
     }
   ]
 }
