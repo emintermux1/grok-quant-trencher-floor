@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-03T21:13:45Z",
+  "updatedAt": "2026-09-03T21:58:45Z",
   "mode": "live",
   "rules": "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
   "open": [
@@ -18,10 +18,10 @@
       "liveMcap": null
     },
     {
-      "ticker": "SOLBROS",
-      "ca": "FsMM8hMqz4fQhKfAv3beqGz5oiJWtXNdmdt3hQskpump",
+      "ticker": "BAPE",
+      "ca": "FCtBQkhEotgvzHXABha2sdmgkv7C2YLkvmyMQK2Ypump",
       "sizeSol": 0.02,
-      "entryMcap": 104569,
+      "entryMcap": 191383,
       "liveMcap": null
     }
   ],
@@ -49,7 +49,8 @@
     { "ticker": "SNICKERS", "reason": "SL", "entryMcap": 26326, "exitMcap": 12385 },
     { "ticker": "LOMCOIN", "reason": "SL", "entryMcap": 85106, "exitMcap": 34840 },
     { "ticker": "Mobi", "reason": "SL", "entryMcap": 99758, "exitMcap": 43310 },
-    { "ticker": "Addog", "reason": "SL", "entryMcap": 78199, "exitMcap": 36834 }
+    { "ticker": "Addog", "reason": "SL", "entryMcap": 78199, "exitMcap": 36834 },
+    { "ticker": "SOLBROS", "reason": "SL", "entryMcap": 104569, "exitMcap": 2095 }
   ],
   "events": [
     {
@@ -5547,6 +5548,42 @@
       "desk": "CHIEF",
       "cls": "ok",
       "t": "SL Addog 78199→36834. Fill SOLBROS 0.02 @ 104569. Book 3/3 Jamu $38,504 (+34%) · APEWIF $180,408 (+146%) · SOLBROS $104,569. Closed 24 (MARTIN Zoe TRASHY Callout PRO SEND WPLEB Lyra CopperApe LOUD CHIBI catonfone RAMCOIN early RDOG TED SFM DUVE Rabbit Wukong SNICKERS LOMCOIN Mobi Addog). Off-book CALLOOOR / MEEKO / $QUANTBOT."
+    },
+    {
+      "ts": "2026-09-03T21:58:20Z",
+      "desk": "RISK",
+      "cls": "no",
+      "t": "SL hit SOLBROS — Dex $2,095 vs entry $104,569 (−98.0%), first mark after the 4.1h fill. Closed. Slot free."
+    },
+    {
+      "ts": "2026-09-03T21:58:25Z",
+      "desk": "SCAN",
+      "cls": "ok",
+      "t": "SOLBROS SL. Passers BAPE $191k pump / $191k Dex 2.4h (oldest) · uselesscat $63k 2.1h · PXPE $71k 0.4h young. Watch GoodBoy / COIN / HAM / HOPE absent. Skip Pumpooor / BEN dumpers · FOMO dump-adjacent · TRUMP1 vol. Closed SOLBROS / Addog / Mobi off."
+    },
+    {
+      "ts": "2026-09-03T21:58:30Z",
+      "desk": "GMGN",
+      "cls": "ok",
+      "t": "fill BAPE 0.02 SOL · CA FCtBQkhEotgvzHXABha2sdmgkv7C2YLkvmyMQK2Ypump · entryMcap 191383 (pump usd_market_cap). Oldest passer after SOLBROS SL. Book 3/3."
+    },
+    {
+      "ts": "2026-09-03T21:58:35Z",
+      "desk": "CHART",
+      "cls": "ok",
+      "t": "held Jamu live mcap $38,969 (+35.8% vs entry $28,705) · held APEWIF live mcap $168,127 (+129.6% vs entry $73,217) · SL SOLBROS $2,095 (−98.0% vs entry $104,569) · filled BAPE entry $191,383. Book 3/3."
+    },
+    {
+      "ts": "2026-09-03T21:58:40Z",
+      "desk": "LORE",
+      "cls": "note",
+      "t": "SOLBROS rugged on first mark (−98% at 4.9h) — same young-fill graveyard as TED / RAMCOIN / LOMCOIN / Mobi. No 12h+ idle names on tape; slot went to BAPE at 2.4h (oldest passer). Jamu still green +36% so flatten stays 2/3. APEWIF cooled +146% → +130%."
+    },
+    {
+      "ts": "2026-09-03T21:58:45Z",
+      "desk": "CHIEF",
+      "cls": "ok",
+      "t": "SL SOLBROS 104569→2095. Fill BAPE 0.02 @ 191383. Book 3/3 Jamu $38,969 (+36%) · APEWIF $168,127 (+130%) · BAPE $191,383. Closed 25 (MARTIN Zoe TRASHY Callout PRO SEND WPLEB Lyra CopperApe LOUD CHIBI catonfone RAMCOIN early RDOG TED SFM DUVE Rabbit Wukong SNICKERS LOMCOIN Mobi Addog SOLBROS). Off-book CALLOOOR / MEEKO / $QUANTBOT."
     }
   ]
 }
