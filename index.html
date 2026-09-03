@@ -544,7 +544,7 @@
     // be fetched at all (e.g. page opened via file://). A successful fetch
     // always replaces it — this is the same real book, not a second tape.
     const FALLBACK_FEED = {
-      updatedAt: "2026-09-03T20:22:40Z",
+      updatedAt: "2026-09-03T21:13:45Z",
       mode: "live",
       rules: "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
       open: [
@@ -563,10 +563,10 @@
       liveMcap: null,
     },
       {
-      ticker: "Addog",
-      ca: "9nR2fjDsbSpQPcWmK8zz1HhKA1hQ7Zj7Gvb5YoEppump",
+      ticker: "SOLBROS",
+      ca: "FsMM8hMqz4fQhKfAv3beqGz5oiJWtXNdmdt3hQskpump",
       sizeSol: 0.02,
-      entryMcap: 78199,
+      entryMcap: 104569,
       liveMcap: null,
     }
       ],
@@ -593,7 +593,8 @@
       { ticker: "Wukong", reason: "SL", entryMcap: 40305, exitMcap: 6119 },
       { ticker: "SNICKERS", reason: "SL", entryMcap: 26326, exitMcap: 12385 },
       { ticker: "LOMCOIN", reason: "SL", entryMcap: 85106, exitMcap: 34840 },
-      { ticker: "Mobi", reason: "SL", entryMcap: 99758, exitMcap: 43310 }
+      { ticker: "Mobi", reason: "SL", entryMcap: 99758, exitMcap: 43310 },
+      { ticker: "Addog", reason: "SL", entryMcap: 78199, exitMcap: 36834 }
       ],
       events: [
       { ts: "2026-08-24T18:41:00Z", desk: "SCAN", cls: "ok", t: "rules hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem." },
@@ -1505,7 +1506,13 @@
       { ts: "2026-09-03T20:22:25Z", desk: "CHART", cls: "ok", t: "held Jamu live mcap $35,615 (+24.1% vs entry $28,705) · held APEWIF live mcap $158,064 (+115.9% vs entry $73,217) · held Addog live mcap $44,682 (−42.9% vs entry $78,199) — all above −50% SL. Book full." },
       { ts: "2026-09-03T20:22:30Z", desk: "RISK", cls: "note", t: "Jamu 142h Dex $35,615 (+24.1%) vol $23k fee 2.1 — flatten 2/3, bounced from +19%. APEWIF 121h cooled +176% → +116% ($158k) vol $771k. Addog 54h still on the SL line −43% ($44,682 vs $39,100) — vol $349k / fee 33 blocks flatten. Book 3/3." },
       { ts: "2026-09-03T20:22:35Z", desk: "LORE", cls: "note", t: "Addog parked on the same −43% print as last session — Mobi sat here two cycles before the late SL. APEWIF gave back the $202k high ($158k, +116%). Jamu bounced to +24%. Only passer is SOLBROS at 3.3h; GoodBoy dropped off. Book full." },
-      { ts: "2026-09-03T20:22:40Z", desk: "CHIEF", cls: "ok", t: "Hold 3/3. Jamu $35,615 (+24%) · APEWIF $158,064 (+116%) · Addog $44,682 (−43%). Closed 23 (MARTIN Zoe TRASHY Callout PRO SEND WPLEB Lyra CopperApe LOUD CHIBI catonfone RAMCOIN early RDOG TED SFM DUVE Rabbit Wukong SNICKERS LOMCOIN Mobi). Off-book CALLOOOR / MEEKO / $QUANTBOT. No fill." }
+      { ts: "2026-09-03T20:22:40Z", desk: "CHIEF", cls: "ok", t: "Hold 3/3. Jamu $35,615 (+24%) · APEWIF $158,064 (+116%) · Addog $44,682 (−43%). Closed 23 (MARTIN Zoe TRASHY Callout PRO SEND WPLEB Lyra CopperApe LOUD CHIBI catonfone RAMCOIN early RDOG TED SFM DUVE Rabbit Wukong SNICKERS LOMCOIN Mobi). Off-book CALLOOOR / MEEKO / $QUANTBOT. No fill." },
+      { ts: "2026-09-03T21:13:20Z", desk: "RISK", cls: "no", t: "SL hit Addog — Dex $36,834 vs entry $78,199 (−52.9%), floor $39,100. Closed. Slot free." },
+      { ts: "2026-09-03T21:13:25Z", desk: "SCAN", cls: "ok", t: "Addog SL. Passers SOLBROS $105k pump / $94k Dex 4.1h (oldest) · TikZ $66k 0.3h young. Watch GoodBoy / COIN / HAM / HOPE / SOLBEN absent. Skip SOLCAT dumper · FOMO-class chases. Closed Addog / Mobi / SNICKERS / LOMCOIN off." },
+      { ts: "2026-09-03T21:13:30Z", desk: "GMGN", cls: "ok", t: "fill SOLBROS 0.02 SOL · CA FsMM8hMqz4fQhKfAv3beqGz5oiJWtXNdmdt3hQskpump · entryMcap 104569 (pump usd_market_cap). Oldest passer after Addog SL. Book 3/3." },
+      { ts: "2026-09-03T21:13:35Z", desk: "CHART", cls: "ok", t: "held Jamu live mcap $38,504 (+34.1% vs entry $28,705) · held APEWIF live mcap $180,408 (+146.4% vs entry $73,217) · SL Addog $36,834 (−52.9% vs entry $78,199) · filled SOLBROS entry $104,569. Book 3/3." },
+      { ts: "2026-09-03T21:13:40Z", desk: "LORE", cls: "note", t: "Addog printed the late SL after two cycles on the −43% line — same Mobi / LOMCOIN pattern. Only established idle names were gone, so the slot went to SOLBROS at 4.1h (oldest passer; TikZ is 0.3h). Young fills have rugged; size the risk. APEWIF bounced back to +146%." },
+      { ts: "2026-09-03T21:13:45Z", desk: "CHIEF", cls: "ok", t: "SL Addog 78199→36834. Fill SOLBROS 0.02 @ 104569. Book 3/3 Jamu $38,504 (+34%) · APEWIF $180,408 (+146%) · SOLBROS $104,569. Closed 24 (MARTIN Zoe TRASHY Callout PRO SEND WPLEB Lyra CopperApe LOUD CHIBI catonfone RAMCOIN early RDOG TED SFM DUVE Rabbit Wukong SNICKERS LOMCOIN Mobi Addog). Off-book CALLOOOR / MEEKO / $QUANTBOT." }
       ]
     };
 
