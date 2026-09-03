@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-03T22:38:40Z",
+  "updatedAt": "2026-09-03T23:33:40Z",
   "mode": "live",
   "rules": "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
   "open": [
@@ -5614,6 +5614,36 @@
       "desk": "CHIEF",
       "cls": "ok",
       "t": "Hold 3/3. Jamu $33,435 (+16%) · APEWIF $197,641 (+170%) · BAPE $212,832 (+11%). Closed 25 (MARTIN Zoe TRASHY Callout PRO SEND WPLEB Lyra CopperApe LOUD CHIBI catonfone RAMCOIN early RDOG TED SFM DUVE Rabbit Wukong SNICKERS LOMCOIN Mobi Addog SOLBROS). Off-book CALLOOOR / MEEKO / $QUANTBOT. No fill."
+    },
+    {
+      "ts": "2026-09-03T23:33:20Z",
+      "desk": "SCAN",
+      "cls": "note",
+      "t": "3/3 Jamu $33,767 Dex (+17.6%) / APEWIF $194,656 Dex (+165.9%) / BAPE $211,598 Dex (+10.6%). Passer BEAVER $56k pump / $48k Dex 21.3h. Watch GoodBoy / HAM / HOPE absent. COIN back as a 6h dumper. Skip ARCADE.GOV chase · SOLCAT dumper · SHITLESS / DOGGYCOIN young. Closed SOLBROS / Addog / Mobi off."
+    },
+    {
+      "ts": "2026-09-03T23:33:25Z",
+      "desk": "CHART",
+      "cls": "ok",
+      "t": "held Jamu live mcap $33,767 (+17.6% vs entry $28,705) · held APEWIF live mcap $194,656 (+165.9% vs entry $73,217) · held BAPE live mcap $211,598 (+10.6% vs entry $191,383) — all above −50% SL. Book full."
+    },
+    {
+      "ts": "2026-09-03T23:33:30Z",
+      "desk": "RISK",
+      "cls": "note",
+      "t": "Jamu 145h Dex $33,767 (+17.6%) vol $19k fee 1.8 — flatten 2/3, parked on the +17% shelf. APEWIF 124h cooled +170% → +166% ($195k) vol $802k. BAPE 3.9h still green +11% ($212k) vs $95,692 SL — second clean mark after the SOLBROS first-print rug. Book 3/3."
+    },
+    {
+      "ts": "2026-09-03T23:33:35Z",
+      "desk": "LORE",
+      "cls": "note",
+      "t": "BAPE held the +11% handle through 3.9h — two clean marks vs SOLBROS −98% on print one. APEWIF sat the $195k shelf after the $198k bid. Jamu flatten still waits on red (vol $19k / fee 1.8 already under). BEAVER is the 21h idle name if a slot frees."
+    },
+    {
+      "ts": "2026-09-03T23:33:40Z",
+      "desk": "CHIEF",
+      "cls": "ok",
+      "t": "Hold 3/3. Jamu $33,767 (+18%) · APEWIF $194,656 (+166%) · BAPE $211,598 (+11%). Closed 25 (MARTIN Zoe TRASHY Callout PRO SEND WPLEB Lyra CopperApe LOUD CHIBI catonfone RAMCOIN early RDOG TED SFM DUVE Rabbit Wukong SNICKERS LOMCOIN Mobi Addog SOLBROS). Off-book CALLOOOR / MEEKO / $QUANTBOT. No fill."
     }
   ]
 }
