@@ -1,15 +1,8 @@
 {
-  "updatedAt": "2026-09-04T01:32:45Z",
+  "updatedAt": "2026-09-04T02:17:45Z",
   "mode": "live",
   "rules": "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
   "open": [
-    {
-      "ticker": "Jamu",
-      "ca": "ASo3fJFAHkP8THZWRXQihXCtmh3Wv51ZdTmdQqYYpump",
-      "sizeSol": 0.02,
-      "entryMcap": 28705,
-      "liveMcap": null
-    },
     {
       "ticker": "APEWIF",
       "ca": "DLvpmv8R4oTbC1DixU5yHLbBcmnvfTckGF3XFzLTpump",
@@ -22,6 +15,13 @@
       "ca": "KmonSZsCnAcms2KGZLFGuyGjhWWBHfX3daN2Jcipump",
       "sizeSol": 0.02,
       "entryMcap": 167172,
+      "liveMcap": null
+    },
+    {
+      "ticker": "COIN",
+      "ca": "5jNB5YFamqs3iifyhs34ERox2En3EBc1v5CdgHkmpump",
+      "sizeSol": 0.02,
+      "entryMcap": 97703,
       "liveMcap": null
     }
   ],
@@ -51,7 +51,8 @@
     { "ticker": "Mobi", "reason": "SL", "entryMcap": 99758, "exitMcap": 43310 },
     { "ticker": "Addog", "reason": "SL", "entryMcap": 78199, "exitMcap": 36834 },
     { "ticker": "SOLBROS", "reason": "SL", "entryMcap": 104569, "exitMcap": 2095 },
-    { "ticker": "BAPE", "reason": "SL", "entryMcap": 191383, "exitMcap": 2997 }
+    { "ticker": "BAPE", "reason": "SL", "entryMcap": 191383, "exitMcap": 2997 },
+    { "ticker": "Jamu", "reason": "FLAT", "entryMcap": 28705, "exitMcap": 25433 }
   ],
   "events": [
     {
@@ -5741,6 +5742,42 @@
       "desk": "CHIEF",
       "cls": "ok",
       "t": "SL BAPE 191383→2997. Fill RST 0.02 @ 167172. Book 3/3 Jamu $28,464 (−1%) · APEWIF $161,016 (+120%) · RST $167,172. Closed 26 (MARTIN Zoe TRASHY Callout PRO SEND WPLEB Lyra CopperApe LOUD CHIBI catonfone RAMCOIN early RDOG TED SFM DUVE Rabbit Wukong SNICKERS LOMCOIN Mobi Addog SOLBROS BAPE). Off-book CALLOOOR / MEEKO / $QUANTBOT."
+    },
+    {
+      "ts": "2026-09-04T02:17:20Z",
+      "desk": "RISK",
+      "cls": "no",
+      "t": "flatten Jamu — 148h hold · Dex $25,433 vs entry $28,705 (−11.4%) · 24h vol $20k / fee 2.0 under floor · first materially red print. Closed. Slot free."
+    },
+    {
+      "ts": "2026-09-04T02:17:25Z",
+      "desk": "SCAN",
+      "cls": "ok",
+      "t": "Jamu FLAT. Passers COIN $98k pump / $93k Dex 29.4h (oldest idle) · ONBOARDING $42k 6.9h · uselesscat $88k 6.4h. Watch GoodBoy / BEAVER / HAM / HOPE / MvC (chase) absent. Skip Pumpooor / TREF dumpers. Closed Jamu / BAPE / SOLBROS off."
+    },
+    {
+      "ts": "2026-09-04T02:17:30Z",
+      "desk": "GMGN",
+      "cls": "ok",
+      "t": "fill COIN 0.02 SOL · CA 5jNB5YFamqs3iifyhs34ERox2En3EBc1v5CdgHkmpump · entryMcap 97703 (pump usd_market_cap). Oldest passer after Jamu flatten. Book 3/3."
+    },
+    {
+      "ts": "2026-09-04T02:17:35Z",
+      "desk": "CHART",
+      "cls": "ok",
+      "t": "FLAT Jamu $25,433 (−11.4% vs entry $28,705) · held APEWIF live mcap $162,587 (+122.1% vs entry $73,217) · held RST live mcap $166,388 (−0.5% vs entry $167,172) · filled COIN entry $97,703. Book 3/3."
+    },
+    {
+      "ts": "2026-09-04T02:17:40Z",
+      "desk": "LORE",
+      "cls": "note",
+      "t": "Jamu finally printed the red flatten after days of green-blocked 2/3 (vol/fee were already dead). RST first mark is clean (−0.5% at 31h). Slot went to COIN at 29h — the idle name next to RST. APEWIF held the $163k / +122% shelf."
+    },
+    {
+      "ts": "2026-09-04T02:17:45Z",
+      "desk": "CHIEF",
+      "cls": "ok",
+      "t": "FLAT Jamu 28705→25433. Fill COIN 0.02 @ 97703. Book 3/3 APEWIF $162,587 (+122%) · RST $166,388 (−0%) · COIN $97,703. Closed 27 (MARTIN Zoe TRASHY Callout PRO SEND WPLEB Lyra CopperApe LOUD CHIBI catonfone RAMCOIN early RDOG TED SFM DUVE Rabbit Wukong SNICKERS LOMCOIN Mobi Addog SOLBROS BAPE Jamu). Off-book CALLOOOR / MEEKO / $QUANTBOT."
     }
   ]
 }
