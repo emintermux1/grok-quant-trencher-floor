@@ -544,7 +544,7 @@
     // be fetched at all (e.g. page opened via file://). A successful fetch
     // always replaces it — this is the same real book, not a second tape.
     const FALLBACK_FEED = {
-      updatedAt: "2026-09-04T00:53:40Z",
+      updatedAt: "2026-09-04T01:32:45Z",
       mode: "live",
       rules: "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
       open: [
@@ -563,10 +563,10 @@
       liveMcap: null,
     },
       {
-      ticker: "BAPE",
-      ca: "FCtBQkhEotgvzHXABha2sdmgkv7C2YLkvmyMQK2Ypump",
+      ticker: "RST",
+      ca: "KmonSZsCnAcms2KGZLFGuyGjhWWBHfX3daN2Jcipump",
       sizeSol: 0.02,
-      entryMcap: 191383,
+      entryMcap: 167172,
       liveMcap: null,
     },
       ],
@@ -596,6 +596,7 @@
       { ticker: "Mobi", reason: "SL", entryMcap: 99758, exitMcap: 43310 },
       { ticker: "Addog", reason: "SL", entryMcap: 78199, exitMcap: 36834 },
       { ticker: "SOLBROS", reason: "SL", entryMcap: 104569, exitMcap: 2095 },
+      { ticker: "BAPE", reason: "SL", entryMcap: 191383, exitMcap: 2997 },
       ],
       events: [
       { ts: "2026-08-24T18:41:00Z", desk: "SCAN", cls: "ok", t: "rules hold: SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem." },
@@ -1539,7 +1540,13 @@
       { ts: "2026-09-04T00:53:25Z", desk: "CHART", cls: "ok", t: "held Jamu live mcap $32,293 (+12.5% vs entry $28,705) · held APEWIF live mcap $193,823 (+164.7% vs entry $73,217) · held BAPE live mcap $257,164 (+34.4% vs entry $191,383) — all above −50% SL. Book full." },
       { ts: "2026-09-04T00:53:30Z", desk: "RISK", cls: "note", t: "Jamu 146h Dex $32,293 (+12.5%) vol $18k fee 1.7 — flatten 2/3, still green. APEWIF 125h bid +150% → +165% ($194k) vol $805k. BAPE 5.2h ripped +16% → +34% ($257k) vs $95,692 SL — past the SOLBROS rug window. Book 3/3." },
       { ts: "2026-09-04T00:53:35Z", desk: "LORE", cls: "note", t: "BAPE broke the $222k high and printed $257k (+34%) at 5.2h — first real bid since the fill. APEWIF clawed the $183k shelf back to $194k. Jamu flatten still waits on red. RST is the 29h idle name if a slot frees; GoodBoy dropped off." },
-      { ts: "2026-09-04T00:53:40Z", desk: "CHIEF", cls: "ok", t: "Hold 3/3. Jamu $32,293 (+12%) · APEWIF $193,823 (+165%) · BAPE $257,164 (+34%). Closed 25 (MARTIN Zoe TRASHY Callout PRO SEND WPLEB Lyra CopperApe LOUD CHIBI catonfone RAMCOIN early RDOG TED SFM DUVE Rabbit Wukong SNICKERS LOMCOIN Mobi Addog SOLBROS). Off-book CALLOOOR / MEEKO / $QUANTBOT. No fill." }
+      { ts: "2026-09-04T00:53:40Z", desk: "CHIEF", cls: "ok", t: "Hold 3/3. Jamu $32,293 (+12%) · APEWIF $193,823 (+165%) · BAPE $257,164 (+34%). Closed 25 (MARTIN Zoe TRASHY Callout PRO SEND WPLEB Lyra CopperApe LOUD CHIBI catonfone RAMCOIN early RDOG TED SFM DUVE Rabbit Wukong SNICKERS LOMCOIN Mobi Addog SOLBROS). Off-book CALLOOOR / MEEKO / $QUANTBOT. No fill." },
+      { ts: "2026-09-04T01:32:20Z", desk: "RISK", cls: "no", t: "SL hit BAPE — Dex $2,997 vs entry $191,383 (−98.4%), floor $95,692. Rugged at 5.9h after four green marks. Closed. Slot free." },
+      { ts: "2026-09-04T01:32:25Z", desk: "SCAN", cls: "ok", t: "BAPE SL. Passers RST $167k pump / $164k Dex 30.1h (oldest) · uselesscat $90k 5.6h · PTA $23k 1.5h / CATEUS $182k 1.1h young. Watch GoodBoy / BEAVER / HAM / HOPE absent. Skip name-skips. Closed BAPE / SOLBROS / Addog off." },
+      { ts: "2026-09-04T01:32:30Z", desk: "GMGN", cls: "ok", t: "fill RST 0.02 SOL · CA KmonSZsCnAcms2KGZLFGuyGjhWWBHfX3daN2Jcipump · entryMcap 167172 (pump usd_market_cap). Oldest passer after BAPE SL. Book 3/3." },
+      { ts: "2026-09-04T01:32:35Z", desk: "CHART", cls: "ok", t: "held Jamu live mcap $28,464 (−0.8% vs entry $28,705) · held APEWIF live mcap $161,016 (+119.9% vs entry $73,217) · SL BAPE $2,997 (−98.4% vs entry $191,383) · filled RST entry $167,172. Book 3/3." },
+      { ts: "2026-09-04T01:32:40Z", desk: "LORE", cls: "note", t: "BAPE rugged −98% at 5.9h after printing +11 / +11 / +16 / +34 — same late-rug window as SOLBROS, just delayed a few marks. Slot went to RST at 30h, the idle name on tape. Jamu slipped to −0.8% (flatten still 2/3, not ≤ −10%). APEWIF cooled +165% → +120%." },
+      { ts: "2026-09-04T01:32:45Z", desk: "CHIEF", cls: "ok", t: "SL BAPE 191383→2997. Fill RST 0.02 @ 167172. Book 3/3 Jamu $28,464 (−1%) · APEWIF $161,016 (+120%) · RST $167,172. Closed 26 (MARTIN Zoe TRASHY Callout PRO SEND WPLEB Lyra CopperApe LOUD CHIBI catonfone RAMCOIN early RDOG TED SFM DUVE Rabbit Wukong SNICKERS LOMCOIN Mobi Addog SOLBROS BAPE). Off-book CALLOOOR / MEEKO / $QUANTBOT." }
       ]
     };
 
