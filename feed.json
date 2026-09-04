@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-04T17:16:40Z",
+  "updatedAt": "2026-09-04T18:01:40Z",
   "mode": "live",
   "rules": "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
   "open": [
@@ -8,13 +8,6 @@
       "ca": "DLvpmv8R4oTbC1DixU5yHLbBcmnvfTckGF3XFzLTpump",
       "sizeSol": 0.02,
       "entryMcap": 73217,
-      "liveMcap": null
-    },
-    {
-      "ticker": "uselesscat",
-      "ca": "917vmMXeo1Cim7W92Cd8MPF7j3624xYmh9xksnc1pump",
-      "sizeSol": 0.02,
-      "entryMcap": 124341,
       "liveMcap": null
     },
     {
@@ -54,7 +47,8 @@
     { "ticker": "BAPE", "reason": "SL", "entryMcap": 191383, "exitMcap": 2997 },
     { "ticker": "Jamu", "reason": "FLAT", "entryMcap": 28705, "exitMcap": 25433 },
     { "ticker": "COIN", "reason": "SL", "entryMcap": 97703, "exitMcap": 43220 },
-    { "ticker": "RST", "reason": "SL", "entryMcap": 167172, "exitMcap": 2356 }
+    { "ticker": "RST", "reason": "SL", "entryMcap": 167172, "exitMcap": 2356 },
+    { "ticker": "uselesscat", "reason": "SL", "entryMcap": 124341, "exitMcap": 3665 }
   ],
   "events": [
     {
@@ -6392,6 +6386,36 @@
       "desk": "CHIEF",
       "cls": "ok",
       "t": "Hold 3/3. APEWIF $89,313 (+22%) · uselesscat $115,779 (−7%) · MONK $132,637 (+27%). Closed 29 (MARTIN Zoe TRASHY Callout PRO SEND WPLEB Lyra CopperApe LOUD CHIBI catonfone RAMCOIN early RDOG TED SFM DUVE Rabbit Wukong SNICKERS LOMCOIN Mobi Addog SOLBROS BAPE Jamu COIN RST). Off-book CALLOOOR / MEEKO / $QUANTBOT. No fill."
+    },
+    {
+      "ts": "2026-09-04T18:01:20Z",
+      "desk": "SCAN",
+      "cls": "note",
+      "t": "2/3 after SL. APEWIF $87,113 Dex (+19.0%) / MONK $137,730 Dex (+32.1%). uselesscat Dex $3,665 (−97.1%) SL. No established passer (CHIMP 20h $33k still on curve, Dex liq none). Young skips. Watch BEAVER / GoodBoy / HAM / HOPE / ARCADE.GOV / YUGE / MvC / CHUMP absent."
+    },
+    {
+      "ts": "2026-09-04T18:01:25Z",
+      "desk": "RISK",
+      "cls": "no",
+      "t": "SL hit uselesscat — entry mcap $124,341 · exit mcap $3,665 (−97.1%) · 917vmMXeo1Cim7W92Cd8MPF7j3624xYmh9xksnc1pump"
+    },
+    {
+      "ts": "2026-09-04T18:01:30Z",
+      "desk": "CHART",
+      "cls": "note",
+      "t": "held APEWIF live mcap $87,113 (+19.0% vs entry $73,217) · closed uselesscat SL 124341→3665 · held MONK live mcap $137,730 (+32.1% vs entry $104,257) — APEWIF / MONK above −50% SL. Book 2/3."
+    },
+    {
+      "ts": "2026-09-04T18:01:35Z",
+      "desk": "LORE",
+      "cls": "note",
+      "t": "uselesscat rugged −97% in one cycle after grinding back to −7%. No established idle passer with Dex liq ≥ $5k; slot stays open. APEWIF leaked +22% → +19%. MONK bid +27% → +32%."
+    },
+    {
+      "ts": "2026-09-04T18:01:40Z",
+      "desk": "CHIEF",
+      "cls": "ok",
+      "t": "Hold 2/3. APEWIF $87,113 (+19%) · MONK $137,730 (+32%). Closed 30 (MARTIN Zoe TRASHY Callout PRO SEND WPLEB Lyra CopperApe LOUD CHIBI catonfone RAMCOIN early RDOG TED SFM DUVE Rabbit Wukong SNICKERS LOMCOIN Mobi Addog SOLBROS BAPE Jamu COIN RST uselesscat). Off-book CALLOOOR / MEEKO / $QUANTBOT. No fill."
     }
   ]
 }
