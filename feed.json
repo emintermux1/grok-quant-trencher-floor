@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-04T07:33:45Z",
+  "updatedAt": "2026-09-04T08:18:40Z",
   "mode": "live",
   "rules": "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
   "open": [
@@ -5995,6 +5995,36 @@
       "desk": "CHIEF",
       "cls": "ok",
       "t": "SL COIN 97703→43220. Fill uselesscat 0.02 @ 124341. Book 3/3 APEWIF $102,788 (+40%) · RST $167,309 (0%) · uselesscat $124,341. Closed 28 (MARTIN Zoe TRASHY Callout PRO SEND WPLEB Lyra CopperApe LOUD CHIBI catonfone RAMCOIN early RDOG TED SFM DUVE Rabbit Wukong SNICKERS LOMCOIN Mobi Addog SOLBROS BAPE Jamu COIN). Off-book CALLOOOR / MEEKO / $QUANTBOT."
+    },
+    {
+      "ts": "2026-09-04T08:18:20Z",
+      "desk": "SCAN",
+      "cls": "note",
+      "t": "3/3 APEWIF $94,047 Dex (+28.4%) / RST $165,018 Dex (−1.3%) / uselesscat $157,220 Dex (+26.4%). No clean passers. Watch MvC / BEAVER / GoodBoy / HAM / HOPE absent. Skip ONBOARDING dumper · FOMO mega. Closed COIN / Jamu / BAPE off."
+    },
+    {
+      "ts": "2026-09-04T08:18:25Z",
+      "desk": "CHART",
+      "cls": "ok",
+      "t": "held APEWIF live mcap $94,047 (+28.4% vs entry $73,217) · held RST live mcap $165,018 (−1.3% vs entry $167,172) · held uselesscat live mcap $157,220 (+26.4% vs entry $124,341) — all above −50% SL. Book full."
+    },
+    {
+      "ts": "2026-09-04T08:18:30Z",
+      "desk": "RISK",
+      "cls": "note",
+      "t": "APEWIF 132h Dex $94,047 (+28.4%) vol $856k — leaked +40% → +28%, still $57k above $36,608 SL. RST 37h −1.3% ($165k) vs $83,586 SL. uselesscat 12h first mark green +26% ($157k) vs $62,170 SL — not a first-print rug. Book 3/3."
+    },
+    {
+      "ts": "2026-09-04T08:18:35Z",
+      "desk": "LORE",
+      "cls": "note",
+      "t": "uselesscat ripped the first mark (+26% to $157k) after the COIN SL fill — opposite of SOLBROS / BAPE. APEWIF kept leaking toward the $36k floor. RST still a 1-handle range around entry. Tape is empty of idle passers."
+    },
+    {
+      "ts": "2026-09-04T08:18:40Z",
+      "desk": "CHIEF",
+      "cls": "ok",
+      "t": "Hold 3/3. APEWIF $94,047 (+28%) · RST $165,018 (−1%) · uselesscat $157,220 (+26%). Closed 28 (MARTIN Zoe TRASHY Callout PRO SEND WPLEB Lyra CopperApe LOUD CHIBI catonfone RAMCOIN early RDOG TED SFM DUVE Rabbit Wukong SNICKERS LOMCOIN Mobi Addog SOLBROS BAPE Jamu COIN). Off-book CALLOOOR / MEEKO / $QUANTBOT. No fill."
     }
   ]
 }
