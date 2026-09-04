@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-04T06:48:40Z",
+  "updatedAt": "2026-09-04T07:33:45Z",
   "mode": "live",
   "rules": "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
   "open": [
@@ -18,10 +18,10 @@
       "liveMcap": null
     },
     {
-      "ticker": "COIN",
-      "ca": "5jNB5YFamqs3iifyhs34ERox2En3EBc1v5CdgHkmpump",
+      "ticker": "uselesscat",
+      "ca": "917vmMXeo1Cim7W92Cd8MPF7j3624xYmh9xksnc1pump",
       "sizeSol": 0.02,
-      "entryMcap": 97703,
+      "entryMcap": 124341,
       "liveMcap": null
     }
   ],
@@ -52,7 +52,8 @@
     { "ticker": "Addog", "reason": "SL", "entryMcap": 78199, "exitMcap": 36834 },
     { "ticker": "SOLBROS", "reason": "SL", "entryMcap": 104569, "exitMcap": 2095 },
     { "ticker": "BAPE", "reason": "SL", "entryMcap": 191383, "exitMcap": 2997 },
-    { "ticker": "Jamu", "reason": "FLAT", "entryMcap": 28705, "exitMcap": 25433 }
+    { "ticker": "Jamu", "reason": "FLAT", "entryMcap": 28705, "exitMcap": 25433 },
+    { "ticker": "COIN", "reason": "SL", "entryMcap": 97703, "exitMcap": 43220 }
   ],
   "events": [
     {
@@ -5958,6 +5959,42 @@
       "desk": "CHIEF",
       "cls": "ok",
       "t": "Hold 3/3. APEWIF $114,957 (+57%) · RST $163,444 (−2%) · COIN $87,667 (−10%). Closed 27 (MARTIN Zoe TRASHY Callout PRO SEND WPLEB Lyra CopperApe LOUD CHIBI catonfone RAMCOIN early RDOG TED SFM DUVE Rabbit Wukong SNICKERS LOMCOIN Mobi Addog SOLBROS BAPE Jamu). Off-book CALLOOOR / MEEKO / $QUANTBOT. No fill."
+    },
+    {
+      "ts": "2026-09-04T07:33:20Z",
+      "desk": "RISK",
+      "cls": "no",
+      "t": "SL hit COIN — Dex $43,220 vs entry $97,703 (−55.8%), floor $48,852. Closed. Slot free."
+    },
+    {
+      "ts": "2026-09-04T07:33:25Z",
+      "desk": "SCAN",
+      "cls": "ok",
+      "t": "COIN SL. Passers uselesscat $124k pump / $119k Dex 11.7h (oldest) · UNSTABLE $93k 0.4h young. Watch MvC / BEAVER / GoodBoy / HAM / HOPE absent. Skip OGCALLERS liq/vol. Closed COIN / Jamu / BAPE off."
+    },
+    {
+      "ts": "2026-09-04T07:33:30Z",
+      "desk": "GMGN",
+      "cls": "ok",
+      "t": "fill uselesscat 0.02 SOL · CA 917vmMXeo1Cim7W92Cd8MPF7j3624xYmh9xksnc1pump · entryMcap 124341 (pump usd_market_cap). Oldest passer after COIN SL. Book 3/3."
+    },
+    {
+      "ts": "2026-09-04T07:33:35Z",
+      "desk": "CHART",
+      "cls": "ok",
+      "t": "held APEWIF live mcap $102,788 (+40.4% vs entry $73,217) · held RST live mcap $167,309 (+0.1% vs entry $167,172) · SL COIN $43,220 (−55.8% vs entry $97,703) · filled uselesscat entry $124,341. Book 3/3."
+    },
+    {
+      "ts": "2026-09-04T07:33:40Z",
+      "desk": "LORE",
+      "cls": "note",
+      "t": "COIN dumped through the SL in one cycle (−10% → −56%) after fading the +11% high. APEWIF kept leaking (+57% → +40%). RST still glued to entry. Slot went to uselesscat at 12h — oldest remaining passer after MvC dropped off."
+    },
+    {
+      "ts": "2026-09-04T07:33:45Z",
+      "desk": "CHIEF",
+      "cls": "ok",
+      "t": "SL COIN 97703→43220. Fill uselesscat 0.02 @ 124341. Book 3/3 APEWIF $102,788 (+40%) · RST $167,309 (0%) · uselesscat $124,341. Closed 28 (MARTIN Zoe TRASHY Callout PRO SEND WPLEB Lyra CopperApe LOUD CHIBI catonfone RAMCOIN early RDOG TED SFM DUVE Rabbit Wukong SNICKERS LOMCOIN Mobi Addog SOLBROS BAPE Jamu COIN). Off-book CALLOOOR / MEEKO / $QUANTBOT."
     }
   ]
 }
