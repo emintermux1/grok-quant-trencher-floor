@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-05T02:16:40Z",
+  "updatedAt": "2026-09-05T03:01:40Z",
   "mode": "live",
   "rules": "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
   "open": [
@@ -6746,6 +6746,36 @@
       "desk": "CHIEF",
       "cls": "ok",
       "t": "Hold 2/3. APEWIF $139,515 (+91%) · MONK $138,857 (+33%). Closed 30 (MARTIN Zoe TRASHY Callout PRO SEND WPLEB Lyra CopperApe LOUD CHIBI catonfone RAMCOIN early RDOG TED SFM DUVE Rabbit Wukong SNICKERS LOMCOIN Mobi Addog SOLBROS BAPE Jamu COIN RST uselesscat). Off-book CALLOOOR / MEEKO / $QUANTBOT. No fill."
+    },
+    {
+      "ts": "2026-09-05T03:01:20Z",
+      "desk": "SCAN",
+      "cls": "note",
+      "t": "2/3 APEWIF $133,907 Dex (+82.9%) / MONK $126,974 Dex (+21.8%). Slot open. Skip PUMPANY 7h on-curve. Young on-curve skips (GoMeme). Watch ARCADE.GOV $3.5k too small. Closed uselesscat off."
+    },
+    {
+      "ts": "2026-09-05T03:01:25Z",
+      "desk": "CHART",
+      "cls": "ok",
+      "t": "held APEWIF live mcap $133,907 (+82.9% vs entry $73,217) · held MONK live mcap $126,974 (+21.8% vs entry $104,257) — both above −50% SL. Book 2/3."
+    },
+    {
+      "ts": "2026-09-05T03:01:30Z",
+      "desk": "RISK",
+      "cls": "note",
+      "t": "APEWIF 151h Dex $133,907 (+82.9%) vol $817k — cooled +91% → +83%, SL $36,608. MONK 57h cooled +33% → +22% ($127k) vs $52,128 SL. Slot open, no flatten (MONK vol $123k / fee 12)."
+    },
+    {
+      "ts": "2026-09-05T03:01:35Z",
+      "desk": "LORE",
+      "cls": "note",
+      "t": "APEWIF leaked +91% → +83%. MONK gave back +33% to +22%. Tape still empty of Dex-liq trench passers after the uselesscat SL."
+    },
+    {
+      "ts": "2026-09-05T03:01:40Z",
+      "desk": "CHIEF",
+      "cls": "ok",
+      "t": "Hold 2/3. APEWIF $133,907 (+83%) · MONK $126,974 (+22%). Closed 30 (MARTIN Zoe TRASHY Callout PRO SEND WPLEB Lyra CopperApe LOUD CHIBI catonfone RAMCOIN early RDOG TED SFM DUVE Rabbit Wukong SNICKERS LOMCOIN Mobi Addog SOLBROS BAPE Jamu COIN RST uselesscat). Off-book CALLOOOR / MEEKO / $QUANTBOT. No fill."
     }
   ]
 }
