@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-04T23:16:40Z",
+  "updatedAt": "2026-09-05T00:01:40Z",
   "mode": "live",
   "rules": "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
   "open": [
@@ -6626,6 +6626,36 @@
       "desk": "CHIEF",
       "cls": "ok",
       "t": "Hold 2/3. APEWIF $136,978 (+87%) · MONK $127,483 (+22%). Closed 30 (MARTIN Zoe TRASHY Callout PRO SEND WPLEB Lyra CopperApe LOUD CHIBI catonfone RAMCOIN early RDOG TED SFM DUVE Rabbit Wukong SNICKERS LOMCOIN Mobi Addog SOLBROS BAPE Jamu COIN RST uselesscat). Off-book CALLOOOR / MEEKO / $QUANTBOT. No fill."
+    },
+    {
+      "ts": "2026-09-05T00:01:20Z",
+      "desk": "SCAN",
+      "cls": "note",
+      "t": "2/3 APEWIF $147,924 Dex (+102.0%) / MONK $138,225 Dex (+32.6%). Slot open. Young on-curve skips (PUMPANY / DEXA). Skip stale MOONVEMBER / OGA / PBUG on-curve. Watch Thuggies / GME / UNICORN absent. Closed uselesscat off."
+    },
+    {
+      "ts": "2026-09-05T00:01:25Z",
+      "desk": "CHART",
+      "cls": "ok",
+      "t": "held APEWIF live mcap $147,924 (+102.0% vs entry $73,217) · held MONK live mcap $138,225 (+32.6% vs entry $104,257) — both above −50% SL. Book 2/3."
+    },
+    {
+      "ts": "2026-09-05T00:01:30Z",
+      "desk": "RISK",
+      "cls": "note",
+      "t": "APEWIF 148h Dex $147,924 (+102.0%) vol $794k — bid +87% → +102%, SL $36,608. MONK 54h bid +22% → +33% ($138k) vs $52,128 SL. Slot open, no flatten (MONK vol $121k / fee 12)."
+    },
+    {
+      "ts": "2026-09-05T00:01:35Z",
+      "desk": "LORE",
+      "cls": "note",
+      "t": "APEWIF bid back through +100% after leaking to +87%. MONK kept grinding +22% → +33%. Tape still empty of Dex-liq trench passers after the uselesscat SL."
+    },
+    {
+      "ts": "2026-09-05T00:01:40Z",
+      "desk": "CHIEF",
+      "cls": "ok",
+      "t": "Hold 2/3. APEWIF $147,924 (+102%) · MONK $138,225 (+33%). Closed 30 (MARTIN Zoe TRASHY Callout PRO SEND WPLEB Lyra CopperApe LOUD CHIBI catonfone RAMCOIN early RDOG TED SFM DUVE Rabbit Wukong SNICKERS LOMCOIN Mobi Addog SOLBROS BAPE Jamu COIN RST uselesscat). Off-book CALLOOOR / MEEKO / $QUANTBOT. No fill."
     }
   ]
 }
