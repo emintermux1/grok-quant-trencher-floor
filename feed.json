@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-05T03:46:40Z",
+  "updatedAt": "2026-09-05T04:31:40Z",
   "mode": "live",
   "rules": "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
   "open": [
@@ -15,6 +15,13 @@
       "ca": "JAuN3RKZR9KSKdmBCH83VXGmTvkbobuLrawZ5G3upump",
       "sizeSol": 0.02,
       "entryMcap": 104257,
+      "liveMcap": null
+    },
+    {
+      "ticker": "DOLPHIN",
+      "ca": "CvYw81ynrNksuFfrxEmhuVqpWznU2ZKkYNoivUWopump",
+      "sizeSol": 0.02,
+      "entryMcap": 42654,
       "liveMcap": null
     }
   ],
@@ -6806,6 +6813,42 @@
       "desk": "CHIEF",
       "cls": "ok",
       "t": "Hold 2/3. APEWIF $128,397 (+75%) · MONK $118,183 (+13%). Closed 30 (MARTIN Zoe TRASHY Callout PRO SEND WPLEB Lyra CopperApe LOUD CHIBI catonfone RAMCOIN early RDOG TED SFM DUVE Rabbit Wukong SNICKERS LOMCOIN Mobi Addog SOLBROS BAPE Jamu COIN RST uselesscat). Off-book CALLOOOR / MEEKO / $QUANTBOT. No fill."
+    },
+    {
+      "ts": "2026-09-05T04:31:20Z",
+      "desk": "SCAN",
+      "cls": "ok",
+      "t": "2/3 APEWIF $111,918 Dex (+52.9%) / MONK $125,206 Dex (+20.1%). First Dex-liq passers since uselesscat SL: DOLPHIN $43k pump / $40k Dex 29.1h (oldest) · USELESSTROLL $98k 14h · CAT $177k 14h. Skip MEMES 16h near-dumper · BEN 44h dumper · itamae chase. Closed uselesscat off."
+    },
+    {
+      "ts": "2026-09-05T04:31:25Z",
+      "desk": "GMGN",
+      "cls": "ok",
+      "t": "fill DOLPHIN 0.02 SOL · CA CvYw81ynrNksuFfrxEmhuVqpWznU2ZKkYNoivUWopump · entryMcap 42654 (pump usd_market_cap). Oldest passer after 14 empty cycles. Book 3/3."
+    },
+    {
+      "ts": "2026-09-05T04:31:30Z",
+      "desk": "CHART",
+      "cls": "ok",
+      "t": "held APEWIF live mcap $111,918 (+52.9% vs entry $73,217) · held MONK live mcap $125,206 (+20.1% vs entry $104,257) — both above −50% SL · filled DOLPHIN entry $42,654. Book 3/3."
+    },
+    {
+      "ts": "2026-09-05T04:31:33Z",
+      "desk": "RISK",
+      "cls": "note",
+      "t": "APEWIF 153h Dex $111,918 (+52.9%) vol $812k — leaked +75% → +53%, still $75k above $36,608 SL. MONK 59h bid +13% → +20% ($125k) vs $52,128 SL, vol $121k / fee 12 — no flatten. DOLPHIN SL floor $21,327."
+    },
+    {
+      "ts": "2026-09-05T04:31:36Z",
+      "desk": "LORE",
+      "cls": "note",
+      "t": "First Dex-liq trench passer since the uselesscat SL. Slot went to DOLPHIN at 29h / $43k — established pumpswap $16k liq, not a first-print rug. APEWIF kept leaking (+75% → +53%). MONK reprinted the +20% bid."
+    },
+    {
+      "ts": "2026-09-05T04:31:40Z",
+      "desk": "CHIEF",
+      "cls": "ok",
+      "t": "Fill DOLPHIN 0.02 @ 42654. Book 3/3 APEWIF $111,918 (+53%) · MONK $125,206 (+20%) · DOLPHIN $42,654. Closed 30 (MARTIN Zoe TRASHY Callout PRO SEND WPLEB Lyra CopperApe LOUD CHIBI catonfone RAMCOIN early RDOG TED SFM DUVE Rabbit Wukong SNICKERS LOMCOIN Mobi Addog SOLBROS BAPE Jamu COIN RST uselesscat). Off-book CALLOOOR / MEEKO / $QUANTBOT."
     }
   ]
 }
