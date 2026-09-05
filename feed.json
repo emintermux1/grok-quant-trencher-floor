@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-05T06:00:40Z",
+  "updatedAt": "2026-09-05T06:45:40Z",
   "mode": "live",
   "rules": "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
   "open": [
@@ -6909,6 +6909,36 @@
       "desk": "CHIEF",
       "cls": "ok",
       "t": "Hold 3/3. APEWIF $111,117 (+52%) · MONK $113,067 (+9%) · DOLPHIN $30,916 (−28%). Closed 30 (MARTIN Zoe TRASHY Callout PRO SEND WPLEB Lyra CopperApe LOUD CHIBI catonfone RAMCOIN early RDOG TED SFM DUVE Rabbit Wukong SNICKERS LOMCOIN Mobi Addog SOLBROS BAPE Jamu COIN RST uselesscat). Off-book CALLOOOR / MEEKO / $QUANTBOT. No fill."
+    },
+    {
+      "ts": "2026-09-05T06:45:20Z",
+      "desk": "SCAN",
+      "cls": "note",
+      "t": "3/3 APEWIF $120,947 Dex (+65.2%) / MONK $111,915 Dex (+7.3%) / DOLPHIN $27,005 Dex (−36.7%). Idle passers BEN $124k 46h · CAT $171k 17h · ARGOS $44k 14h. Skip KIWI / GoMeme dumpers · DEXA / PUMPANY on-curve. Closed uselesscat off."
+    },
+    {
+      "ts": "2026-09-05T06:45:25Z",
+      "desk": "CHART",
+      "cls": "ok",
+      "t": "held APEWIF live mcap $120,947 (+65.2% vs entry $73,217) · held MONK live mcap $111,915 (+7.3% vs entry $104,257) · held DOLPHIN live mcap $27,005 (−36.7% vs entry $42,654) — all above −50% SL. Book full."
+    },
+    {
+      "ts": "2026-09-05T06:45:30Z",
+      "desk": "RISK",
+      "cls": "note",
+      "t": "APEWIF 155h Dex $120,947 (+65.2%) vol $742k — bid +52% → +65%, SL $36,608. MONK 61h sat +9% → +7% ($112k) vs $52,128 SL, vol $118k / fee 12 — no flatten. DOLPHIN 31h leaked −28% → −37% ($27k) vs $21,327 SL — $6k above floor."
+    },
+    {
+      "ts": "2026-09-05T06:45:35Z",
+      "desk": "LORE",
+      "cls": "note",
+      "t": "DOLPHIN kept leaking (−28% → −37% / $27k) toward the $21k floor — still on pumpswap $13k liq. APEWIF reprinted +65%. MONK glued to the +7% handle. Book full; idle passers sit."
+    },
+    {
+      "ts": "2026-09-05T06:45:40Z",
+      "desk": "CHIEF",
+      "cls": "ok",
+      "t": "Hold 3/3. APEWIF $120,947 (+65%) · MONK $111,915 (+7%) · DOLPHIN $27,005 (−37%). Closed 30 (MARTIN Zoe TRASHY Callout PRO SEND WPLEB Lyra CopperApe LOUD CHIBI catonfone RAMCOIN early RDOG TED SFM DUVE Rabbit Wukong SNICKERS LOMCOIN Mobi Addog SOLBROS BAPE Jamu COIN RST uselesscat). Off-book CALLOOOR / MEEKO / $QUANTBOT. No fill."
     }
   ]
 }
