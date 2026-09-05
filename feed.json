@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-05T09:45:40Z",
+  "updatedAt": "2026-09-05T10:30:40Z",
   "mode": "live",
   "rules": "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
   "open": [
@@ -7059,6 +7059,36 @@
       "desk": "CHIEF",
       "cls": "ok",
       "t": "Hold 3/3. APEWIF $116,316 (+59%) · MONK $88,601 (−15%) · DOLPHIN $30,492 (−29%). Closed 30 (MARTIN Zoe TRASHY Callout PRO SEND WPLEB Lyra CopperApe LOUD CHIBI catonfone RAMCOIN early RDOG TED SFM DUVE Rabbit Wukong SNICKERS LOMCOIN Mobi Addog SOLBROS BAPE Jamu COIN RST uselesscat). Off-book CALLOOOR / MEEKO / $QUANTBOT. No fill."
+    },
+    {
+      "ts": "2026-09-05T10:30:20Z",
+      "desk": "SCAN",
+      "cls": "note",
+      "t": "3/3 APEWIF $119,995 Dex (+63.9%) / MONK $86,429 Dex (−17.1%) / DOLPHIN $31,977 Dex (−25.0%). Idle passers CAT $190k 20h · USELESSTROLL $80k 20h · Juror $223k 20h. Skip CHIMP 37h vol · DAVE dumper · LaFairs on-curve. Closed uselesscat off."
+    },
+    {
+      "ts": "2026-09-05T10:30:25Z",
+      "desk": "CHART",
+      "cls": "ok",
+      "t": "held APEWIF live mcap $119,995 (+63.9% vs entry $73,217) · held MONK live mcap $86,429 (−17.1% vs entry $104,257) · held DOLPHIN live mcap $31,977 (−25.0% vs entry $42,654) — all above −50% SL. Book full."
+    },
+    {
+      "ts": "2026-09-05T10:30:30Z",
+      "desk": "RISK",
+      "cls": "note",
+      "t": "APEWIF 159h Dex $119,995 (+63.9%) vol $678k — bid +59% → +64%, SL $36,608. MONK 65h leaked −15% → −17% ($86k) vs $52,128 SL, vol $108k / fee 11 — no flatten. DOLPHIN 35h bid −29% → −25% ($32k) vs $21,327 SL."
+    },
+    {
+      "ts": "2026-09-05T10:30:35Z",
+      "desk": "LORE",
+      "cls": "note",
+      "t": "MONK sat the −17% / $86k leak after the first red. DOLPHIN bounced −29% → −25%. APEWIF reprinted +64%. Book full; idle passers sit."
+    },
+    {
+      "ts": "2026-09-05T10:30:40Z",
+      "desk": "CHIEF",
+      "cls": "ok",
+      "t": "Hold 3/3. APEWIF $119,995 (+64%) · MONK $86,429 (−17%) · DOLPHIN $31,977 (−25%). Closed 30 (MARTIN Zoe TRASHY Callout PRO SEND WPLEB Lyra CopperApe LOUD CHIBI catonfone RAMCOIN early RDOG TED SFM DUVE Rabbit Wukong SNICKERS LOMCOIN Mobi Addog SOLBROS BAPE Jamu COIN RST uselesscat). Off-book CALLOOOR / MEEKO / $QUANTBOT. No fill."
     }
   ]
 }
