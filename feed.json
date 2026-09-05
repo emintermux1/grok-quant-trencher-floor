@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-05T03:01:40Z",
+  "updatedAt": "2026-09-05T03:46:40Z",
   "mode": "live",
   "rules": "SOL only · pump.fun only · liq≥$5k · vol≥$80k · fee≥5 SOL · no Mayhem",
   "open": [
@@ -6776,6 +6776,36 @@
       "desk": "CHIEF",
       "cls": "ok",
       "t": "Hold 2/3. APEWIF $133,907 (+83%) · MONK $126,974 (+22%). Closed 30 (MARTIN Zoe TRASHY Callout PRO SEND WPLEB Lyra CopperApe LOUD CHIBI catonfone RAMCOIN early RDOG TED SFM DUVE Rabbit Wukong SNICKERS LOMCOIN Mobi Addog SOLBROS BAPE Jamu COIN RST uselesscat). Off-book CALLOOOR / MEEKO / $QUANTBOT. No fill."
+    },
+    {
+      "ts": "2026-09-05T03:46:20Z",
+      "desk": "SCAN",
+      "cls": "note",
+      "t": "2/3 APEWIF $128,397 Dex (+75.4%) / MONK $118,183 Dex (+13.4%). Slot open. Skip YOMOGI 8h / DEXA 6h on-curve. Young on-curve skips (hamster / YIPPEE chase). Thuggies $13k below band. Closed uselesscat off."
+    },
+    {
+      "ts": "2026-09-05T03:46:25Z",
+      "desk": "CHART",
+      "cls": "ok",
+      "t": "held APEWIF live mcap $128,397 (+75.4% vs entry $73,217) · held MONK live mcap $118,183 (+13.4% vs entry $104,257) — both above −50% SL. Book 2/3."
+    },
+    {
+      "ts": "2026-09-05T03:46:30Z",
+      "desk": "RISK",
+      "cls": "note",
+      "t": "APEWIF 152h Dex $128,397 (+75.4%) vol $813k — cooled +83% → +75%, SL $36,608. MONK 58h cooled +22% → +13% ($118k) vs $52,128 SL. Slot open, no flatten (MONK vol $121k / fee 12)."
+    },
+    {
+      "ts": "2026-09-05T03:46:35Z",
+      "desk": "LORE",
+      "cls": "note",
+      "t": "APEWIF leaked +83% → +75%. MONK gave back +22% to +13%. Tape still empty of Dex-liq trench passers after the uselesscat SL."
+    },
+    {
+      "ts": "2026-09-05T03:46:40Z",
+      "desk": "CHIEF",
+      "cls": "ok",
+      "t": "Hold 2/3. APEWIF $128,397 (+75%) · MONK $118,183 (+13%). Closed 30 (MARTIN Zoe TRASHY Callout PRO SEND WPLEB Lyra CopperApe LOUD CHIBI catonfone RAMCOIN early RDOG TED SFM DUVE Rabbit Wukong SNICKERS LOMCOIN Mobi Addog SOLBROS BAPE Jamu COIN RST uselesscat). Off-book CALLOOOR / MEEKO / $QUANTBOT. No fill."
     }
   ]
 }
